@@ -13,8 +13,6 @@
 
 ### We are BKFA from HUST 
 
-<div align="center" >
-
 <b>Party with us</b>
 
 <img src="https://octodex.github.com/images/yaktocat.png">
@@ -37,12 +35,10 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dvntgt7IsOg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-</div>
-
 # About BKFA.com
 ### Purpose
 
-<p align="center" >BKFA.com is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.
+<p align="justify" >BKFA.com is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.
 </p>
 
 <p align="center"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAUmAAAAJDU0OTRjMjQ0LTU3MWMtNDJmOS05NzllLTU2Y2M2ZGFlOTZhYQ.jpg"></p>
@@ -161,7 +157,6 @@ img {
   opacity: 1;
 }
 </style>
-<body>
 
 <h2 style="text-align:center">Slideshow Gallery</h2>
 
