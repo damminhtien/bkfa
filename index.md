@@ -6,13 +6,14 @@
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=565933070461786&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 # BKFA
 
 ## Welcome to BKFA.com GitHub pages :sparkles: :sparkles: :sparkles:
 
 ### We are BKFA from HUST /play tada
 
-<p align="center" >
+<div align="center" >
 
 <b>Party with us</b>
 
@@ -36,7 +37,7 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dvntgt7IsOg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-</p>
+</div>
 
 # About BKFA.com
 ### Purpose
