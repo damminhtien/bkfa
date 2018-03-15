@@ -1,3 +1,11 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=565933070461786&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 # BKFA
 
 ## Welcome to BKFA.com GitHub pages :sparkles: :sparkles: :sparkles:
@@ -41,3 +49,6 @@ We are students of HUST
 - 0henri0
 
 with love <3
+<div class="fb-share-button" data-href="https://damminhtien.github.io/bkfa/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdamminhtien.github.io%2Fbkfa%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+<div class="fb-like" data-href="https://damminhtien.github.io/bkfa/" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+<div class="fb-comments" data-href="https://damminhtien.github.io/bkfa/" data-numposts="5"></div>
