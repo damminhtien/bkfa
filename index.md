@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+# BKFA
 
-You can use the [editor on GitHub](https://github.com/damminhtien/bkfa/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to BKFA.com GitHub pages :sparkles: :sparkles: :sparkles:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### We are BKFA from HUST
 
-### Markdown
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![Image of BKHN](https://i.ytimg.com/vi/NLSue7sTDMo/maxresdefault.jpg)
 
-```markdown
-Syntax highlighted code block
+![Image of Team](https://media.giphy.com/media/1ZtmZoLRtnfjBW1giN/giphy.gif)
 
-# Header 1
-## Header 2
-### Header 3
+![Image of Team](https://media.giphy.com/media/5wFUxatvUMXJ9JhpVp/giphy.gif)
 
-- Bulleted
-- List
+![Image of Team](https://media.giphy.com/media/1lwtswtRpqDBcn9UVI/giphy.gif)
 
-1. Numbered
-2. List
+![Image of Team](https://media.giphy.com/media/d5qqj1zFg3Z3uLS2xS/giphy.gif)
 
-**Bold** and _Italic_ and `Code` text
+![Image of Team](https://media.giphy.com/media/3XA0mnQR0zhD7OZAbG/giphy.gif)
 
-[Link](url) and ![Image](src)
-```
+# About BKFA.com
+### Purpose
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+BKFA.com is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.
 
-### Jekyll Themes
+<p align="center"><img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAUmAAAAJDU0OTRjMjQ0LTU3MWMtNDJmOS05NzllLTU2Y2M2ZGFlOTZhYQ.jpg"></p>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/damminhtien/bkfa/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Technology
 
-### Support or Contact
+- Larvel framwork (LAMP stack)
+- Bootstrap 4.0 + Jquery
+- Social plugin
+- Another stylesheet css source
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### About BKFA
+
+We are students of HUST   
+- damminhtien
+- trantrongbinh
+- assassin881997
+- 0henri0
+
+with love <3
