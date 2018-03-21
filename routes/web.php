@@ -25,12 +25,27 @@ use App\mon;
 		Route::group(['prefix'=>'vien'],function(){
 			Route::get('danhsach','vienController@getDanhSach');
 
-			Route::get('them','vienController@getThem');
 			Route::post('them','vienController@postThem');
 
-			Route::get('sua/{idvien}','vienController@getSua');
 			Route::post('sua/{idvien}','vienController@postSua');
 			
 			Route::get('xoa/{idvien}','vienController@getXoa');
 		});
+
+		Route::group(['prefix'=>'slide'],function(){
+			Route::get('danhsach','slideController@getDanhSach');
+
+			Route::get('them','slideController@getThem');
+			Route::post('them','slideController@postThem');
+
+			Route::post('sua/{idslide}','slideController@postSua');
+			Route::post('sua/{idslide}','slideController@postSua');
+			
+			Route::get('xoa/{idslide}','slideController@getXoa');
+		});
+
+		Route::group(['prefix'=>'ajax'],function(){
+			Route::get('getmonby{idvien}','ajaxController@getMonByVien');
+		});
 	});
+
