@@ -7,6 +7,19 @@
 // ]
 
 // Chạy cmd : composer  dumpautoload
+// 
+function cutString($str, $num){
+	if($num < strlen($str)){
+		$i = $num;
+		while($str[$i] != ' '){
+			$i--;
+			if($i <= 0) return substr($str, 0, $num);
+		}
+		$subs = substr($str, 0, $i);	
+		return $subs;
+	}
+	return $str;
+}
 
 function changeTitle($str,$strSymbol='-',$case=MB_CASE_LOWER){// MB_CASE_UPPER / MB_CASE_TITLE / MB_CASE_LOWER
 	$str=trim($str);

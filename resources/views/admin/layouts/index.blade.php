@@ -21,6 +21,7 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
+    @yield('style')
 </head>
 
 <body>
@@ -58,6 +59,7 @@
     <script src="../bower_components/jquery.sparkline/index.js"></script>
     <script src="../bower_components/chart.js/dist/Chart.min.js"></script>
     <script src="assets/js/app.min.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>    
     <!-- page js -->
     <script src="assets/js/dashboard/dashboard.js"></script>
     @yield('script')
