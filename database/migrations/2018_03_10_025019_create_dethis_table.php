@@ -20,10 +20,10 @@ class CreateDethisTable extends Migration
             $table->string('urlanh');
             $table->string('gioithieu');
             $table->integer('nam');
-            $table->longText('ghichu');
+            $table->longText('ghichu')->nullable();
             $table->string('luotxem');
             $table->integer('idmon')->unsigned();
-            $table->string('urlloigiai');
+            $table->string('urlloigiai')->nullable();
             $table->foreign('idmon')->references('idmon')->on('mons')->onDelete('cascade');
             $table->timestamps();
         });

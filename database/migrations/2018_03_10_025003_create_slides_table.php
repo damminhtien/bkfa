@@ -19,7 +19,7 @@ class CreateSlidesTable extends Migration
             $table->string('url');
             $table->string('urlanh');
             $table->string('gioithieu');
-            $table->longText('ghichu');
+            $table->longText('ghichu')->nullable();
             $table->string('luotxem');
             $table->integer('idmon')->unsigned();
             $table->foreign('idmon')->references('idmon')->on('mons')->onDelete('cascade');
