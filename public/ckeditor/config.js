@@ -4,35 +4,22 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here.
-	// For complete reference see:
-	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+	// Define changes to default configuration here. For example:
+	// config.language = 'fr';
+	config.uiColor = '#FFF';
+	
+	config.height = '350px';
+	
+	config.filebrowserBrowseUrl = 'http://[tên miền của bạn]/ckfinder/ckfinder.html';
+ 
+	config.filebrowserImageBrowseUrl = '/ckfinder/ckfinder.html?type=Images';
+	 
+	config.filebrowserFlashBrowseUrl = '/ckfinder/ckfinder.html?type=Flash';
+	 
+	config.filebrowserUploadUrl = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files';
+	 
+	config.filebrowserImageUploadUrl = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images';
+	 
+	config.filebrowserFlashUploadUrl = '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash';
 
-	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		{ name: 'insert' },
-		{ name: 'forms' },
-		{ name: 'tools' },
-		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		{ name: 'others' },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'styles' },
-		{ name: 'colors' },
-		{ name: 'about' }
-	];
-
-	// Remove some buttons provided by the standard plugins, which are
-	// not needed in the Standard(s) toolbar.
-	config.removeButtons = 'Underline,Subscript,Superscript';
-
-	// Set the most common block elements.
-	config.format_tags = 'p;h1;h2;h3;pre';
-
-	// Simplify the dialog windows.
-	config.removeDialogTabs = 'image:advanced;link:advanced';
 };
