@@ -24,7 +24,7 @@ class CreateDethisTable extends Migration
             $table->string('luotxem');
             $table->integer('idmon')->unsigned();
             $table->string('urlloigiai');
-            $table->foreign('idmon')->references('idmon')->on('mons');
+            $table->foreign('idmon')->references('idmon')->on('mons')->onDelete('cascade');
             $table->timestamps();
         });
     }

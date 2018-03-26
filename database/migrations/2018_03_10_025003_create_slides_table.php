@@ -22,7 +22,7 @@ class CreateSlidesTable extends Migration
             $table->longText('ghichu');
             $table->string('luotxem');
             $table->integer('idmon')->unsigned();
-            $table->foreign('idmon')->references('idmon')->on('mons');
+            $table->foreign('idmon')->references('idmon')->on('mons')->onDelete('cascade');
             $table->timestamps();
         });
     }
