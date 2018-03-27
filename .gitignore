@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
-/public/upload
+/public/upload/images
+/public/upload/slide
+/public/upload/dethi
+/public/upload/.ckfinder
 /public/storage
 /storage/*.key
 /vendor
