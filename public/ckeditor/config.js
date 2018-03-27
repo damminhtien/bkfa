@@ -10,7 +10,7 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	config.height = '350px';
 	
-	config.filebrowserBrowseUrl = 'http://[tên miền của bạn]/ckfinder/ckfinder.html';
+	config.filebrowserBrowseUrl = 'http://localhost:8000/ckfinder/ckfinder.html';
  
 	config.filebrowserImageBrowseUrl = '/ckfinder/ckfinder.html?type=Images';
 	 
