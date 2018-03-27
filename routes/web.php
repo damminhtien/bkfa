@@ -38,7 +38,7 @@ use App\mon;
 			Route::get('them','slideController@getThem');
 			Route::post('them','slideController@postThem');
 
-			Route::post('sua/{idslide}','slideController@postSua');
+			Route::get('sua/{idslide}','slideController@getSua');
 			Route::post('sua/{idslide}','slideController@postSua');
 			
 			Route::get('xoa/{idslide}','slideController@getXoa');

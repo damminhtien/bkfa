@@ -1,9 +1,8 @@
 <?php
-
 // Mở composer.json
 // Thêm vào trong "autoload" chuỗi sau
 // "files": [
-//         "app/function/function.php"
+//         "app/function/string.php"
 // ]
 
 // Chạy cmd : composer  dumpautoload
@@ -89,6 +88,4 @@ function stripUnicode($str){
 	}
 	return $str;
 }
-
-
 ?>
