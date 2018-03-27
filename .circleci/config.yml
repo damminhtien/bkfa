@@ -35,3 +35,8 @@ jobs:
         
       # run tests!
       - run: phpunit
+    deployment:
+      staging:
+        branch: master
+        heroku:
+          appname: foo-bar-123
