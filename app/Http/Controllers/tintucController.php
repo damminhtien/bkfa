@@ -37,14 +37,12 @@ class tintucController extends Controller
 		// $tintuc->tieudekhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
-		$tintuc->luotxem = 0;
-		$tintuc->ngaydang = 0;
 
 		if($request->hasFile('anh')) {
 			$file = $request->file('anh');
-			$duoi = $file->getClientOriginalExtension();
-			if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg') {
-				return redirect('admin/tintuc/them')->with('loi','Chọn đuôi có file jpg,png hoặc jpeg');
+			$ext = $file->getClientOriginalExtension();
+			if(!checkExtensionImage($ext)) {
+				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
 			$name = $file->getClientOriginalName();
 			$anh = str_random(4)."_".$name;
@@ -88,14 +86,12 @@ class tintucController extends Controller
 		// $tintuc->tieudekhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
-		$tintuc->luotxem = 0;
-		$tintuc->ngaydang = 0;
 
 		if($request->hasFile('anh')) {
 			$file = $request->file('anh');
-			$duoi = $file->getClientOriginalExtension();
-			if($duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg') {
-				return redirect('admin/tintuc/them')->with('loi','Chọn đuôi có file jpg,png hoặc jpeg');
+			$ext = $file->getClientOriginalExtension();
+			if(!checkExtensionImage($ext)) {
+				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
 			$name = $file->getClientOriginalName();
 			$anh = str_random(4)."_".$name;

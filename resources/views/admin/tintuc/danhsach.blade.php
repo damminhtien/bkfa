@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <strong>Slide @php echo "( " .count($tintuc). " bản ghi )"; @endphp</strong>
+        <h4>Bảng dữ liệu <strong>Tin tức @php echo "( " .count($tintuc). " bản ghi )"; @endphp</strong>
         <a href="admin/tintuc/them" title="Thêm tin tức mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
      @if(count($errors) > 0)
       <br><br>
