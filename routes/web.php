@@ -45,7 +45,19 @@ use App\mon;
 		});
 
 		Route::group(['prefix'=>'ajax'],function(){
-			Route::get('getmonby{idvien}','ajaxController@getMonByVien');
+			Route::get('getmonby{idmon}','ajaxController@getMonByVien');
+		});
+
+		Route::group(['prefix'=>'mon'],function(){
+			Route::get('danhsach','monController@getDanhSach');
+
+			Route::get('them','monController@getThem');
+			Route::post('them','monController@postThem');
+
+			Route::get('sua/{idmon}','monController@getSua');
+			Route::post('sua/{idmon}','monController@postSua');
+			
+			Route::get('xoa/{idmon}','monController@getXoa');
 		});
 	});
 
