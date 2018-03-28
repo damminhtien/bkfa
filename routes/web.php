@@ -47,5 +47,18 @@ use App\mon;
 		Route::group(['prefix'=>'ajax'],function(){
 			Route::get('getmonby{idvien}','ajaxController@getMonByVien');
 		});
+
+		Route::group(['prefix'=>'dethi'],function(){
+			Route::get('danhsach','dethiController@getDanhSach');
+
+			Route::get('them','dethiController@getThem');
+			Route::post('them','dethiController@postThem');
+
+			Route::get('sua/{iddethi}','dethiController@getSua');
+			Route::post('sua/{iddethi}','dethiController@postSua');
+			
+			Route::get('xoa/{iddethi}','dethiController@getXoa');
+		});
 	});
+
 
