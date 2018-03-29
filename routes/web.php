@@ -71,6 +71,18 @@ use App\mon;
 			
 			Route::get('xoa/{iddethi}','dethiController@getXoa');
 		});
+
+		Route::group(['prefix'=>'mon'],function(){
+			Route::get('danhsach','monController@getDanhSach');
+
+			Route::get('them','monController@getThem');
+			Route::post('them','monController@postThem');
+
+			Route::get('sua/{idmon}','monController@getSua');
+			Route::post('sua/{idmon}','monController@postSua');
+			
+			Route::get('xoa/{idmon}','monController@getXoa');
+		});
 	});
 
 

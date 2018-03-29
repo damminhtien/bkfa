@@ -13,7 +13,7 @@ class tintucController extends Controller
 	}
 
 	public function getThem(){
-		return view('admin.tintuc.them',['tintuc'=>$tintuc]);
+		return view('admin.tintuc.them');
 	}
 	public function postThem(Request $request){
 		$this->validate($request,
