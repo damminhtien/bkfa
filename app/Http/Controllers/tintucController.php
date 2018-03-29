@@ -8,7 +8,7 @@ use App\tintuc;
 class tintucController extends Controller
 {
     public function getDanhSach(){
-		$tintuc = tintuc::all();
+		$tintuc = tintuc::all()->reverse();
 		return view('admin.tintuc.danhsach',['tintuc'=>$tintuc]);
 	}
 
