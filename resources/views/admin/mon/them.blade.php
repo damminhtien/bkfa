@@ -4,11 +4,11 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <div class="page-header">
+     <div class="page-header">
          <h4><small>Thêm</small> môn</h4>
-        </div>
-    </div>
-<div class="row">
+     </div>
+ </div>
+ <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
@@ -61,7 +61,7 @@
             </form>
         </div>
     </div>
-</div>	
+</div>  
 </div>
 </div>
 @endsection
