@@ -13,7 +13,6 @@ class tintucController extends Controller
 	}
 
 	public function getThem(){
-		$tintuc = tintuc::all();
 		return view('admin.tintuc.them',['tintuc'=>$tintuc]);
 	}
 	public function postThem(Request $request){
@@ -37,7 +36,6 @@ class tintucController extends Controller
 		$tintuc->tenkhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
-		$tintuc->luotxem = 0;
 
 		if($request->hasFile('anh')) {
 			$file = $request->file('anh');
@@ -56,9 +54,9 @@ class tintucController extends Controller
 		else {
 			$tintuc->urlanh = "default.jpg";
 		}
+		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
 		$tintuc->save();
-
-		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công');
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công ' . $ten);
 	}
 
 	public function getSua($id){
@@ -96,13 +94,14 @@ class tintucController extends Controller
 		else {
 			$modTinTuc->urlanh = $oldTinTuc->urlanh;
 		}
+		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
 		$modTinTuc->save();
-		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ' . $modTinTuc->tieude);
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ' . $ten);
 	}
 
 	public function getXoa($id){
         $tintuc = tintuc::find($id);
-        $ten = cutString($tintuc->firstOrFail()->gioithieu, 40);
+        $ten = cutString($tintuc->firstOrFail()->tieude, 40);
         unlink('upload/tintuc/'.$tintuc->urlanh);
         $tintuc->delete();
         return redirect('admin/tintuc/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten); 
