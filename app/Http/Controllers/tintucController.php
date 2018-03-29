@@ -37,17 +37,18 @@ class tintucController extends Controller
 		$tintuc->tenkhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
+		$tintuc->luotxem = 0;
 
 		if($request->hasFile('anh')) {
 			$file = $request->file('anh');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect('admin/tintuc/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
 			$name = $file->getClientOriginalName();
-			$anh = str_random(4)."_".$name;
+			$anh = time() . rand() . "_" . $name;
 			while(file_exists("upload/tintuc/".$anh)) {
-				$anh = str_random(4)."_".$name;
+				$anh = time() . rand() . "_" . $name;
 			}
 			$file->move("upload/tintuc",$anh);
 			$tintuc->urlanh = $anh;
@@ -66,7 +67,6 @@ class tintucController extends Controller
 	}
 
 	public function postSua(Request $request,$id){
-		// $tintuc = tintuc::find($id);
 		$modTinTuc = tintuc::find($id);
 		$oldTinTuc = clone $modTinTuc;
      	if($request->idtintuc != null) $modTinTuc->idtintuc = $request->idtintuc;
@@ -77,26 +77,6 @@ class tintucController extends Controller
      	else $modTinTuc->gioithieu = $oldTinTuc->gioithieu;
      	if($request->noidung != null) $modTinTuc->noidung = $request->noidung;
      	else $modTinTuc->noidung = $oldTinTuc->noidung;
-     	
-		// $this->validate($request,
-		// 	[
-		// 		'tieude'=>'required|min:3|unique:tintucs,tieude',
-		// 		'gioithieu'=>'required',
-		// 		'noidung'=>'required'
-		// 	],
-		// 	[
-		// 		'tieude.required'=>'Bạn chưa chọn tiêu đề',
-		// 		'tieude.min'=>'Tiêu đề phải có ít nhất 3 ký tự',
-		// 		'tieude.unique'=>'Tiêu đề đã tồn tại',
-		// 		'gioithieu.required'=>'Bạn chưa nhập giới thiệu',
-		// 		'noidung.required'=>'Bạn chưa nhập nội dung'
-		// 	]
-		// );
-
-		// $tintuc->tieude = $request->tieude;
-		// // $tintuc->tieudekhongdau = changeTitle($request->tieude);
-		// $tintuc->gioithieu = $request->gioithieu;
-		// $tintuc->noidung = $request->noidung;
 
 		if($request->hasFile('urlanh')) {
 			$file = $request->file('urlanh');
@@ -105,20 +85,19 @@ class tintucController extends Controller
 				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
 			$name = $file->getClientOriginalName();
-			$urlanh = str_random(4)."_".$name;
+			$urlanh = time() . rand() . "_" . $name;
 			while(file_exists("upload/tintuc/".$urlanh)) {
-				$urlanh = str_random(4)."_".$name;
+				$urlanh = time() . rand() . "_" . $name;
 			}
 			$file->move("upload/tintuc",$urlanh);
 			$modTinTuc->urlanh = $urlanh;
 			if($oldTinTuc->urlanh != 'default.jpg' && file_exists('upload/tintuc/'.$oldTinTuc->urlanh)) unlink('upload/tintuc/'.$oldTinTuc->urlanh);
-			// $tintuc->urlanh = $anh;
 		}
 		else {
 			$modTinTuc->urlanh = $oldTinTuc->urlanh;
 		}
 		$modTinTuc->save();
-		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công');
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ' . $modTinTuc->tieude);
 	}
 
 	public function getXoa($id){
