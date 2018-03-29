@@ -15,6 +15,8 @@
     <!-- page plugins css -->
     <link rel="stylesheet" href="../bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.css" />
     <link rel="stylesheet" href="../bower_components/nvd3/build/nv.d3.min.css" />
+     <!-- page plugins css -->
+    <link rel="stylesheet" href="../bower_components/datatables/media/css/jquery.dataTables.css" />
     <!-- core css -->
     <link href="assets/css/ei-icon.css" rel="stylesheet">
     <link href="assets/css/themify-icons.css" rel="stylesheet">
@@ -62,6 +64,11 @@
     <script src="ckeditor/ckeditor.js"></script>    
     <!-- page js -->
     <script src="assets/js/dashboard/dashboard.js"></script>
+    <!-- page plugins js -->
+    <script src="../bower_components/datatables/media/js/jquery.dataTables.js"></script>
+
+    <!-- page js -->
+    <script src="assets/js/table/data-table.js"></script>
     @yield('script')
 </body>
 

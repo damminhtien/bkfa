@@ -22,7 +22,7 @@ class CreateMonsTable extends Migration
             $table->string('gioithieu');
             $table->longText('ghichu');
             $table->integer('idvien')->unsigned();
-            $table->foreign('idvien')->references('idvien')->on('viens');
+            $table->foreign('idvien')->references('idvien')->on('viens')->onDelete('cascade');
             $table->timestamps();     
         });
     }
