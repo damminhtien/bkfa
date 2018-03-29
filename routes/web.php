@@ -44,6 +44,18 @@ use App\mon;
 			Route::get('xoa/{idslide}','slideController@getXoa');
 		});
 
+		Route::group(['prefix'=>'tintuc'],function(){
+			Route::get('danhsach','tintucController@getDanhSach');
+
+			Route::get('them','tintucController@getThem');
+			Route::post('them','tintucController@postThem');
+
+			Route::get('sua/{idtintuc}','tintucController@getSua');
+			Route::post('sua/{idtintuc}','tintucController@postSua');
+			
+			Route::get('xoa/{idtintuc}','tintucController@getXoa');
+		});
+
 		Route::group(['prefix'=>'ajax'],function(){
 			Route::get('getmonby{idvien}','ajaxController@getMonByVien');
 		});
