@@ -38,14 +38,39 @@ use App\mon;
 			Route::get('them','slideController@getThem');
 			Route::post('them','slideController@postThem');
 
-			Route::post('sua/{idslide}','slideController@postSua');
+			Route::get('sua/{idslide}','slideController@getSua');
 			Route::post('sua/{idslide}','slideController@postSua');
 			
 			Route::get('xoa/{idslide}','slideController@getXoa');
 		});
 
+		Route::group(['prefix'=>'tintuc'],function(){
+			Route::get('danhsach','tintucController@getDanhSach');
+
+			Route::get('them','tintucController@getThem');
+			Route::post('them','tintucController@postThem');
+
+			Route::get('sua/{idtintuc}','tintucController@getSua');
+			Route::post('sua/{idtintuc}','tintucController@postSua');
+			
+			Route::get('xoa/{idtintuc}','tintucController@getXoa');
+		});
+
 		Route::group(['prefix'=>'ajax'],function(){
 			Route::get('getmonby{idvien}','ajaxController@getMonByVien');
 		});
+
+		Route::group(['prefix'=>'dethi'],function(){
+			Route::get('danhsach','dethiController@getDanhSach');
+
+			Route::get('them','dethiController@getThem');
+			Route::post('them','dethiController@postThem');
+
+			Route::get('sua/{iddethi}','dethiController@getSua');
+			Route::post('sua/{iddethi}','dethiController@postSua');
+			
+			Route::get('xoa/{iddethi}','dethiController@getXoa');
+		});
 	});
+
 
