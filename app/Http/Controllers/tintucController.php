@@ -34,7 +34,7 @@ class tintucController extends Controller
 
 		$tintuc = new tintuc;
 		$tintuc->tieude = $request->tieude;
-		// $tintuc->tieudekhongdau = changeTitle($request->tieude);
+		$tintuc->tenkhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
 
@@ -53,7 +53,7 @@ class tintucController extends Controller
 			$tintuc->urlanh = $anh;
 		}
 		else {
-			$tintuc->urlanh = "";
+			$tintuc->urlanh = "default.jpg";
 		}
 		$tintuc->save();
 
@@ -66,51 +66,65 @@ class tintucController extends Controller
 	}
 
 	public function postSua(Request $request,$id){
-		$tintuc = tintuc::find($id);
-		$this->validate($request,
-			[
-				'tieude'=>'required|min:3|unique:tintucs,tieude',
-				'gioithieu'=>'required',
-				'noidung'=>'required'
-			],
-			[
-				'tieude.required'=>'Bạn chưa chọn tiêu đề',
-				'tieude.min'=>'Tiêu đề phải có ít nhất 3 ký tự',
-				'tieude.unique'=>'Tiêu đề đã tồn tại',
-				'gioithieu.required'=>'Bạn chưa nhập giới thiệu',
-				'noidung.required'=>'Bạn chưa nhập nội dung'
-			]
-		);
+		// $tintuc = tintuc::find($id);
+		$modTinTuc = tintuc::find($id);
+		$oldTinTuc = clone $modTinTuc;
+     	if($request->idtintuc != null) $modTinTuc->idtintuc = $request->idtintuc;
+     	else $modTinTuc->idtintuc = $oldTinTuc->idtintuc;
+     	if($request->tieude != null) $modTinTuc->tieude = $request->tieude;
+     	else $modTinTuc->tieude = $oldTinTuc->tieude;
+     	if($request->gioithieu != null) $modTinTuc->gioithieu = $request->gioithieu;
+     	else $modTinTuc->gioithieu = $oldTinTuc->gioithieu;
+     	if($request->noidung != null) $modTinTuc->noidung = $request->noidung;
+     	else $modTinTuc->noidung = $oldTinTuc->noidung;
+     	
+		// $this->validate($request,
+		// 	[
+		// 		'tieude'=>'required|min:3|unique:tintucs,tieude',
+		// 		'gioithieu'=>'required',
+		// 		'noidung'=>'required'
+		// 	],
+		// 	[
+		// 		'tieude.required'=>'Bạn chưa chọn tiêu đề',
+		// 		'tieude.min'=>'Tiêu đề phải có ít nhất 3 ký tự',
+		// 		'tieude.unique'=>'Tiêu đề đã tồn tại',
+		// 		'gioithieu.required'=>'Bạn chưa nhập giới thiệu',
+		// 		'noidung.required'=>'Bạn chưa nhập nội dung'
+		// 	]
+		// );
 
-		$tintuc->tieude = $request->tieude;
-		// $tintuc->tieudekhongdau = changeTitle($request->tieude);
-		$tintuc->gioithieu = $request->gioithieu;
-		$tintuc->noidung = $request->noidung;
+		// $tintuc->tieude = $request->tieude;
+		// // $tintuc->tieudekhongdau = changeTitle($request->tieude);
+		// $tintuc->gioithieu = $request->gioithieu;
+		// $tintuc->noidung = $request->noidung;
 
-		if($request->hasFile('anh')) {
-			$file = $request->file('anh');
+		if($request->hasFile('urlanh')) {
+			$file = $request->file('urlanh');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
 				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
 			$name = $file->getClientOriginalName();
-			$anh = str_random(4)."_".$name;
-			while(file_exists("upload/tintuc/".$anh)) {
-				$anh = str_random(4)."_".$name;
+			$urlanh = str_random(4)."_".$name;
+			while(file_exists("upload/tintuc/".$urlanh)) {
+				$urlanh = str_random(4)."_".$name;
 			}
-			$file->move("upload/tintuc",$anh);
-			$tintuc->urlanh = $anh;
+			$file->move("upload/tintuc",$urlanh);
+			$modTinTuc->urlanh = $urlanh;
+			if($oldTinTuc->urlanh != 'default.jpg' && file_exists('upload/tintuc/'.$oldTinTuc->urlanh)) unlink('upload/tintuc/'.$oldTinTuc->urlanh);
+			// $tintuc->urlanh = $anh;
 		}
 		else {
-			$tintuc->urlanh = "";
+			$modTinTuc->urlanh = $oldTinTuc->urlanh;
 		}
-		$tintuc->save();
-		return redirect('admin/tintuc/sua/'.$id)->with('thongbao','Sửa thành công');
+		$modTinTuc->save();
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công');
 	}
 
 	public function getXoa($id){
         $tintuc = tintuc::find($id);
         $ten = cutString($tintuc->firstOrFail()->gioithieu, 40);
+        unlink('upload/tintuc/'.$tintuc->urlanh);
         $tintuc->delete();
         return redirect('admin/tintuc/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten); 
 	}
