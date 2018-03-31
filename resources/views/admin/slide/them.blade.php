@@ -31,6 +31,7 @@
                         <select class="form-control" name="idVien" id="vien">
                         	<option>- - - Chọn viện - - -</option>
                         	@foreach ($vien as $v)
+                            
                         		<option value="{{$v->idvien}}">{{$v->ten}}</option>
                         	@endforeach
                         </select>
