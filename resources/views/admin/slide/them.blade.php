@@ -24,33 +24,34 @@
 		                    {{session('thongbao')}}
 		                </div>
 		            @endif
-		            <form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+		            <form action="admin/slide/them" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label>Viện</label>
-                        <select class="form-control" name="vien" id="vien">
-                        	<option value="0">- - - Chọn viện - - 	-</option>
+                        <label class="text-info">Viện *</label>
+                        <select class="form-control" name="idVien" id="vien">
+                        	<option>- - - Chọn viện - - -</option>
                         	@foreach ($vien as $v)
+                            
                         		<option value="{{$v->idvien}}">{{$v->ten}}</option>
                         	@endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Môn</label>
-                        <select class="form-control" name="mon" id="mon">
+                        <label class="text-info">Môn *</label>
+                        <select class="form-control" name="idMon" id="mon">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Giới thiệu</label>
-                        <textarea id="gioithieu" name="gioithieu" class="form-control ckeditor" rows="3"></textarea>
+                        <label class="text-info">Giới thiệu (Lớn hơn 10 ký tự) *</label>
+                        <textarea id="gioithieu" name="gioithieu"  class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Ghi chú</label>
-                        <textarea id="demo" name="NoiDung" class="form-control ckeditor" rows="10"></textarea>
+                        <label class="text-info">Ghi chú</label>
+                        <textarea id="demo" name="ghichu" class="form-control ckeditor" rows="50"></textarea>
                     </div>
                     <div class="form-group">
                 		<label>
-                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> Chọn file</span>
+                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> Chọn file*</span>
                     		<p id="filename" class="d-inline"></p>
                     		<input type="file" name="file" style="display: none;">
                     	</label>
@@ -58,14 +59,14 @@
                     <div class="form-group">
 						<label>
                     		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> Chọn ảnh</span>
-                    		<p id="filename" class="d-inline"></p>
+                    		<p id="fileanh" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-default">Thêm</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit" disabled>Thêm <i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới  <i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>
@@ -95,7 +96,14 @@
     			reader.readAsDataURL(file);
     			$("#imgupload").html(img);
     			img.width = "200";
-			});
+			}); 
         });
+        function checkForm(){
+            console.log($('#vien').val());
+            if($('#vien').val() != '' && $('#mon').val() != '' && $('#gioithieu').val().length >= 10 && $('input[name=file]').get(0).files.length > 0)
+                $("#btnSubmit").prop('disabled', false);
+            else $("#btnSubmit").prop('disabled', true);
+        }
+        setInterval(checkForm,100);
     </script>
 @endsection

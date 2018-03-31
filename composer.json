@@ -28,7 +28,8 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Function/function.php"
+            "app/Function/string.php",
+            "app/Function/checkextension.php"
         ]
     },
     "autoload-dev": {
