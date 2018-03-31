@@ -29,11 +29,11 @@
                     
                     <div class="form-group">
                         <label>Tiêu đề</label>
-                        <input class="form-control" name="tieude" placeholder="Please Enter Category Name"></input>
+                        <input class="form-control" name="tieude" placeholder="Nhập vào tiêu đề"></input>
                     </div>
                     <div class="form-group">
                         <label>Giới thiệu</label>
-                        <textarea name="gioithieu" class="form-control ckeditor" rows="3"></textarea>
+                        <textarea name="gioithieu" class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <label>Nội dung</label>
@@ -49,8 +49,8 @@
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-default">Thêm</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">Thêm <i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới  <i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>

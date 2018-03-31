@@ -71,14 +71,14 @@
                     </div>
                     <div class="form-group">
                         <label>
-                            <span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> File lời giải*</span>
+                            <span class="text-warning btn btn-lg btn-outline-warning"><i class="fa fa-folder-open"></i> File lời giải*</span>
                             <p id="filename2" class="d-inline"></p>
                             <input type="file" name="loigiai" style="display: none;">
                         </label>
                     </div>
                     <div class="form-group">
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> Chọn ảnh</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>&nbsp&nbsp&nbsp Chọn ảnh&nbsp</span>
                     		<p id="fileanh" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
@@ -122,7 +122,6 @@
 			}); 
         });
         function checkForm(){
-            console.log($('#vien').val());
             if($('#vien').val() != '' && $('#mon').val() != '' && $('#nam').val() != '' && $('#gioithieu').val().length >= 10 && $('input[name=de]').get(0).files.length > 0 && $('input[name=loigiai]').get(0).files.length > 0)
                 $("#btnSubmit").prop('disabled', false);
             else $("#btnSubmit").prop('disabled', true);

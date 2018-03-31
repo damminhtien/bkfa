@@ -6,61 +6,61 @@
                 <div class="logo logo-white" style="background-image: url('assets/images/logo/logo-white.png')"></div>
             </a>
             <div class="mobile-toggle side-nav-toggle">
-                <a href="index.html">
-                                <i class="ti-arrow-circle-left"></i>
-                            </a>
+                <a href="/">
+                    <i class="ti-arrow-circle-left"></i>
+                </a>
             </div>
         </div>
         <ul class="side-nav-menu scrollable">
             <li class="nav-item active">
-                <a class="mrg-top-30" href="index.html">
-                                <span class="icon-holder">
-                                        <i class="ti-home"></i>
-                                    </span>
-                                <span class="title">Dashboard</span>
-                            </a>
+                <a class="mrg-top-30" href="/admin/">
+                    <span class="icon-holder">
+                            <i class="ti-home"></i>
+                        </span>
+                    <span class="title">Giới thiệu</span>
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                        <i class="ti-package"></i>
-                                    </span>
-                                <span class="title">Database</span>
-                                <span class="arrow">
-                                        <i class="ti-angle-right"></i>
-                                    </span>
-                            </a>
+                    <span class="icon-holder">
+                            <i class="ti-desktop"></i>
+                        </span>
+                    <span class="title">Bảng dữ liệu</span>
+                    <span class="arrow">
+                        <i class="ti-angle-right"></i>
+                    </span>
+                </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="email.html">Đề Thi</a>
+                        <a href="/admin/dethi/danhsach">Đề Thi</a>
                     </li>
                     <li>
-                        <a href="calendar.html">Viện</a>
+                        <a href="/admin/vien/danhsach">Viện</a>
                     </li>
                     <li>
-                        <a href="social.html">Môn</a>
+                        <a href="/admin/mon/danhsach">Môn</a>
                     </li>
                     <li>
-                        <a href="social.html">Tin Tức</a>
+                        <a href="/admin/tintuc/danhsach">Tin Tức</a>
                     </li>
                     <li>
-                        <a href="social.html">Slide</a>
+                        <a href="/admin/slide/danhsach">Slide</a>
                     </li>
                     <li>
-                        <a href="social.html">Users</a>
+                        <a href="/admin/user/danhsach">Users</a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                        <i class="ti-package"></i>
-                                    </span>
-                                <span class="title">Apps</span>
-                                <span class="arrow">
-                                        <i class="ti-angle-right"></i>
-                                    </span>
-                            </a>
+                    <span class="icon-holder">
+                        <i class="ti-package"></i>
+                    </span>
+                    <span class="title">Apps</span>
+                    <span class="arrow">
+                        <i class="ti-angle-right"></i>
+                    </span>
+                </a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="email.html">Email</a>
