@@ -14,15 +14,15 @@
 use App\vien;
 use App\mon;
 
-Route::get('/', function(){
-	return view('admin.gioithieu');
-});
-
-Route::group(['prefix'=>'ajax'],function(){
-	Route::get('getmonby{idvien}','ajaxController@getMonByVien');
-});
-
 Route::group(['prefix'=>'admin'],function(){
+	Route::get('/', function(){
+		return view('admin.gioithieu');
+	});
+	
+	Route::group(['prefix'=>'ajax'],function(){
+		Route::get('getmonby{idvien}','ajaxController@getMonByVien');
+	});
+
 	Route::group(['prefix'=>'vien'],function(){
 		Route::get('danhsach','vienController@getDanhSach');
 
@@ -31,6 +31,18 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('sua/{idvien}','vienController@postSua');
 
 		Route::get('xoa/{idvien}','vienController@getXoa');
+	});
+
+	Route::group(['prefix'=>'mon'],function(){
+		Route::get('danhsach','monController@getDanhSach');
+
+		Route::get('them','monController@getThem');
+		Route::post('them','monController@postThem');
+
+		Route::get('sua/{idmon}','monController@getSua');
+		Route::post('sua/{idmon}','monController@postSua');
+
+		Route::get('xoa/{idmon}','monController@getXoa');
 	});
 
 	Route::group(['prefix'=>'slide'],function(){
