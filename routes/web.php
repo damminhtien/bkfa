@@ -14,12 +14,13 @@
 use App\vien;
 use App\mon;
 
-
 Route::get('/', function(){
 	return view('admin.gioithieu');
 });
 
-
+Route::group(['prefix'=>'ajax'],function(){
+	Route::get('getmonby{idvien}','ajaxController@getMonByVien');
+});
 
 Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'vien'],function(){
@@ -56,10 +57,6 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::get('xoa/{idtintuc}','tintucController@getXoa');
 	});
 
-	Route::group(['prefix'=>'ajax'],function(){
-		Route::get('getmonby{idvien}','ajaxController@getMonByVien');
-	});
-
 	Route::group(['prefix'=>'dethi'],function(){
 		Route::get('danhsach','dethiController@getDanhSach');
 
@@ -75,6 +72,7 @@ Route::group(['prefix'=>'admin'],function(){
 	Route::group(['prefix'=>'user'],function(){
 		
 		Route::get('danhsach','userController@getDanhSach');
+
 
 		Route::get('sua/{iduser}','userController@getSua');
 		Route::post('sua/{iduser}','userController@postSua');
