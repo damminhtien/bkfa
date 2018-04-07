@@ -25,6 +25,7 @@ class CreateDethisTable extends Migration
             $table->integer('idmon')->unsigned();
             $table->string('urlloigiai')->nullable();
             $table->foreign('idmon')->references('idmon')->on('mons')->onDelete('cascade');
+            //onDelete xóa tất cả các dữ liệu liên quan đến khóa ngoại trên các bảng. cascade-xóa tất cả.
             $table->timestamps();
         });
     }
