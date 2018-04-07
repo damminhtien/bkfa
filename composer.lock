@@ -810,16 +810,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.13",
+            "version": "v5.6.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "90ccb77a543ff063533083f427d5e655546afbad"
+                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/90ccb77a543ff063533083f427d5e655546afbad",
-                "reference": "90ccb77a543ff063533083f427d5e655546afbad",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
+                "reference": "82d8165d1ea86bdd81ddfa1db9343fa19e7d1450",
                 "shasum": ""
             },
             "require": {
@@ -944,7 +944,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-26T13:45:20+00:00"
+            "time": "2018-03-14T17:29:38+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2904,16 +2904,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v2.0.2",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "245958b02c6a9edf24627380f368333ac5413a51"
+                "reference": "e60011a179d97f33ee394865b1cec472247df3b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/245958b02c6a9edf24627380f368333ac5413a51",
-                "reference": "245958b02c6a9edf24627380f368333ac5413a51",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/e60011a179d97f33ee394865b1cec472247df3b9",
+                "reference": "e60011a179d97f33ee394865b1cec472247df3b9",
                 "shasum": ""
             },
             "require": {
@@ -2962,7 +2962,7 @@
                 "php",
                 "symfony"
             ],
-            "time": "2018-03-21T20:11:24+00:00"
+            "time": "2018-03-20T21:27:23+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3532,16 +3532,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.0.3",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "536f4d853c12d8189963435088e8ff7c0daeab2e"
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/536f4d853c12d8189963435088e8ff7c0daeab2e",
-                "reference": "536f4d853c12d8189963435088e8ff7c0daeab2e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
                 "shasum": ""
             },
             "require": {
@@ -3555,7 +3555,7 @@
                 "phar-io/version": "^1.0",
                 "php": "^7.1",
                 "phpspec/prophecy": "^1.7",
-                "phpunit/php-code-coverage": "^6.0.1",
+                "phpunit/php-code-coverage": "^6.0",
                 "phpunit/php-file-iterator": "^1.4.3",
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.0",
@@ -3608,7 +3608,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-03-26T07:36:48+00:00"
+            "time": "2018-02-26T07:03:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
