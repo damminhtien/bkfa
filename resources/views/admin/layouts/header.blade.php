@@ -102,10 +102,12 @@
             <li class="user-profile dropdown">
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
                     <img class="profile-img img-fluid" src="assets/images/user.jpg" alt="">
+                    @if(Auth::check())
                     <div class="user-info">
-                        <span class="name pdd-right-5">Nate Leong</span>
+                        <span class="name pdd-right-5">{{Auth::user()->ten}}</span>
                         <i class="ti-angle-down font-size-10"></i>
                     </div>
+                    @endif
                 </a>
                 <ul class="dropdown-menu">
                     <li>

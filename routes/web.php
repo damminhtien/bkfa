@@ -14,7 +14,12 @@
 use App\vien;
 use App\mon;
 
+Route::get('admin/dangnhap','adminController@getDangNhapAdmin');
+Route::post('admin/dangnhap','adminController@postDangNhapAdmin');
+Route::get('admin/dangxuat','adminController@getDangXuatAdmin');
+
 Route::group(['prefix'=>'admin'],function(){
+	
 	Route::get('/', function(){
 		return view('admin.gioithieu');
 	});
@@ -105,6 +110,20 @@ Route::group(['prefix'=>'admin'],function(){
 		Route::post('them','userController@postThem');
 
 		Route::get('xoa/{id}','userController@getXoa');
+	});
+
+	Route::group(['prefix'=>'quanly'],function(){
+		
+		Route::get('danhsach','adminController@getDanhSach');
+
+
+		Route::get('sua/{idadmin}','adminController@getSua');
+		Route::post('sua/{idadmin}','adminController@postSua');
+
+		Route::get('them','adminController@getThem');
+		Route::post('them','adminController@postThem');
+
+		Route::get('xoa/{id}','adminController@getXoa');
 	});
 });
 
