@@ -14,7 +14,11 @@
 use App\vien;
 use App\mon;
 
-Route::group(['prefix'=>'admin'],function(){
+Route::get('admin/dangnhap','UserController@getDangNhapAdmin');
+Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
+Route::get('admin/dangxuat','UserController@getDangXuatAdmin');
+
+Route::group(['prefix'=>'admin','middleware' => 'adminLogin'],function(){
 	Route::get('/', function(){
 		return view('admin.gioithieu');
 	});

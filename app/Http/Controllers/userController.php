@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\users;
+use App\User;
 
 class userController extends Controller
 {
     //
     public function getDanhSach() {
-		$user = users::all()->reverse();
+		$user = User::all()->reverse();
 		return view('admin.user.danhsach',['user'=>$user]);
 	}
 	
@@ -24,8 +24,8 @@ class userController extends Controller
 			[
 				'ten' => 'required|min:3',
 				'email' => 'required|email|unique:users,email',
-				'matkhau' => 'required|min:3|max:32',
-				'matkhau2' => 'required|same:matkhau'
+				'password' => 'required|min:3|max:32',
+				'password2' => 'required|same:password'
 			],
 			[
 				'ten.required' => 'Bạn chưa nhập tên người dùng', 
@@ -33,24 +33,24 @@ class userController extends Controller
 				'email.required' => 'Bạn chưa nhập email', 
 				'email.email' => 'Bạn chưa nhập đúng định dạng email', 
 				'email.unique' => 'Email đã tồn tại', 
-				'matkhau.required' => 'Bạn chưa nhập mật khẩu', 
-				'matkhau.min' => 'Mật khẩu có ít nhất 3 ký tự',
-				'matkhau.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
-				'matkhau2.required' => 'Bạn chưa nhập lại mật khẩu',
-				'matkhau2.same' => 'Mật khẩu nhập lại chưa đúng'
+				'password.required' => 'Bạn chưa nhập mật khẩu', 
+				'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+				'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
+				'password2.required' => 'Bạn chưa nhập lại mật khẩu',
+				'password2.same' => 'Mật khẩu nhập lại chưa đúng'
 			]
 		);
 
-		$user = new users;
+		$user = new User;
 		$user->ten = $request->ten;
 		$user->email = $request->email;
-		$user->matkhau = bcrypt($request->matkhau);
+		$user->password = bcrypt($request->password);
 		$user->save();
 		return redirect('admin/user/danhsach')->with('thongbao','Thêm thành công');
 	}
 
 	public function getSua($id) {
-		$user = users::find($id);
+		$user = User::find($id);
 		return view('admin/user/sua',['user'=>$user]);
 	}
 
@@ -65,23 +65,23 @@ class userController extends Controller
 			]
 		);
 
-		$user = users::find($id);
+		$user = User::find($id);
 		$user->ten = $request->ten;
 		if($request->changePassword == "on") {
 			$this->validate($request,
 			[
-				'matkhau' => 'required|min:3|max:32',
-				'matkhau2' => 'required|same:matkhau'
+				'password' => 'required|min:3|max:32',
+				'password2' => 'required|same:password'
 			],
 			[
-				'matkhau.required' => 'Bạn chưa nhập mật khẩu', 
-				'matkhau.min' => 'Mật khẩu có ít nhất 3 ký tự',
-				'matkhau.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
-				'matkhau2.required' => 'Bạn chưa nhập lại mật khẩu',
-				'matkhau2.same' => 'Mật khẩu nhập lại chưa đúng'
+				'password.required' => 'Bạn chưa nhập mật khẩu', 
+				'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+				'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
+				'password2.required' => 'Bạn chưa nhập lại mật khẩu',
+				'password2.same' => 'Mật khẩu nhập lại chưa đúng'
 			]
 			);
-			$user->matkhau = bcrypt($request->matkhau);
+			$user->password = bcrypt($request->password);
 
 		}
 		$ten = $user->ten;
@@ -90,9 +90,39 @@ class userController extends Controller
 	}
 
 	public function getXoa($id){
-		$user = users::find($id);
+		$user = User::find($id);
 		$ten = $user->ten;
 		$user->delete();
 		return redirect('admin/user/danhsach')->with('thongbao','Xóa thành công '.$ten); 
+	}
+
+	public function getDangNhapAdmin() {
+		return view('admin.login');
+	}
+
+	public function postDangNhapAdmin(Request $request) {
+		$this->validate($request,
+			[
+				'email'=>'required',
+				'password'=>'required|min:3|max:32'
+			],
+			[
+				'email.required' => 'Bạn chưa nhập email',
+				'password.required' => 'Bạn chưa nhập mật khẩu',
+				'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+				'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự'  
+			]
+		);
+		if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
+			return redirect('admin/user/danhsach');
+		}
+		else {
+			return redirect('admin/dangnhap')->with('thongbao','Đăng nhập không thành công');
+		}
+	}
+
+	public function getDangXuatAdmin() {
+		Auth::logout();
+		return redirect('admin/dangnhap');
 	}
 }
