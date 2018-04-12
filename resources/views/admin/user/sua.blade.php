@@ -24,7 +24,7 @@
                             {{session('thongbao')}}
                         </div>
                     @endif
-                    <form action="admin/user/sua/{{ $user->iduser }}" method="POST" enctype="multipart/form-data">
+                    <form action="admin/user/sua/{{ $user->id }}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     
                     <div class="form-group">
@@ -38,11 +38,11 @@
                     <div class="form-group">
                         <input type="checkbox" id="changePassword" name="changePassword">
                         <label class="text-info">Đổi mật khẩu</label>
-                        <input type="password" name="matkhau"  class="form-control password" placeholder="Nhập mật khẩu" disabled=""></input>
+                        <input type="password" name="password"  class="form-control password" placeholder="Nhập mật khẩu" disabled=""></input>
                     </div>
                     <div class="form-group">
                         <label class="text-info">Nhập lại mật khẩu</label>
-                        <input type="password" name="matkhau2"  class="form-control password" placeholder="Nhập lại mật khẩu" disabled=""></input>
+                        <input type="password" name="password2"  class="form-control password" placeholder="Nhập lại mật khẩu" disabled=""></input>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">Sửa <i class="fa fa-paper-plane"></i></button>
                     <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới<i class="fa fa-undo"></i></button>
