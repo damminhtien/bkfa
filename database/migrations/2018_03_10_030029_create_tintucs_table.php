@@ -20,7 +20,7 @@ class CreateTintucsTable extends Migration
             $table->string('gioithieu');
             $table->integer('ngaydang');
             $table->longText('noidung');
-            $table->string('luotxem')->default(0);
+            $table->string('luotxem');
             $table->timestamps();
         });
     }
