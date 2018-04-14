@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://www.youtube.com/watch?v=m6ndiBURmlQ'),
+    'url' => env('APP_URL', 'http://localhost:8000/login'),
 
     /*
     |--------------------------------------------------------------------------

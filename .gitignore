@@ -6,7 +6,6 @@
 /public/upload/.ckfinder
 /public/storage
 /storage/*.key
-/vendor
 /.idea
 /.vscode
 /.vagrant
