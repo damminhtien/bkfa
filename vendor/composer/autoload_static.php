@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd
+class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -351,6 +351,7 @@ class ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ajaxController' => __DIR__ . '/../..' . '/app/Http/Controllers/ajaxController.php',
         'App\\Http\\Controllers\\dethiController' => __DIR__ . '/../..' . '/app/Http/Controllers/dethiController.php',
         'App\\Http\\Controllers\\monController' => __DIR__ . '/../..' . '/app/Http/Controllers/monController.php',
@@ -359,6 +360,7 @@ class ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd
         'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
         'App\\Http\\Controllers\\vienController' => __DIR__ . '/../..' . '/app/Http/Controllers/vienController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AdminLoginMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/AdminLoginMiddleware.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -4014,10 +4016,10 @@ class ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8d6b5601bf08e7542de9fe66e94501dd::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3::$classMap;
 
         }, null, ClassLoader::class);
     }
