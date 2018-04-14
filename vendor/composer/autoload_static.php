@@ -355,6 +355,7 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         'App\\Http\\Controllers\\ajaxController' => __DIR__ . '/../..' . '/app/Http/Controllers/ajaxController.php',
         'App\\Http\\Controllers\\dethiController' => __DIR__ . '/../..' . '/app/Http/Controllers/dethiController.php',
         'App\\Http\\Controllers\\monController' => __DIR__ . '/../..' . '/app/Http/Controllers/monController.php',
+        'App\\Http\\Controllers\\pageController' => __DIR__ . '/../..' . '/app/Http/Controllers/pageController.php',
         'App\\Http\\Controllers\\slideController' => __DIR__ . '/../..' . '/app/Http/Controllers/slideController.php',
         'App\\Http\\Controllers\\tintucController' => __DIR__ . '/../..' . '/app/Http/Controllers/tintucController.php',
         'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
