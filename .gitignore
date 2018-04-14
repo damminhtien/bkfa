@@ -1,0 +1,17 @@
+/node_modules
+/public/hot
+/public/upload/images
+/public/upload/slide
+/public/upload/dethi
+/public/upload/.ckfinder
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
