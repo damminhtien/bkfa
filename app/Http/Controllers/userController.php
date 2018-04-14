@@ -97,7 +97,7 @@ class userController extends Controller
 	}
 
 	public function getDangNhapAdmin() {
-		return view('admin.login');
+		return view('auth.login');
 	}
 
 	public function postDangNhapAdmin(Request $request) {
