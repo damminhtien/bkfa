@@ -103,7 +103,7 @@
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
                     <img class="profile-img img-fluid" src="assets/images/user.jpg" alt="">
                     <div class="user-info">
-                        <span class="name pdd-right-5">Nate Leong</span>
+                        <span class="name pdd-right-5">{{ Auth::user()->ten }}</span>
                         <i class="ti-angle-down font-size-10"></i>
                     </div>
                 </a>
@@ -128,10 +128,14 @@
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="index.html">
-                            <i class="ti-power-off pdd-right-10"></i>
-                            <span>Logout</span>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </li>

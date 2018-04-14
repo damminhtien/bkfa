@@ -37,11 +37,11 @@
                     </div>
                     <div class="form-group">
                         <label class="text-info">Mật khẩu</label>
-                        <input type="password" name="matkhau"  class="form-control" placeholder="Nhập mật khẩu"></input>
+                        <input type="password" name="password"  class="form-control" placeholder="Nhập mật khẩu"></input>
                     </div>
                     <div class="form-group">
                         <label class="text-info">Nhập lại mật khẩu</label>
-                        <input type="password" name="matkhau2"  class="form-control" placeholder="Nhập lại mật khẩu"></input>
+                        <input type="password" name="password2"  class="form-control" placeholder="Nhập lại mật khẩu"></input>
                     </div>
                     <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">Thêm <i class="fa fa-paper-plane"></i></button>
                     <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới<i class="fa fa-undo"></i></button>

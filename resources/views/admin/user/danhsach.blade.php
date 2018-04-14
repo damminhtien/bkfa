@@ -62,8 +62,8 @@
                                       <td>
                                           <div class="mrg-top-15">
                                               <div class="thumbnail">
-                                                <h5>{{cutString($u->matkhau, 20)}}</h5>
-                                                <p>{{$u->matkhau}}</p>
+                                                <h5>{{cutString($u->password, 20)}}</h5>
+                                                <p>{{$u->password}}</p>
                                               </div>
                                           </div>
                                       </td>
@@ -75,14 +75,14 @@
 	                                    
 	                                    <td>
 	                                        <div class="mrg-top-15">
-	                                        	<a href="admin/user/sua/{{$u->iduser}}" title="Sửa {{$u->ten}}"><button class="btn btn-icon btn-flat btn-rounded dropdown-toggle"> 
+	                                        	<a href="admin/user/sua/{{$u->id}}" title="Sửa {{$u->ten}}"><button class="btn btn-icon btn-flat btn-rounded dropdown-toggle"> 
                                               <h3 class="ti-pencil-alt"></h3>
                                             </button></a>
 	                                        </div>
 	                                    </td>            
 	                                    <td>
 	                                        <div class="mrg-top-15">
-	                                        	<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#xoaModal{{$u->iduser}}" title="Xoá {{$u->ten}}">  
+	                                        	<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#xoaModal{{$u->id}}" title="Xoá {{$u->ten}}">  
 	                                        		<h3 class="ti-trash text-danger"></h3>
 	                                        	</button></a>
                                             @include('admin.user.xoa')

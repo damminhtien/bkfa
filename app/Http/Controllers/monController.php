@@ -62,7 +62,7 @@ class monController extends Controller
 		$this->validate(
 			$request, 
 			[
-				'tenmon' => 'required|min:3|max:100|unique:mons,ten',
+				'tenmon' => 'required|min:3|max:100',
 				'gioithieu' => 'required|min:10',
 				'mahocphan' =>'required',
 			],
@@ -70,17 +70,26 @@ class monController extends Controller
 				'tenmon.required' => 'Bạn chưa nhập tên môn',
 				'tenmon.min' => 'Tên môn phải có độ dài từ 3 đến 100 ký tự',
 				'tenmon.max' => 'Tên môn phải có độ dài từ 3 đến 100 ký tự',
-				'tenmon.unique' => 'Tên môn đã tồn tại',
 				'gioithieu.required' => 'Bạn chưa nhập giới thiệu',
 				'gioithieu.min' => 'giới thiệu phải có độ dài từ 10 ký tự',
 				'mahocphan.required' =>'Bạn chưa nhập mã học phần',
 			]
 		);
 		$mon = mon::find($idmon);
-		if($request->tenmon != null){
-			$mon->ten = $request->tenmon;
-			$mon->tenkhongdau = changeTitle($request->tenmon);
+		if($request->tenmon != $mon->ten ){
+			$this->validate(
+				$request, 
+				[
+					'tenmon' => 'unique:mons,ten',	
+				],
+				[				
+					'tenmon.unique' => 'Tên môn đã tồn tại',
+				]
+			);
+			
 		}
+		$mon->ten = $request->tenmon;
+		$mon->tenkhongdau = changeTitle($request->tenmon);
 		if($request->mahocphan != null){
 			$mon->mahocphan = $request->mahocphan;
 		}
@@ -96,8 +105,6 @@ class monController extends Controller
 		$mon->save();
 		return redirect('admin/mon/danhsach')->with('thongbao','Sửa thành công môn: '.$request->tenmon);
 	}
-
-
 	public function getXoa($idmon){
 		$mon= mon::find($idmon);
 		$mon->delete();
