@@ -1,0 +1,121 @@
+/*====================================================
+                        document-1
+======================================================*/
+
+#document-1 {
+    padding: 10px 0;
+}
+
+#document-1 .row:last-child {
+    padding: 70px 0 0 0;
+}
+
+#document-1 .document-1-title h3 {
+    padding: 0;
+    margin-bottom: 5px;
+    text-transform: none;
+    font-size: 30px;
+}
+
+#document-1 .list-group-item:first-child,
+#document-1 .list-group-item:last-child {
+    border-radius: 0;
+}
+
+#document-1 .list-group-item {
+    border: 2px solid #fff;
+    background: #f0f0f0;
+    color: #777;
+}
+
+#document-1 .input-group {
+    margin: 30px 0;
+}
+
+#document-1 .input-group input,
+#document-1 .input-group .input-group-addon {
+    border-radius: 0;
+}
+
+#document-1 .top-seller li img{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+}
+
+#document-1 .top-seller li h6{
+    padding-top: 5px;
+}
+
+#document-1 .card .card-title{
+    margin-bottom: 0.3em;
+}
+
+#document-1 .card .card-title a {
+    color: #444;
+    text-decoration: none;
+}
+
+#document-1 .card strong {
+    color: #444;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#document-1 .card span {
+    color: #333;
+    margin-right: 17px;
+    text-decoration: line-through;
+}
+
+#document-1 .cart-icon{
+    padding-top: 30px;
+}
+
+#document-1 .cart-icon a {
+    color: #555;
+    padding: 7px 12px;
+    font-weight: 300;
+    text-decoration: none;
+    border: 1px solid #aaa;
+}
+
+
+#document-1 .list-group-item:hover,
+#document-1 .list-group-item:first-child,
+#document-1 .cart-icon a:hover {
+    background: -moz-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(34, 155, 242, 1)), color-stop(99%, rgba(0, 128, 129, 1)), color-stop(100%, rgba(0, 128, 128, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* opera 11.10+ */
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .col-lg-4,
+    .col-md-6,
+    .mb-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15%;
+        padding-left: 15%;
+    }
+}
+
+@media (max-width: 420px) {
+    .col-lg-4,
+    .col-md-6,
+    .mb-4 {
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}

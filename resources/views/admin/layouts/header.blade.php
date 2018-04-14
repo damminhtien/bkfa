@@ -24,39 +24,39 @@
                             <ul class="list-unstyled list-info">
                                 <li>
                                     <a href="index.html">
-                                                        <img class="thumb-img" src="assets/images/avatars/thumb-1.jpg" alt="">
-                                                        <div class="info">
-                                                            <span class="title">Jordan Hurst</span>
-                                                            <span class="sub-title">
-                                                                    <i class="ti-location-pin"></i>
-                                                                    <span>44 Shirley Ave. West Chicago</span>
-                                                            </span>
-                                                        </div>
-                                                    </a>
+                                        <img class="thumb-img" src="assets/images/avatars/thumb-1.jpg" alt="">
+                                        <div class="info">
+                                            <span class="title">Jordan Hurst</span>
+                                            <span class="sub-title">
+                                                    <i class="ti-location-pin"></i>
+                                                    <span>44 Shirley Ave. West Chicago</span>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="index.html">
-                                                        <img class="thumb-img" src="assets/images/avatars/thumb-5.jpg" alt="">
-                                                        <div class="info">
-                                                            <span class="title">Jennifer Watkins</span>
-                                                            <span class="sub-title">
-                                                                    <i class="ti-location-pin"></i>
-                                                                    <span>514 S. Magnolia St. Orlando</span>
-                                                            </span>
-                                                        </div>
-                                                    </a>
+                                        <img class="thumb-img" src="assets/images/avatars/thumb-5.jpg" alt="">
+                                        <div class="info">
+                                            <span class="title">Jennifer Watkins</span>
+                                            <span class="sub-title">
+                                                    <i class="ti-location-pin"></i>
+                                                    <span>514 S. Magnolia St. Orlando</span>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="index.html">
-                                                        <img class="thumb-img" src="assets/images/avatars/thumb-4.jpg" alt="">
-                                                        <div class="info">
-                                                            <span class="title">Michael Birch</span>
-                                                            <span class="sub-title">
-                                                                    <i class="ti-location-pin"></i>
-                                                                    <span>70 Bowman St. South Windsor</span>
-                                                            </span>
-                                                        </div>
-                                                    </a>
+                                        <img class="thumb-img" src="assets/images/avatars/thumb-4.jpg" alt="">
+                                        <div class="info">
+                                            <span class="title">Michael Birch</span>
+                                            <span class="sub-title">
+                                                    <i class="ti-location-pin"></i>
+                                                    <span>70 Bowman St. South Windsor</span>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -69,25 +69,25 @@
                             <ul class="list-unstyled list-info">
                                 <li>
                                     <a href="index.html">
-                                                        <img class="thumb-img" src="assets/images/img-1.jpg" alt="">
-                                                        <div class="info">
-                                                            <span class="title">Artoo expresses his relief</span>
-                                                            <span class="sub-title">
-                                                                    <span>Oh, thank goodness we're coming out...</span>
-                                                            </span>
-                                                        </div>
-                                                    </a>
+                                        <img class="thumb-img" src="assets/images/img-1.jpg" alt="">
+                                        <div class="info">
+                                            <span class="title">Artoo expresses his relief</span>
+                                            <span class="sub-title">
+                                                    <span>Oh, thank goodness we're coming out...</span>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
                                     <a href="index.html">
-                                                        <img class="thumb-img" src="assets/images/img-2.jpg" alt="">
-                                                        <div class="info">
-                                                            <span class="title">Ready for some power?</span>
-                                                            <span class="sub-title">
-                                                                    <span>Lord Vader. You may take Caption So...</span>
-                                                            </span>
-                                                        </div>
-                                                    </a>
+                                        <img class="thumb-img" src="assets/images/img-2.jpg" alt="">
+                                        <div class="info">
+                                            <span class="title">Ready for some power?</span>
+                                            <span class="sub-title">
+                                                    <span>Lord Vader. You may take Caption So...</span>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -101,44 +101,48 @@
         <ul class="nav-right">
             <li class="user-profile dropdown">
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img class="profile-img img-fluid" src="assets/images/user.jpg" alt="">
-                                    <div class="user-info">
-                                        <span class="name pdd-right-5">Nate Leong</span>
-                                        <i class="ti-angle-down font-size-10"></i>
-                                    </div>
-                                </a>
+                    <img class="profile-img img-fluid" src="assets/images/user.jpg" alt="">
+                    <div class="user-info">
+                        <span class="name pdd-right-5">{{ Auth::user()->ten }}</span>
+                        <i class="ti-angle-down font-size-10"></i>
+                    </div>
+                </a>
                 <ul class="dropdown-menu">
                     <li>
                         <a href="index.html">
-                                            <i class="ti-settings pdd-right-10"></i>
-                                            <span>Setting</span>
-                                        </a>
+                            <i class="ti-settings pdd-right-10"></i>
+                            <span>Setting</span>
+                        </a>
                     </li>
                     <li>
                         <a href="index.html">
-                                            <i class="ti-user pdd-right-10"></i>
-                                            <span>Profile</span>
-                                        </a>
+                            <i class="ti-user pdd-right-10"></i>
+                            <span>Profile</span>
+                        </a>
                     </li>
                     <li>
                         <a href="index.html">
-                                            <i class="ti-email pdd-right-10"></i>
-                                            <span>Inbox</span>
-                                        </a>
+                            <i class="ti-email pdd-right-10"></i>
+                            <span>Inbox</span>
+                        </a>
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="index.html">
-                                            <i class="ti-power-off pdd-right-10"></i>
-                                            <span>Logout</span>
-                                        </a>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </li>
             <li class="notifications dropdown">
                 <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="ti-bell"></i>
-                                </a>
+                    <i class="ti-bell"></i>
+                </a>
                 <ul class="dropdown-menu ">
                     <li class="notice-header">
                         <i class="ti-bell pdd-right-10"></i>
