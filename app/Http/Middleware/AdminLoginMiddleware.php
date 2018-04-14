@@ -21,9 +21,9 @@ class AdminLoginMiddleware
             $user = Auth::user();
             if ($user->quyen == 1)
                 return $next($request);
-            else return redirect('admin/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
+            else return redirect('/home')->with('thongbao','Admin mới có thể truy cập, mời đăng xuất');
         }
         else
-            return redirect('admin/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
+            return redirect('/home')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
     }    
 }
