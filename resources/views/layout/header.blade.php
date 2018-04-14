@@ -50,10 +50,6 @@
                         <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">
                             @foreach($vien as $v)
                             <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
-                            <a class="dropdown-item" href="#">Điện tử viễn thông</a>
-                            <a class="dropdown-item" href="#">Cơ khí</a>
-                            <a class="dropdown-item" href="#">Công nghệ may</a>
-                            <a class="dropdown-item" href="#">Đại cương</a>
                             @endforeach
                         </div>
                     </li>
