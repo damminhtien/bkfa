@@ -17,8 +17,10 @@ use App\mon;
 Route::get('admin/dangnhap','UserController@getDangNhapAdmin');
 Route::post('admin/dangnhap','UserController@postDangNhapAdmin');
 Route::get('admin/dangxuat','UserController@getDangXuatAdmin');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix'=>'admin','middleware' => 'adminLogin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	Route::get('/', function(){
 		return view('admin.gioithieu');
 	});
@@ -99,5 +101,3 @@ Route::group(['prefix'=>'admin','middleware' => 'adminLogin'],function(){
 		Route::get('xoa/{id}','userController@getXoa');
 	});
 });
-
-
