@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\ajaxController' => $baseDir . '/app/Http/Controllers/ajaxController.php',
     'App\\Http\\Controllers\\dethiController' => $baseDir . '/app/Http/Controllers/dethiController.php',
     'App\\Http\\Controllers\\monController' => $baseDir . '/app/Http/Controllers/monController.php',
+    'App\\Http\\Controllers\\pageController' => $baseDir . '/app/Http/Controllers/pageController.php',
     'App\\Http\\Controllers\\slideController' => $baseDir . '/app/Http/Controllers/slideController.php',
     'App\\Http\\Controllers\\tintucController' => $baseDir . '/app/Http/Controllers/tintucController.php',
     'App\\Http\\Controllers\\userController' => $baseDir . '/app/Http/Controllers/userController.php',

@@ -580,8 +580,7 @@ header .topmenu .top-data li a.log-top:hover {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    /*background-image: url(../img/home-banner-bg.jpg);*/
-    background: rgb(0, 0, 0, 0.5) url(http://ts.hust.edu.vn/images/Tuyen_sinh/ts2017/ts.hust.edu.vn.4.JPG);
+    background: rgba(0, 0, 0,0.5) url(http://ts.hust.edu.vn/images/Tuyen_sinh/ts2017/ts.hust.edu.vn.4.JPG);
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -1145,7 +1144,7 @@ input[type=password] {
 
 .desc-comp-offer-cont:hover {
     margin-bottom: 10px;
-    border-bottom: 5px solid #C90202;
+    border-bottom: 5px solid #0a73db;
     margin-top: -5px;
     cursor: pointer;
 }

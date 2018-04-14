@@ -8,7 +8,7 @@
 
 @include('layout.home')
 <!-- latest news -->
-<section id="single-news-p1" class="single-news-p1">
+<section id="single-news-p1" class="single-news-p1" >
     <div class="container">
         <div class="row">
             <div class="col-md-8">
