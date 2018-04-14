@@ -15,7 +15,7 @@
                             <label for="ten" class="col-md-4 col-form-label text-md-right">{{ __('Tên') }}</label>
 
                             <div class="col-md-6">
-                                <input id="ten" type="text" class="form-control{{ $errors->has('ten') ? ' không hợp lệ' : '' }}" name="ten" value="{{ old('ten') }}" required autofocus>
+                                <input id="ten" type="text" class="form-control{{ $errors->has('ten') ? ' is-invalid' : '' }}" name="ten" value="{{ old('ten') }}" required autofocus>
 
                                 @if ($errors->has('ten'))
                                     <span class="invalid-feedback">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Địa chỉ Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' không hợp lệ' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -43,7 +43,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Mật khẩu') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' không hợp lệ' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
