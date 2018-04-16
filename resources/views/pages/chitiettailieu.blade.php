@@ -1,4 +1,4 @@
-@extends('layout.index') @section('title', 'Chi tiết đề thi') @section('content')
+@extends('pages.layouts.index') @section('title', 'Chi tiết đề thi') @section('content')
 <section id="single-product-p1">
     <div class="container">
         <div class="input-group ">

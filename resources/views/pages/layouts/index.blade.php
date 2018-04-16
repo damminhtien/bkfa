@@ -12,7 +12,7 @@
     <!-- Global Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="css/animate/animate.min.css"> -->
     <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
@@ -24,12 +24,12 @@
 </head>
 
 <body id="page-top">
-    @include('layout.header')
-    @include('layout.login')
+    @include('pages.layouts.header')
+    @include('pages.layouts.login')
 
     @yield('content')
 
-    @include('layout.footer')
+    @include('pages.layouts.footer')
 
     <!--Global JavaScript -->
     <script src="js/jquery/jquery.min.js"></script>

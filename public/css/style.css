@@ -17,6 +17,9 @@
 
 
 
+
+
+
 /* General CSS */
 
 html,
@@ -61,6 +64,9 @@ p {
 
 
 
+
+
+
 /*====================================================
                        NAVIGATION
 ======================================================*/
@@ -77,6 +83,9 @@ header .topmenu {
     border-top: solid 1px #f0f0f0;
     border-bottom: solid 1px #f0f0f0;
 }
+
+
+
 
 
 
@@ -108,6 +117,9 @@ header .topmenu .top-contacts i {
     font-size: 13px;
     margin-right: 3px;
 }
+
+
+
 
 
 
@@ -197,6 +209,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*Responsive Topbar*/
 
 @media (max-width: 991px) {
@@ -212,6 +227,9 @@ header .topmenu .top-data li a.log-top:hover {
         border: solid 1px #eee;
     }
 }
+
+
+
 
 
 
@@ -274,6 +292,9 @@ header .topmenu .top-data li a.log-top:hover {
 .navbar-nav>li>a:active {
     color: #66BBFF!important;
 }
+
+
+
 
 
 
@@ -529,6 +550,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*====================================================
                   BUTTON (Generic)
 ======================================================*/
@@ -571,6 +595,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*====================================================
                        HOME
 ======================================================*/
@@ -580,7 +607,7 @@ header .topmenu .top-data li a.log-top:hover {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background: rgba(0, 0, 0,0.5) url(http://ts.hust.edu.vn/images/Tuyen_sinh/ts2017/ts.hust.edu.vn.4.JPG);
+    background: rgba(0, 0, 0, 0.5) url(http://ts.hust.edu.vn/images/Tuyen_sinh/ts2017/ts.hust.edu.vn.4.JPG);
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -752,6 +779,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*====================================================
                OTHER HOME PAGE
 ======================================================*/
@@ -840,6 +870,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*====================================================
                TITLE CONTENT (Generic)
 ======================================================*/
@@ -920,6 +953,9 @@ header .topmenu .top-data li a.log-top:hover {
 
 
 
+
+
+
 /*====================================================
                COLOR (Generic)
 ======================================================*/
@@ -970,6 +1006,9 @@ header .topmenu .top-data li a.log-top:hover {
     background: -o-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
     /* opera 11.10+ */
 }
+
+
+
 
 
 
@@ -1060,6 +1099,9 @@ input[type=password] {
 
 
 
+
+
+
 /*====================================================
                         ABOUT
 ======================================================*/
@@ -1117,6 +1159,9 @@ input[type=password] {
         margin: 0;
     }
 }
+
+
+
 
 
 /*====================================================
@@ -1251,8 +1296,6 @@ input[type=password] {
     }
 }
 
-
-
 /*====================================================
                     FOOTER
 ======================================================*/
@@ -1267,10 +1310,6 @@ input[type=password] {
     color: #ccc;
     font-size: 15px;
 }
-
-
-
-
 
 /*Heading Fotoer*/
 
@@ -1296,11 +1335,6 @@ input[type=password] {
     font-size: 18px;
     text-transform: none;
 }
-
-
-
-
-
 
 /*Link link*/
 
@@ -1333,10 +1367,6 @@ input[type=password] {
     color: #555;
     display: block;
 }
-
-
-
-
 
 /*Thumb list*/
 
@@ -1386,10 +1416,6 @@ address.address-details-f a {
     float: left;
     margin: 10px;
 }
-
-
-
-
 
 /*footer bottom*/
 

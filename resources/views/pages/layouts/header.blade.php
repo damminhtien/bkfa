@@ -7,7 +7,7 @@
                     <div class="col-md-7">
                         <ul class="list-inline top-contacts">
                             <li>
-                                <i class="fa fa-envelope"></i> Email: <a href="mailto:info@themeborn.com">bkfa@gmil.com</a>
+                                <i class="fa fa-envelope"></i> Email: <a href="mailto:info@themeborn.com">bkfa.com@gmail.com</a>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i> Hotline: (1) 0969696969

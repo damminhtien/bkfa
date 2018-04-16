@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('pages.layouts.index')
 
 @section('title')
     Trang chủ
@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('layout.home')
+@include('pages.layouts.home')
 <!-- latest news -->
 <section id="single-news-p1" class="single-news-p1" >
     <div class="container">

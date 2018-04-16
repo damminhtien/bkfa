@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('pages.layouts.index')
 @section('title', 'Danh sách tài liệu')
 
 @section('content')
