@@ -1,0 +1,377 @@
+/*====================================================
+                DEFAULT VALUES:
+
+                Font Family                 : Roboto Condensed
+                
+                Greenish Blue               : #2196f3       (Buttons, Icons, Links, Lines & Backgrounds)
+                Steel Gray                  : #41464b       (Headings)
+                light Gray                  : #61666b       (Heading Second)
+                Gray                        : #717171       (Paragraphs)
+                Gray extra light            : #f5f5f5       (Content Background)
+                White                       : #fff          (Text With Black Backgrounds)
+                Black                       : #000 
+
+======================================================*/
+
+@import url('https://fonts.googleapis.com/css?family=Hind:400,600');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Hind', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Roboto', sans-serif;
+    color: #41464b;
+    text-transform: uppercase;
+}
+
+a {
+    font-family: 'Hind', sans-serif;
+    color: #2196f3;
+}
+
+p {
+    font-family: 'Hind', sans-serif;
+    color: #64707b;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+@media (min-width: 1600px) {
+    p {
+        font-family: 'Hind', sans-serif;
+        color: #64707b;
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+
+
+
+/*====================================================
+                  BUTTON
+======================================================*/
+
+.btn-general {
+    background-color: transparent;
+    text-align: center;
+    border-width: 1px;
+    border-radius: 0px;
+    font-size: 16px;
+    padding: 10px 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.btn-white {
+    border-color: #2196f3;
+    background-color: #2196f3;
+    color: #fff;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+    background-color: transparent;
+    color: #2196f3;
+    cursor: pointer;
+}
+
+.btn-green {
+    border-color: #2196f3;
+    color: #2196f3;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+    background-color: #2196f3;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/*====================================================
+               TITLE CONTENT (Generic)
+======================================================*/
+
+.title-bar {
+    padding: 100px 0;
+}
+
+.title-bar h1 {
+    color: #41464b;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px auto 10px auto;
+}
+
+.title-bar .heading-border {
+    width: 60px;
+    height: 10px;
+    background-color: #2196f3;
+    margin: 0 auto 20px auto;
+}
+
+.heading-border-light {
+    width: 30px;
+    height: 5px;
+    background-color: #2196f3;
+    margin: 0 0 20px 0;
+}
+
+.title-bar p {
+    color: #717171;
+}
+
+.title-bar p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.title-bar .title-but {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+@media (max-width: 575px) {
+
+    .title-bar {
+        padding: 50px 0;
+    }
+
+    .title-bar h1 {
+        color: #41464b;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
+        margin: 20px auto 10px auto;
+    }
+
+    .title-bar p {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        padding-bottom: 40px;
+        margin: 0 auto;
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .title-bar p {
+        font-size: 16px;
+    }
+}
+
+
+/*====================================================
+                        ABOUT
+======================================================*/
+
+.about .about-content-box {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-content-box>i {
+    color: #fff;
+    height: 150px;
+    line-height: 150px;
+    font-size: 100px;
+}
+
+.about-content-box>h5 {
+    color: #fff;
+    text-transform: none;
+    font-weight: normal;
+    padding: 20px 0 10px 0;
+}
+
+.about-content-box>p {
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .about .container-fluid {
+        width: 60%
+    }
+
+    .about .container-fluid .col-md-4 {
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 585px) {
+    .about .container-fluid {
+        width: 80%
+    }
+
+    .about .container-fluid .col-md-4 {
+        margin: 15px 0;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .about .container-fluid {
+        width: 100%
+    }
+
+    .about .container-fluid .col-md-4 {
+        margin: 0;
+    }
+}
+
+
+/*====================================================
+                    COLOR (Generic)
+======================================================*/
+
+.cl-white {
+    color: #fff;
+}
+
+.cl-atlantis {
+    color: #fff;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.bg-atlantis {
+    background: #2196f3;
+}
+
+.bg-starship {
+    background: #cdd613;
+}
+
+.bg-matisse {
+    background: #0b385d;
+}
+
+.bg-chathams {
+    background: #0aa1b9;
+}
+
+.bg-gray {
+    background: #f0f0f0;
+}
+
+.bg-light-gray {
+    background: #f9f9f9;
+}
+
+.bg-gradiant {
+    background: -moz-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(34, 155, 242, 1)), color-stop(99%, rgba(0, 128, 129, 1)), color-stop(100%, rgba(0, 128, 128, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(34, 155, 242, 1) 0%, rgba(0, 128, 129, 1) 99%, rgba(0, 128, 128, 1) 100%);
+    /* opera 11.10+ */
+}
+
+
+/*====================================================
+               OTHER HOME PAGE
+======================================================*/
+
+.home-p {
+    z-index: 1;
+    padding: 100px 0;
+    position: relative;
+}
+
+.home-p.breadcrumbs-lg {
+    padding: 200px 0;
+}
+
+.home-p.pages-head1 {
+    background: url(../img/img/banner-1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head2 {
+    background: url(../img/img/banner-2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head3 {
+    background: url(../img/img/banner-3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head4 {
+    background: url(../img/img/banner-4.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p:after {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.home-p h1 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+
+.home-p p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .home-p.breadcrumbs-lg {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-p,
+    .home-p.breadcrumbs-lg {
+        padding: 50px 0;
+    }
+
+    .home-p h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .home-p p {
+        font-size: 18px;
+    }
+}

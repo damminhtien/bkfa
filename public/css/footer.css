@@ -1,0 +1,177 @@
+/*====================================================
+                    FOOTER
+======================================================*/
+
+.footer-s1 .footer {
+    padding: 70px 0;
+    background: #252525;
+}
+
+.footer-s1 .footer .comp-desc-f p {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 15px;
+}
+
+/*Heading Fotoer*/
+
+.footer-s1 .heading-footer {
+    text-align: left;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 2px;
+}
+
+.footer-s1 .heading-footer:after {
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 50px;
+    content: " ";
+    background: #fff;
+    position: absolute;
+}
+
+.footer-s1 .heading-footer h2 {
+    color: #eee;
+    font-size: 18px;
+    text-transform: none;
+}
+
+/*Link link*/
+
+.footer-s1 .footer .link-list {
+    margin-bottom: 0;
+}
+
+.footer-s1 .footer .link-list li {
+    padding: 3px 0px;
+    border-bottom: solid 1px #333;
+}
+
+.footer-s1 .footer .link-list li:last-child {
+    padding-top: 0;
+    border-top: none;
+}
+
+.footer-s1 .footer .link-list li a {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+.footer-s1 .footer .link-list a:hover {
+    color: #fff;
+}
+
+.footer-s1 .footer .link-list li small {
+    color: #555;
+    display: block;
+}
+
+/*Thumb list*/
+
+.footer-s1 .footer .thumb-list>li {
+    margin-bottom: 20px;
+}
+
+.footer-s1 .footer .thumb-list>li:before,
+.footer-s1 .footer .thumb-list>li:after {
+    content: " ";
+    display: table;
+}
+
+.footer-s1 .footer .thumb-list>li:after {
+    clear: both;
+}
+
+.footer-s1 .footer .thumb-list>li img {
+    float: left;
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-s1 .footer .thumb-list>li a {
+    color: #777;
+    display: block;
+    padding-bottom: 8px;
+}
+
+.footer-s1 .footer .thumb-list>li a:hover {
+    color: #bbb;
+}
+
+.footer-s1 .footer .thumb-list>li small {
+    color: #555;
+    font-size: 13px;
+}
+
+address.address-details-f,
+address.address-details-f a {
+    color: #ddd;
+    font-size: 15px;
+}
+
+.social-icon-f li {
+    float: left;
+    margin: 10px;
+}
+
+/*footer bottom*/
+
+#footer-bottom {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px 0;
+}
+
+#footer-copyrights p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: #bbb;
+    text-align: center;
+}
+
+#footer-copyrights p a:last-child {
+    border-left: 2px solid #fff;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 22px;
+    padding: 3px 15px;
+    border-radius: 0;
+    display: none;
+}
+
+@media (min-width: 1600px) {
+    address.address-details-f,
+    address.address-details-f a {
+        color: #ddd;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer .container {
+        width: 90%;
+    }
+    .footer-s1 .heading-footer h2 {
+        color: #eee;
+        font-size: 18px;
+        margin-top: 50px;
+        text-transform: none;
+    }
+    .footer-s1 .heading-footer {
+        text-align: left;
+        position: relative;
+        margin-bottom: 10px;
+        padding-bottom: 2px;
+    }
+}

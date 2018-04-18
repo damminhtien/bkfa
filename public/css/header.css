@@ -1,0 +1,145 @@
+/*====================================================
+                       NAVIGATION
+======================================================*/
+
+
+/*Top Navbar*/
+
+.top-menubar-nav {
+    display: none;
+}
+
+header .topmenu {
+    background: #f0f0f0;
+    border-top: solid 1px #f0f0f0;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+/*Top Contacts*/
+
+header .topmenu ul {
+    margin: 0;
+}
+
+header .topmenu .top-contacts {
+    line-height: 25px;
+}
+
+header .topmenu .top-contacts li {
+    color: #666;
+    padding: 5px 0;
+    font-size: 12px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+header .topmenu .top-contacts li a {
+    color: #666;
+}
+
+header .topmenu .top-contacts i {
+    color: #999;
+    font-size: 13px;
+    margin-right: 3px;
+}
+
+
+
+
+/*Top Data*/
+
+header .topmenu .top-data {
+    text-align: right;
+}
+
+header .topmenu .top-data li {
+    padding: 5px 11px;
+    margin-left: -4px;
+    display: inline-block;
+    border-right: solid 1px #eee;
+}
+
+header .topmenu .top-data li:first-child {
+    margin-left: 0;
+    border-left: solid 1px #eee;
+}
+
+header .topmenu .top-data li a {
+    font-size: 12px;
+}
+
+header .topmenu .top-data li a:hover {
+    text-decoration: none;
+}
+
+.top-social {
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 25px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+header .topmenu .top-data li i.top-social.fa-facebook,
+.social-icon-f li i.top-social.fa-facebook {
+    border: 2px solid #4267b2;
+    color: #4267b2;
+}
+
+header .topmenu .top-data li i.top-social.fa-facebook:hover,
+.social-icon-f li i.top-social.fa-facebook:hover {
+    background: #4267b2;
+    color: #fff;
+}
+
+header .topmenu .top-data li i.top-social.fa-twitter,
+.social-icon-f li i.top-social.fa-twitter {
+    border: 2px solid #4AB3F4;
+    color: #4AB3F4;
+}
+
+header .topmenu .top-data li i.top-social.fa-twitter:hover,
+.social-icon-f li i.top-social.fa-twitter:hover {
+    background: #4AB3F4;
+    color: #fff;
+}
+
+header .topmenu .top-data li i.top-social.fa-google-plus,
+.social-icon-f li i.top-social.fa-google-plus {
+    border: 2px solid #e24343;
+    color: #e24343;
+}
+
+header .topmenu .top-data li i.top-social.fa-google-plus:hover,
+.social-icon-f li i.top-social.fa-google-plus:hover {
+    background: #e24343;
+    color: #fff;
+}
+
+header .topmenu .top-data li a.log-top {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: #888;
+}
+
+header .topmenu .top-data li a.log-top:hover {
+    color: #555;
+}
+
+/*Responsive Topbar*/
+
+@media (max-width: 991px) {
+    header .topmenu ul {
+        text-align: center !important;
+    }
+
+    header .topmenu .top-data li {
+        top: 1px;
+        padding: 6px 10px;
+        margin-left: -5px;
+        position: relative;
+        border: solid 1px #eee;
+    }
+}

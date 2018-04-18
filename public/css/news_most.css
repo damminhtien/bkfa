@@ -1,0 +1,131 @@
+/*====================================================
+                   NEW
+======================================================*/
+
+#service-h {
+    padding: 20px 0 20px;
+}
+
+.service-h-desc {
+    padding: 50px 10px 90px 60px;
+}
+
+.new_most {
+    padding: 20px;
+    margin: 50px -60px 70px 35px;
+    box-shadow: 3px 3px 8px 1px #505050;
+    border: 1px solid #2196f3;
+}
+
+.service-h-tab {
+    position: relative;
+    margin: 20px 0;
+}
+
+.service-h-tab .nav-tabs>a {
+    border-radius: 0;
+    width: 120px;
+    text-align: center;
+    height: 55px;
+    line-height: 40px;
+    border: 1px solid #ddd;
+}
+
+.service-h-tab .nav-tabs>a.active {
+    color: #fff;
+    border: 1px solid #2196f3;
+    background: #2196f3;
+}
+
+.service-h-tab .tab-content .tab-pane {
+    padding: 20px 20px 0px 10px;
+}
+
+.news-item{
+    height: 100px;
+}
+
+.news-item a {
+    text-decoration: none;
+}
+
+.right-news {
+    text-decoration: none;
+    clear: both;
+}
+
+.right-news img {
+    width: 120px;
+    height: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+.right-news p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 0;
+}
+
+.right-news p:hover {
+    color: #900;
+}
+
+.right-news small {
+    color: #888;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    #service-h .col-md-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%!important;
+    }
+    .new_most {
+        margin: 50px auto 70px auto;
+        box-shadow: 3px 3px 8px 1px #505050;
+        border: 1px solid #2196f3;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .new_most {
+        box-shadow: 3px 3px 8px 1px #505050;
+        border: 1px solid #2196f3;
+    }
+}
+
+@media (max-width: 767px) {
+
+    #service-h {
+        padding: 30px 0 0px;
+    }
+
+    .new_most {
+        margin: 50px auto 70px auto;
+        box-shadow: 3px 3px 8px 1px #505050;
+        border: 1px solid #2196f3;
+    }
+
+    .service-h-tab .nav-tabs>a {
+        border-radius: 0;
+        width: 100%;
+        text-align: center;
+        height: 55px;
+        line-height: 40px;
+        border: 1px solid #ddd;
+    }
+}
+
+@media (max-width: 420px) {
+    .new_most {
+        margin: 50px auto 70px auto;
+        box-shadow: 3px 3px 8px 1px #505050;
+        border: 1px solid #2196f3;
+    }
+
+    .service-h-desc {
+        padding: 50px 10px 90px 10px;
+    }
+}

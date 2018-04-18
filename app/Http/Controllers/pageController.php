@@ -33,4 +33,14 @@ class pageController extends Controller
         $chitiet = dethi::where('idmon',$id);
         return view('pages.chitiettailieu', ['vien'=>$vien, 'chitiet'=>$chitiet]);
     }
+
+    function kienThucLT(){
+        $vien = vien::all();
+        return view('pages.kienthuc', ['vien'=>$vien]);
+    }
+
+    function dsTinTuc2(){
+       $vien = vien::all();
+        return view('pages.listnews', ['vien'=>$vien]);
+    }
 }

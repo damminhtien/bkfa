@@ -1,12 +1,13 @@
 /*====================================================
-                   BUSINESS-GROWTH-P1
+                   COURSE
 ======================================================*/
 
-.business-growth-p1 {
+.course {
+     background: #f0f0f0;
     padding-bottom: 100px;
 }
 
-.business-growth-p1>.container>.row>.service-padding {
+.course>.container>.row>.service-padding {
     padding: 0;
 }
 
@@ -84,7 +85,7 @@ ul.service-spec li p {
 }
 
 @media (max-width: 767px) {
-    .business-growth-p1 {
+    .course {
         padding: 0 40px 100px 40px;
     }
 }

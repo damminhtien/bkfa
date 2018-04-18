@@ -86,5 +86,13 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 Route::get('/', 'pageController@trangChu');
 Route::get('ds-tintuc', 'pageController@dsTinTuc');
+Route::get('ds-tintuc2', 'pageController@dsTinTuc2');
 Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTaiLieu');
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
+Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
+
+
+Route::get('404', function(){
+	return view('layout.404');
+});
+

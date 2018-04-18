@@ -16,11 +16,22 @@
     <!-- <link rel="stylesheet" href="css/animate/animate.min.css"> -->
     <link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/news.css">
-    <link rel="stylesheet" href="css/dstailieu.css">
-    <link rel="stylesheet" href="css/chitiettailieu.css">
+    <!--  css -->
+    <link rel="stylesheet" href="css/trangchu.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/document.css">
+    <link rel="stylesheet" href="css/news_most.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/footer.css">
+   <!--  css pages -->
+    <link rel="stylesheet" href="css/pages/news.css">
+     <link rel="stylesheet" href="css/pages/list_news.css">
+    <link rel="stylesheet" href="css/pages/dstailieu.css">
+    <link rel="stylesheet" href="css/pages/chitiettailieu.css">
+    <link rel="stylesheet" href="css/pages/kienthuc.css">
 </head>
 
 <body id="page-top">
