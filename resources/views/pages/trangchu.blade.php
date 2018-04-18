@@ -160,7 +160,7 @@
                     <br>
                     <br>
                     <div class="news-all" align="center">
-                        <a href="news-list.html" class="btn btn-general btn-green" role="button">See More 1</a>
+                        <a href="ds-tintuc" class="btn btn-general btn-green" role="button">See More 1</a>
                         <a href="list-news.html" class="btn btn-general btn-green" role="button">See More 2</a>
                     </div>
                 </div>
@@ -203,6 +203,27 @@
 <section>
     <div  id="document" class="container-fluid ">
         <div class="row ">
+            @foreach($dethi as $dt)
+            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" data-wow-delay="0.4s">
+                <div class="desc-document-cont">
+                    <div class="thumbnail-blogs ">
+                        <img src="upload/images/{{$dt->urlanh}} " class="img-fluid " alt="{{$dt->gioithieu}} ">
+                    </div>
+                    {{-- <div class="thumbnail-blogs">
+                        <img src="upload/images/{{$dt->urlanh}}" class="img-fluid" alt="{{$dt->gioithieu}}">
+                    </div> --}}
+                    <div>
+                        <h3>{{cutString($dt->gioithieu, 33)." ..."}}</h3>
+                        <p class="desc">{{$dt->nam}}</p>
+                    </div>
+                    <div>
+                        <a href="#"><i class="fa fa-heart-o"> 1</i></a>
+                        <a href="#"><i class="fa fa-eye"></i> 2</a>
+                        <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
             <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
                 <div class="desc-document-cont ">
                     <div class="thumbnail-blogs ">

@@ -46,6 +46,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">
+                            @foreach($vien as $v)
+                            <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
+                            @endforeach
                             <a class="dropdown-item" href="chitiet.html">Công Nghệ Thông Tin</a>
                             <a class="dropdown-item" href="#">Điện tử viễn thông</a>
                             <a class="dropdown-item" href="#">Cơ khí</a>

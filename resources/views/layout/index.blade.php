@@ -26,10 +26,12 @@
     <link rel="stylesheet" href="css/news_most.css">
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/footer.css">
-
-    <link rel="stylesheet" href="css/news.css">
-    <link rel="stylesheet" href="css/dstailieu.css">
-    <link rel="stylesheet" href="css/chitiettailieu.css">
+   <!--  css pages -->
+    <link rel="stylesheet" href="css/pages/news.css">
+     <link rel="stylesheet" href="css/pages/list_news.css">
+    <link rel="stylesheet" href="css/pages/dstailieu.css">
+    <link rel="stylesheet" href="css/pages/chitiettailieu.css">
+    <link rel="stylesheet" href="css/pages/kienthuc.css">
 </head>
 
 <body id="page-top">

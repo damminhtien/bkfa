@@ -62,6 +62,8 @@
 
 .thumbnail-blogs img {
     margin-top: 5px;
+    width: 220px;
+    height: 260px;
 }
 
 .thumbnail-blogs img:hover {
