@@ -1,0 +1,130 @@
+/*====================================================
+                       ĐỀ THI
+======================================================*/
+
+#document {
+    padding: 70px 0;
+}
+
+.desc-document h2,
+.desc-document>.heading-border-light {
+    margin-left: 20px;
+}
+
+.desc-document-cont {
+
+    max-width: 270px;
+    margin: 20px auto;
+    /*    margin-bottom: 10px;*/
+    box-shadow: 3px 3px 10px 1px rgba(158, 158, 158, 0.68);
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.desc-document-cont:hover {
+    margin-bottom: 10px;
+    border-bottom: 5px solid #C90202;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.desc-document .btn-green {
+    margin: 15px;
+}
+
+.desc-document .btn-white {
+    margin: 15px;
+    padding: 10px 18px;
+}
+
+.desc-document-cont h3 {
+    padding: 30px 10px 0 10px;
+    font-size: 18px;
+    text-transform: none;
+}
+
+.desc-document-cont p {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.desc-document-cont a {
+    padding: 0px 10px;
+}
+
+.desc-document-cont {
+    height: 400px;
+}
+
+.thumbnail-blogs {
+    text-align: center;
+}
+
+.thumbnail-blogs img {
+    margin-top: 5px;
+}
+
+.thumbnail-blogs img:hover {
+    box-shadow: 0px 0px 10px #027FFF;
+    -moz-box-shadow: 0px 0px 10px #027FFF;
+    -webkit-box-shadow: 0px 0px 10px #027FFF;
+}
+
+.desc-document-cont i {
+    border-radius: 5px;
+    margin: 0 10px auto;
+    padding: 2px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    #document {
+        margin-left: 10px
+    }
+
+    #document .col-md-3:first-child {
+        -ms-flex: 0 0 90%;
+        flex: 0 0 90%;
+        max-width: 90%!important;
+    }
+
+    #document .col-md-3 {
+        -ms-flex: 0 0 33%;
+        flex: 0 0 33%;
+        max-width: 33%!important;
+    }
+}
+
+@media (max-width: 767px) {
+    .desc-document {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    #document .col-sm-6 {
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%!important;
+    }
+
+    .desc-document {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 420px) {
+    #document .col-sm-6 {
+        -ms-flex: 0 0 95%;
+        flex: 0 0 95%;
+        max-width: 95%!important;
+    }
+}
+
+@media (min-width: 1600px) {
+    .desc-document-cont p {
+        padding: 0 10px;
+        font-size: 16px;
+    }
+}
+
