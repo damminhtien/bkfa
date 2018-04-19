@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sửa viện</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{ Lang::get('sub.edit') }} {{ Lang::get('sub.institute') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,14 +13,14 @@
                     <form action="admin/vien/sua/{{$v->idvien}}" method="POST">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group row">
-                            <label for="txtSuaVien" class="col-sm-2 col-form-label"> Sửa Viện</label>
+                            <label for="txtSuaVien" class="col-sm-2 col-form-label"> {{ Lang::get('sub.edit') }} {{ Lang::get('sub.institute') }}</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="suaSuaVien" name="suaTenVien" value="{{$v->ten}}">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="reset" class="btn btn-secondary" >Làm mới</button>
-                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="reset" class="btn btn-secondary" >{{ Lang::get('sub.refresh') }}</button>
+                            <button type="submit" class="btn btn-primary">{{ Lang::get('sub.edit') }}</button>
                         </div>
                     </form>
                 </div>

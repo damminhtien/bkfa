@@ -34,15 +34,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <form action="{{ route('switchLang') }}" class="form-lang" method="post">
+                            <select name="locale" onchange='this.form.submit();'>
+                                <option value="en">{{ trans('sub.lang.en') }}</option>
+                                <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                            </select>
+                            {{ csrf_field() }}
+                        </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Đăng ký') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ Lang::get('sub.login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ Lang::get('sub.register') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -53,7 +59,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Đăng xuất') }}
+                                        {{ Lang::get('sub.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

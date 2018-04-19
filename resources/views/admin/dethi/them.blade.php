@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="page-title">
 	    <div class="page-header">
-	        <h4><small>Thêm</small> Đề thi</h4>
+	        <h4>{{ Lang::get('sub.add') }} {{ Lang::get('sub.exam') }}</h4>
 	    </div>
     </div>
 	<div class="row">
@@ -32,61 +32,61 @@
 		            <form action="admin/dethi/them" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label class="text-info">Viện *</label>
+                        <label class="text-info">{{ Lang::get('sub.institute') }} *</label>
                         <select class="form-control" name="idVien" id="vien">
-                        	<option>- - - Chọn viện - - -</option>
+                        	<option>- - - {{ Lang::get('sub.select_institute') }} - - -</option>
                         	@foreach ($vien as $v)
                         		<option value="{{$v->idvien}}">{{$v->ten}}</option>
                         	@endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Môn *</label>
+                        <label class="text-info">{{ Lang::get('sub.subject') }} *</label>
                         <select class="form-control" name="idMon" id="mon">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Năm *</label>
+                        <label class="text-info">{{ Lang::get('sub.year') }} *</label>
                         <select class="form-control" name="nam" id="nam">
-                            <option>- - - Chọn năm - - -</option>
+                            <option>- - - {{ Lang::get('sub.select_year') }} - - -</option>
                             @for($i = date("Y"); $i >= 1955; $i--)
                                 <option value="{{$i}}">{{$i." - K".($i - 1955)}}</option>
                             @endfor
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Giới thiệu (Lớn hơn 10 ký tự) *</label>
+                        <label class="text-info">{{ Lang::get('sub.about') }} ({{ Lang::get('sub.bigger') }}) *</label>
                         <textarea id="gioithieu" name="gioithieu"  class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Ghi chú</label>
+                        <label class="text-info">{{ Lang::get('sub.note') }}</label>
                         <textarea id="demo" name="ghichu" class="form-control ckeditor" rows="50"></textarea>
                     </div>
                     <div class="form-group">
                 		<label>
-                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> &nbsp&nbspFile đề * &nbsp&nbsp&nbsp</span>
+                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> &nbsp&nbspFile {{ Lang::get('sub.exam') }} * &nbsp&nbsp&nbsp</span>
                     		<p id="filename1" class="d-inline"></p>
                     		<input type="file" name="de" style="display: none;">
                     	</label>
                     </div>
                     <div class="form-group">
                         <label>
-                            <span class="text-warning btn btn-lg btn-outline-warning"><i class="fa fa-folder-open"></i> File lời giải*</span>
+                            <span class="text-warning btn btn-lg btn-outline-warning"><i class="fa fa-folder-open"></i> File {{ Lang::get('sub.answer') }}*</span>
                             <p id="filename2" class="d-inline"></p>
                             <input type="file" name="loigiai" style="display: none;">
                         </label>
                     </div>
                     <div class="form-group">
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>&nbsp&nbsp&nbsp Chọn ảnh&nbsp</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>&nbsp&nbsp&nbsp {{ Lang::get('sub.image') }}&nbsp</span>
                     		<p id="fileanh" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit" disabled>Thêm <i class="fa fa-paper-plane"></i></button>
-                    <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới  <i class="fa fa-undo"></i></button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit" disabled>{{ Lang::get('sub.add') }} <i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">{{ Lang::get('sub.refresh') }}<i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>

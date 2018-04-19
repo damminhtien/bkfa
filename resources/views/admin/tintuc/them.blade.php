@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="page-title">
 	    <div class="page-header">
-	        <h4><small>Thêm</small> Tin Tức</h4>
+	        <h4><small>{{ Lang::get('sub.add') }}</small> {{ Lang::get('sub.news') }}</h4>
 	    </div>
     </div>
 	<div class="row">
@@ -28,29 +28,29 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     
                     <div class="form-group">
-                        <label>Tiêu đề</label>
-                        <input class="form-control" name="tieude" placeholder="Nhập vào tiêu đề"></input>
+                        <label>{{ Lang::get('sub.title') }}</label>
+                        <input class="form-control" name="tieude" placeholder="{{ Lang::get('sub.input_title') }}"></input>
                     </div>
                     <div class="form-group">
-                        <label>Giới thiệu</label>
+                        <label>{{ Lang::get('sub.about') }}</label>
                         <textarea name="gioithieu" class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Nội dung</label>
+                        <label>{{ Lang::get('sub.content') }}</label>
                         <textarea name="noidung" class="form-control ckeditor" rows="10"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Ảnh</label><br>
+                        <label>{{ Lang::get('sub.image') }}</label><br>
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> Chọn ảnh</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>{{ Lang::get('sub.select_image') }}</span>
                     		<p id="filename" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">Thêm <i class="fa fa-paper-plane"></i></button>
-                    <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới  <i class="fa fa-undo"></i></button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">{{ Lang::get('sub.add') }}<i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">{{ Lang::get('sub.refresh') }}<i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>

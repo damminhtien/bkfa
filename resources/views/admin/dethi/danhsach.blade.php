@@ -5,8 +5,8 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-      <h4>Bảng dữ liệu <strong>Đề thi @php echo "( " .count($dethi). " bản ghi )"; @endphp</strong>
-		    <a href="admin/dethi/them" title="Thêm đề thi mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
+      <h4>{{ Lang::get('sub.datasheet') }}<strong> {{ Lang::get('sub.exam') }} @php echo "- " .count($dethi).""; @endphp {{ Lang::get('sub.record') }}</strong>
+		    <a href="admin/dethi/them" title="{{ Lang::get('sub.add_exam') }}"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
 		  @if(count($errors) > 0)
 		 	  <br><br>
       	<div class="alert alert-danger">
@@ -32,13 +32,13 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Giới thiệu</th>
-                                    <th>Môn học</th>
-                                    <th>Ảnh</th>
-                                    <th>Lượt xem</th>
-                                    <th>Ghi chú</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.about') }}</th>
+                                    <th>{{ Lang::get('sub.subject') }}</th>
+                                    <th>{{ Lang::get('sub.image') }}</th>
+                                    <th>{{ Lang::get('sub.view') }}</th>
+                                    <th>{{ Lang::get('sub.note') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
