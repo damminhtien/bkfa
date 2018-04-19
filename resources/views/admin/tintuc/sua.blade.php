@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="page-title">
 	    <div class="page-header">
-	        <h4><small>Sửa</small> Tin Tức</h4>
+	        <h4><small>{{ Lang::get('sub.edit') }}</small>{{ Lang::get('sub.news') }}</h4>
 	    </div>
     </div>
 	<div class="row">
@@ -28,30 +28,30 @@
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     
                     <div class="form-group">
-                        <label>Tiêu đề</label>
-                        <input class="form-control" name="tieude" placeholder="Please Enter Category Name" value="{{ $tintuc->tieude }}"></input>
+                        <label>{{ Lang::get('sub.title') }}</label>
+                        <input class="form-control" name="tieude" value="{{ $tintuc->tieude }}"></input>
                     </div>
                     <div class="form-group">
-                        <label>Giới thiệu</label>
+                        <label>{{ Lang::get('sub.about') }}</label>
                         <textarea name="gioithieu" class="form-control ckeditor" rows="3">{{$tintuc->gioithieu}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Nội dung</label>
+                        <label>{{ Lang::get('sub.content') }}</label>
                         <textarea name="noidung" class="form-control ckeditor" rows="10">{{$tintuc->noidung}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Ảnh</label><br>
+                        <label>{{ Lang::get('sub.image') }}</label><br>
                         <p><img with="300" height="300" src="upload/tintuc/{{$tintuc->urlanh}}"></p>
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> Chọn ảnh</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>{{ Lang::get('sub.select_image') }}</span>
                     		<p id="filename" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-default">Sửa</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
+                    <button type="submit" class="btn btn-default">{{ Lang::get('sub.edit') }}</button>
+                    <button type="reset" class="btn btn-default">{{ Lang::get('sub.refresh') }}</button>
                 </form>
 		        </div>
     		</div>

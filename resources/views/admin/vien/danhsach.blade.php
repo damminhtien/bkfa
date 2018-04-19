@@ -1,7 +1,7 @@
 @extends('admin.layouts.index') @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <b>Viện @php echo "( " .count($vien). " bản ghi )"; @endphp<b> 
+        <h4>{{ Lang::get('sub.datasheet') }} <b>{{ Lang::get('sub.institute') }} @php echo "- " .count($vien). ""; @endphp {{ Lang::get('sub.record') }}<b> 
 		<button type="button" class="btn-success btn" style="float: right;" data-toggle="modal" data-target="#myModal"><i class="ti-plus" ></i></button>
 		 @if(count($errors) > 0)
 		 	<br><br>
@@ -28,10 +28,10 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Tên Viện</th>
-                                    <th>Tên Không Dấu</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.name') }} {{ Lang::get('sub.institute') }}</th>
+                                    <th>{{ Lang::get('sub.unsign_name') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>

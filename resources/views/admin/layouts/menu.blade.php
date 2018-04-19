@@ -17,7 +17,7 @@
                     <span class="icon-holder">
                             <i class="ti-home"></i>
                         </span>
-                    <span class="title">Giới thiệu</span>
+                    <span class="title">{{ Lang::get('sub.about') }}</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -25,29 +25,29 @@
                     <span class="icon-holder">
                             <i class="ti-desktop"></i>
                         </span>
-                    <span class="title">Bảng dữ liệu</span>
+                    <span class="title">{{ Lang::get('sub.datasheet') }}</span>
                     <span class="arrow">
                         <i class="ti-angle-right"></i>
                     </span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/admin/dethi/danhsach">Đề Thi</a>
+                        <a href="/admin/dethi/danhsach">{{ Lang::get('sub.exam') }}</a>
                     </li>
                     <li>
-                        <a href="/admin/vien/danhsach">Viện</a>
+                        <a href="/admin/vien/danhsach">{{ Lang::get('sub.institute') }}</a>
                     </li>
                     <li>
-                        <a href="/admin/mon/danhsach">Môn</a>
+                        <a href="/admin/mon/danhsach">{{ Lang::get('sub.subject') }}</a>
                     </li>
                     <li>
-                        <a href="/admin/tintuc/danhsach">Tin Tức</a>
+                        <a href="/admin/tintuc/danhsach">{{ Lang::get('sub.news') }}</a>
                     </li>
                     <li>
-                        <a href="/admin/slide/danhsach">Slide</a>
+                        <a href="/admin/slide/danhsach">{{ Lang::get('sub.slide') }}</a>
                     </li>
                     <li>
-                        <a href="/admin/user/danhsach">Users</a>
+                        <a href="/admin/user/danhsach">{{ Lang::get('sub.user') }}</a>
                     </li>
                 </ul>
             </li>

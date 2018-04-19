@@ -5,8 +5,8 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <strong>Tin tức @php echo "( " .count($tintuc). " bản ghi )"; @endphp</strong>
-        <a href="admin/tintuc/them" title="Thêm tin tức mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
+        <h4>{{ Lang::get('sub.datasheet') }}<strong>{{ Lang::get('sub.news') }} @php echo "- " .count($tintuc). ""; @endphp {{ Lang::get('sub.record') }}</strong>
+        <a href="admin/tintuc/them" title="{{ Lang::get('sub.add_news') }}"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
      @if(count($errors) > 0)
       <br><br>
             <div class="alert alert-danger">
@@ -32,14 +32,14 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Tiêu đề</th>
-                                    <th>Giới thiệu</th>
-                                    <th>Nội dung</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày đăng</th>
-                                    <th>Lượt xem</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.title') }}</th>
+                                    <th>{{ Lang::get('sub.about') }}</th>
+                                    <th>{{ Lang::get('sub.content') }}</th>
+                                    <th>{{ Lang::get('sub.image') }}</th>
+                                    <th>{{ Lang::get('sub.date') }}</th>
+                                    <th>{{ Lang::get('sub.view') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
