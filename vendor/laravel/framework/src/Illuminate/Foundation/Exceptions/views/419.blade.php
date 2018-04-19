@@ -1,9 +1,9 @@
 @extends('errors::layout')
 
-@section('title', 'Page Expired')
+@section('title', 'Trang đã hết hạn')
 
 @section('message')
-    The page has expired due to inactivity.
+    Trang này đã hết hạn vì bạn không hoạt động
     <br/><br/>
-    Please refresh and try again.
+    Xin mời làm mới trang và thử lại
 @stop

@@ -1,5 +1,5 @@
 @extends('errors::layout')
 
-@section('title', 'Error')
+@section('title', 'Lỗi!!!!zz')
 
-@section('message', 'Whoops, looks like something went wrong.')
+@section('message', 'Whoops, có điều gì đó sai sai.')

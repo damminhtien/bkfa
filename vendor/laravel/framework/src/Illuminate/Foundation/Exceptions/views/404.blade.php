@@ -1,5 +1,5 @@
 @extends('errors::layout')
 
-@section('title', 'Page Not Found')
+@section('title', 'Không tìm thấy trang')
 
-@section('message', 'Sorry, the page you are looking for could not be found.')
+@section('message', 'Xin lỗi, trang bạn tìm kiếm không nằm trong danh mục.')
