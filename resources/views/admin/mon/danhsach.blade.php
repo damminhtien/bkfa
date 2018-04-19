@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
   <div class="page-title">
-    <h4>Bảng dữ liệu <strong>Môn @php echo "( " .count($mon). " bản ghi )"; @endphp</strong>
+    <h4>{{ Lang::get('sub.datasheet') }}<strong> {{ Lang::get('sub.subject') }} @php echo "- " .count($mon). ""; @endphp {{ Lang::get('sub.record') }}</strong>
       <a href="admin/mon/them" title="Thêm môn mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
       @if(count($errors) > 0)
       <br><br>
@@ -31,14 +31,14 @@
           <table id="dt-opt" class="table table-lg table-hover">
             <thead>
               <tr>
-                  <th>stt</th>
-                  <th>tên môn</th>
-                  <th>mã học phần</th>
-                  <th>viện</th>
-                  <th>giới thiệu</th>
-                  <th>ghi chú</th>
-                  <th>sửa</th>
-                  <th>xóa</th>
+                  <th>STT</th>
+                  <th>{{ Lang::get('sub.name') }} {{ Lang::get('sub.subject') }}</th>
+                  <th>{{ Lang::get('sub.codehp') }}</th>
+                  <th>{{ Lang::get('sub.institute') }}</th>
+                  <th>{{ Lang::get('sub.about') }}</th>
+                  <th>{{ Lang::get('sub.note') }}</th>
+                  <th>{{ Lang::get('sub.edit') }}</th>
+                  <th>{{ Lang::get('sub.delete') }}</th>
                 </tr>
             </thead>
             <tbody>

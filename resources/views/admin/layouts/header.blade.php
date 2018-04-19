@@ -111,27 +111,26 @@
                     <li>
                         <a href="index.html">
                             <i class="ti-settings pdd-right-10"></i>
-                            <span>Setting</span>
+                            <span>{{ Lang::get('sub.setting') }}</span>
                         </a>
                     </li>
                     <li>
                         <a href="index.html">
                             <i class="ti-user pdd-right-10"></i>
-                            <span>Profile</span>
+                            <span>{{ Lang::get('sub.profile') }}</span>
                         </a>
                     </li>
                     <li>
                         <a href="index.html">
                             <i class="ti-email pdd-right-10"></i>
-                            <span>Inbox</span>
+                            <span>{{ Lang::get('sub.inbox') }}</span>
                         </a>
                     </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            {{ __('Đăng xuất') }}
+                            {{ Lang::get('sub.logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -152,82 +151,91 @@
                         <ul class="list-info overflow-y-auto relative scrollable">
                             <li>
                                 <a href="index.html">
-                                                    <img class="thumb-img" src="library/images/avatars/thumb-5.jpg" alt="">
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Jennifer Watkins</span>
-                                                        <span class="text-gray">commented on your <span class="text-dark">post</span></span>
-                                                        </span>
-                                                        <span class="sub-title">5 mins ago</span>
-                                                    </div>
-                                                </a>
+                                    <img class="thumb-img" src="library/images/avatars/thumb-5.jpg" alt="">
+                                    <div class="info">
+                                        <span class="title">
+                                            <span class="font-size-14 text-semibold">Jennifer Watkins</span>
+                                        <span class="text-gray">commented on your <span class="text-dark">post</span></span>
+                                        </span>
+                                        <span class="sub-title">5 mins ago</span>
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <a href="index.html">
-                                                    <img class="thumb-img" src="library/images/avatars/thumb-4.jpg" alt="">
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Samuel Field</span>
-                                                        <span class="text-gray">likes your <span class="text-dark">photo</span></span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
+                                    <img class="thumb-img" src="library/images/avatars/thumb-4.jpg" alt="">
+                                    <div class="info">
+                                        <span class="title">
+                                            <span class="font-size-14 text-semibold">Samuel Field</span>
+                                        <span class="text-gray">likes your <span class="text-dark">photo</span></span>
+                                        </span>
+                                        <span class="sub-title">8 hours ago</span>
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <a href="index.html">
-                                                    <span class="thumb-img bg-primary">
-                                                            <span class="text-white">M</span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Michael Birch</span>
-                                                        <span class="text-gray">likes your <span class="text-dark">photo</span></span>
-                                                        </span>
-                                                        <span class="sub-title">5 hours ago</span>
-                                                    </div>
-                                                </a>
+                                    <span class="thumb-img bg-primary">
+                                        <span class="text-white">M</span>
+                                    </span>
+                                    <div class="info">
+                                        <span class="title">
+                                            <span class="font-size-14 text-semibold">Michael Birch</span>
+                                            <span class="text-gray">likes your <span class="text-dark">photo</span></span>
+                                        </span>
+                                        <span class="sub-title">5 hours ago</span>
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <a href="index.html">
-                                                    <span class="thumb-img bg-success">
-                                                        <span class="text-white"><i class="fa fa-paper-plane-o"></i></span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Message sent</span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
+                                    <span class="thumb-img bg-success">
+                                        <span class="text-white"><i class="fa fa-paper-plane-o"></i></span>
+                                    </span>
+                                    <div class="info">
+                                        <span class="title">
+                                            <span class="font-size-14 text-semibold">Message sent</span>
+                                        </span>
+                                        <span class="sub-title">8 hours ago</span>
+                                    </div>
+                                </a>
                             </li>
                             <li>
                                 <a href="index.html">
-                                                    <span class="thumb-img bg-info">
-                                                        <span class="text-white"><i class="ti-user"></i></span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title">
-                                                            <span class="font-size-14 text-semibold">Admin</span>
-                                                        <span class="text-gray">Welcome on board</span>
-                                                        </span>
-                                                        <span class="sub-title">8 hours ago</span>
-                                                    </div>
-                                                </a>
+                                    <span class="thumb-img bg-info">
+                                        <span class="text-white"><i class="ti-user"></i></span>
+                                    </span>
+                                    <div class="info">
+                                        <span class="title">
+                                            <span class="font-size-14 text-semibold">Admin</span>
+                                            <span class="text-gray">Welcome on board</span>
+                                        </span>
+                                        <span class="sub-title">8 hours ago</span>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li class="notice-footer">
                         <span>
-                                            <a href="index.html" class="text-gray">Check all notifications <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
-                                        </span>
+                            <a href="index.html" class="text-gray">Check all notifications <i class="ei-right-chevron pdd-left-5 font-size-10"></i></a>
+                        </span>
                     </li>
                 </ul>
             </li>
             <li>
                 <a class="side-panel-toggle" href="javascript:void(0);">
-                                    <i class="ti-align-right"></i>
-                                </a>
+                    <i class="ti-align-right"></i>
+                </a>
+            </li>
+            <li>
+                <form action="{{ route('switchLang') }}" class="form-lang" method="post">
+                    <select name="locale" onchange='this.form.submit();'>
+                        <option value="en">{{ trans('sub.lang.en') }}</option>
+                        <option value="vi" {{ Lang::locale()==='vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                    </select>
+                    {{ csrf_field() }}
+                </form>
             </li>
         </ul>
     </div>

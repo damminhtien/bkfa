@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="page-title">
 	    <div class="page-header">
-	        <h4><small>Thêm</small> Slide</h4>
+	        <h4><small>{{ Lang::get('sub.add') }}</small> Slide</h4>
 	    </div>
     </div>
 	<div class="row">
@@ -27,9 +27,9 @@
 		            <form action="admin/slide/them" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
-                        <label class="text-info">Viện *</label>
+                        <label class="text-info">{{ Lang::get('sub.institute') }} *</label>
                         <select class="form-control" name="idVien" id="vien">
-                        	<option>- - - Chọn viện - - -</option>
+                        	<option>- - - {{ Lang::get('sub.select_institute') }} - - -</option>
                         	@foreach ($vien as $v)
                             
                         		<option value="{{$v->idvien}}">{{$v->ten}}</option>
@@ -37,36 +37,36 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Môn *</label>
+                        <label class="text-info">{{ Lang::get('sub.subject') }} *</label>
                         <select class="form-control" name="idMon" id="mon">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Giới thiệu (Lớn hơn 10 ký tự) *</label>
+                        <label class="text-info">{{ Lang::get('sub.about') }} ({{ Lang::get('sub.bigger') }}) *</label>
                         <textarea id="gioithieu" name="gioithieu"  class="form-control" rows="5"></textarea>
                     </div>
                     <div class="form-group">
-                        <label class="text-info">Ghi chú</label>
+                        <label class="text-info">{{ Lang::get('sub.note') }}</label>
                         <textarea id="demo" name="ghichu" class="form-control ckeditor" rows="50"></textarea>
                     </div>
                     <div class="form-group">
                 		<label>
-                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> Chọn file*</span>
+                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i>{{ Lang::get('sub.select_file') }}*</span>
                     		<p id="filename" class="d-inline"></p>
                     		<input type="file" name="file" style="display: none;">
                     	</label>
                     </div>
                     <div class="form-group">
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> Chọn ảnh</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>{{ Lang::get('sub.select_image') }}</span>
                     		<p id="fileanh" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit" disabled>Thêm <i class="fa fa-paper-plane"></i></button>
-                    <button type="reset" class="btn btn-lg float-right btn-secondary">Làm mới  <i class="fa fa-undo"></i></button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit" disabled>{{ Lang::get('sub.add') }}<i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">{{ Lang::get('sub.refresh') }}<i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>

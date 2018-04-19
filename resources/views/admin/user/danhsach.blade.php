@@ -5,8 +5,8 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <strong>User @php echo "( " .count($user). " bản ghi )"; @endphp</strong>
-		    <a href="admin/user/them" title="Thêm user mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
+        <h4>{{ Lang::get('sub.datasheet') }} <strong>{{ Lang::get('sub.user') }} @php echo "- " .count($user). ""; @endphp {{ Lang::get('sub.record') }}</strong>
+		    <a href="admin/user/them" title="{{ Lang::get('sub.add') }} {{ Lang::get('sub.user') }}"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
 		 @if(count($errors) > 0)
 		 	<br><br>
           	<div class="alert alert-danger">
@@ -32,12 +32,12 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Tên</th>
-                                    <th>Email</th>
-                                    <th>Mật khẩu</th>
-                                    <th>Ngày tạo</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.name') }}</th>
+                                    <th>{{ Lang::get('sub.email') }}</th>
+                                    <th>{{ Lang::get('sub.password') }}</th>
+                                    <th>{{ Lang::get('sub.date_upload') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,7 +82,7 @@
 	                                    </td>            
 	                                    <td>
 	                                        <div class="mrg-top-15">
-	                                        	<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#xoaModal{{$u->id}}" title="Xoá {{$u->ten}}">  
+	                                        	<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#xoaModal{{$u->id}}" title="{{ Lang::get('sub.delete') }} {{$u->ten}}">  
 	                                        		<h3 class="ti-trash text-danger"></h3>
 	                                        	</button></a>
                                             @include('admin.user.xoa')
