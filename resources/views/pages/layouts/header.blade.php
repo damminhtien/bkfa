@@ -36,13 +36,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav" data-toggle="affix" style="z-index: 10">
         <div class="container">
-            <a class="navbar-brand smooth-scroll" href="index.html"><img src="img/logo-s.png" alt="logo"></a>
+            <a class="navbar-brand smooth-scroll" href="/"><img src="img/logo-s.png" alt="logo"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="/">Trang chủ</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">

@@ -5,7 +5,7 @@
                 <div class="row">
                     <!-- About Us -->
                     <div class="col-md-3 col-sm-6 ">
-                        <div><img src="img/logo-w.png" alt="" class="img-fluid"></div>
+                        <div><img src="img/logo-s1.png" alt="" class="img-fluid"></div>
                         <ul class="list-unstyled comp-desc-f">
                             <li>
                                 <p>Businessbox is a corporate business theme. You can customize what ever you think to make your website much better from your great ideas. </p>
