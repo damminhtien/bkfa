@@ -97,4 +97,20 @@ function checkExtensionImage($ext){
 		return true;
 	return false;
 }
+
+function getUrlFileUpload($ext,$str){
+	if(checkExtensionArchive($ext)) return "archive/{$str}";
+	if(checkExtensionImage($ext)) return "images/{$str}";
+	if(checkExtensionSupportFile($ext)) return "document/{$str}";
+	return $str;
+}
+
+function getExtension($file){
+	$len = strlen($file);
+	for($i = $len-1; $i >= 0; $i--){
+		if($file[$i] == '.') {
+			return substr($file, $i-$len+1);
+		}
+	}
+}
 ?>

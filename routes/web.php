@@ -96,7 +96,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 			Route::post('sua/{iduser}','userController@postSua');
 			Route::get('them','userController@getThem');
 			Route::post('them','userController@postThem');
-			Route::get('xoa/{id}','userController@getXoa');
+			Route::get('xoa/{iduser}','userController@getXoa');
 		});
 	});
 });
@@ -107,9 +107,3 @@ Route::get('ds-tintuc2', 'pageController@dsTinTuc2');
 Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTaiLieu');
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
-
-
-Route::get('404', function(){
-	return view('layout.404');
-});
-

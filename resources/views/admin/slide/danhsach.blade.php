@@ -65,8 +65,8 @@
                                       </td>
 	                                    <td>
 	                                        <div>
-	                                            <div class="thumbnail" href="#"><img src="upload/images/{{$s->urlanh}}" width="45" height="45" >
-                                              <span><img src="upload/images/{{$s->urlanh}}" with="200" height="200" title="Ảnh {{$s->urlanh}}"></span></div>
+	                                            <div class="thumbnail" href="#"><img src="upload/images/slide/anh/{{$s->urlanh}}" width="45" height="45" >
+                                              <span><img src="upload/images/slide/anh/{{$s->urlanh}}" with="200" height="200" title="Ảnh {{$s->urlanh}}"></span></div>
 	                                        </div>
 	                                    </td>
                                       <td>
