@@ -14,4 +14,10 @@ class LangController extends Controller
 		Session::put('locale', $request->locale);
 		return redirect()->back();
 	}
+
+	public function postLang2(Request $request)
+	{
+		Session::put('locale2', $request->locale2);
+		return redirect()->back();
+	}
 }

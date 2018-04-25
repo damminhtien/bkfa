@@ -26,7 +26,7 @@
                         <strong>{{$ds->gioithieu}}</strong>
                         <div class="cart-icon text-center">
                             <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                            <a href="chi-tiet-tai-lieu/{{ $ds->idmon }}/{{ $ds->tenkhongdau }}.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
+                            <a href="chi-tiet-tai-lieu/{{ $ds->idmon }}/{{ $ds->tenkhongdau }}.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> {{ Lang::get('sub.exam') }}</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <strong>Một trong những môn quan trong, đòi hỏi ...</strong>
                         <div class="cart-icon text-center">
                             <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                            <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
+                            <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> {{ Lang::get('sub.exam') }}</a>
                         </div>
                     </div>
                 </div>

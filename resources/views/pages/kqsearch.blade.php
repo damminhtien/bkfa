@@ -5,7 +5,7 @@
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
         <div class="input-group ">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ Lang::get('sub.search') }}">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
         </div>
     </div>
@@ -16,16 +16,16 @@
     <div class="row">
         <div class="col-xs-11 col-sm-11 col-md-11 wow fadeInUp" data-wow-delay="0.3s">
             <div class="service-h-desc">
-                <h3>Kết quả tìm kiếm</h3>
+                <h3>{{ Lang::get('sub.resultsearch') }}</h3>
                 <div class="heading-border-light"></div>
                 <hgroup>
-                    <h2 class="lead"><strong class="cl-blue">3</strong> Kết quả tìm kiếm cho <strong class="cl-blue">vlxxx.com</strong></h2>
+                    <h2 class="lead"><strong class="cl-blue">3</strong> {{ Lang::get('sub.resultsearch') }} <strong class="cl-blue">vlxxx.com</strong></h2>
                 </hgroup>
                 <div class="service-h-tab">
                     <nav class="nav nav-tabs" id="myTab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Đề thi</a>
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">{{ Lang::get('sub.exam') }}</a>
                         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Slide</a>
-                        <a class="nav-item nav-link" id="my-profile-tab" data-toggle="tab" href="#my-profile" role="tab" aria-controls="my-profile">Tin tức</a>
+                        <a class="nav-item nav-link" id="my-profile-tab" data-toggle="tab" href="#my-profile" role="tab" aria-controls="my-profile">{{ Lang::get('sub.news') }}</a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="result-view" align="left">
-                                <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
+                                <a href="#" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -127,7 +127,7 @@
                             <br>
                             <br>
                             <div class="result-view" align="left">
-                                <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
+                                <a href="#" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
                             </div>
                         </div>
                     </div>
