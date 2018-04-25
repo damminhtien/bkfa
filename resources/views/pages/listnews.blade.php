@@ -4,8 +4,8 @@
 <!-- home news list -->
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
-        <h1 class="wow fadeInUp" data-wow-delay="0.1s">News</h1>
-        <p>Discover more</p>
+        <h1 class="wow fadeInUp" data-wow-delay="0.1s">{{ Lang::get('sub.news') }}</h1>
+        <p>{{ Lang::get('sub.seemore') }}</p>
     </div>
     <!--/end container-->
 </div>

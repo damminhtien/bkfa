@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Đăng nhập BKFA.com - Kho tài liệu khổng lồ Bách Khoa</title>
+    <title>{{ Lang::get('sub.login') }} BKFA.com - {{ Lang::get('sub.library') }}</title>
     <base href="{{asset('')}}" >
     <!-- Favicon -->
     <link rel="shortcut icon" href="library/images/logo/favicon.png">
@@ -40,8 +40,7 @@
                             <div class="vertical-align full-height pdd-horizon-70">
                                 <div class="table-cell">
                                     <div class="pdd-horizon-15">
-                                        <h2>Đăng nhập</h2>
-                                        <p class="mrg-btm-15 font-size-13">Vui lòng nhập tài khoản và mật khẩu để đăng nhập</p>
+                                        <h2>{{ Lang::get('sub.login') }}</h2>
                                         @if(count($errors) > 0)
                                         <div class="alert alert-danger">
                                             @foreach($errors->all() as $err)
@@ -64,13 +63,13 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-control" placeholder="Password" value=""><br>
-                                                    <a href="{{ route('password.request') }}">Quên mật khẩu?</a>
+                                                    <a href="{{ route('password.request') }}">{{ Lang::get('sub.forgot_password') }}</a>
                                                 </div>
                                                 <div class="checkbox font-size-12">
                                                     <input id="agreement" name="agreement" type="checkbox">
-                                                    <label for="agreement">Nhớ tài khoản</label>
+                                                    <label for="agreement">{{ Lang::get('sub.remember_me') }}</label>
                                                 </div>                                           
-                                                <button class="btn btn-info">Đăng Nhập</button>
+                                                <button class="btn btn-info">{{ Lang::get('sub.login') }}</button>
                                             </fieldset>
                                         </form>
                                     </div>
@@ -78,7 +77,7 @@
                             </div>
                             <div class="login-footer">
                                 <img class="img-responsive inline-block" src="library/images/logo/logo.png" width="100" alt="">
-                                <span class="font-size-13 pull-right pdd-top-10">Bạn chưa có tài khoản? <a href="dangky">Đăng ký ngay</a></span>
+                                <span class="font-size-13 pull-right pdd-top-10">{{ Lang::get('sub.text4') }}<a href="dangky">{{ Lang::get('sub.register') }}</a></span>
                             </div>
                         </div>
                     </div>

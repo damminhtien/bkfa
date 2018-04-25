@@ -57,11 +57,6 @@ class pageController extends Controller
         return view('pages.kienthuc', ['vien'=>$vien]);
     }
 
-    function dsTinTuc2(){
-       $vien = vien::all();
-        return view('pages.listnews', ['vien'=>$vien]);
-    }
-
     function getDangNhap() {
         return view('pages.dangnhap');
     }

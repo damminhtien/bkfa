@@ -19,7 +19,7 @@
                                     color: white
                                 }
                                 </style>
-                                <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="Search ..." id="input-search">
+                                <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="{{ Lang::get('sub.search') }} ..." id="input-search">
                             </div>
                         </div>
                         <div class="col-sm-2"></div>
@@ -28,10 +28,10 @@
                 </div>
                 <div class="hero ">
                     <hgroup class="wow fadeInUp">
-                        <h1><span ><a href="" class="typewrite" data-period="2000" data-type='[" BKFA.COM", "Website Tài liệu"]'><span class="wrap"> </span></a></span> <i class="fa fa-pencil"> </i></h1>
-                        <h3>Một kho tài liệu khủng lồ cho sinh viên</h3>
+                        <h1><span ><a href="" class="typewrite" data-period="2000" data-type='[" BKFA.COM", "{{ Lang::get('sub.docweb') }}"]'><span class="wrap"> </span></a></span> <i class="fa fa-pencil"> </i></h1>
+                        <h3>{{ Lang::get('sub.library') }}</h3>
                     </hgroup>
-                    <a href="https://www.youtube.com/watch?v=stxlq4tXTaQ" class="btn btn-general btn-green wow fadeInUp" role="button" target="_blank">Hướng dẫn sử dụng</a>
+                    <a href="https://www.youtube.com/watch?v=stxlq4tXTaQ" class="btn btn-general btn-green wow fadeInUp" role="button" target="_blank">{{ Lang::get('sub.manual') }}</a>
                 </div>
             </div>
         </div>

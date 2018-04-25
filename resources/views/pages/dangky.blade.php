@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Đăng ký tài khoản BKFA.com - Kho tài liệu khổng lồ Bách Khoa</title>
+    <title>{{ Lang::get('sub.text5') }} BKFA.com - {{ Lang::get('sub.library') }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="library/images/logo/favicon.png">
@@ -50,7 +50,7 @@
                                     <div class="vertical-align full-height pdd-horizon-70">
                                         <div class="table-cell">
                                             <div class="pdd-horizon-15">
-                                                <h1 class="mrg-btm-30">Đăng ký tài khoản BKFA.com</h1>
+                                                <h1 class="mrg-btm-30">{{ Lang::get('sub.text5') }} BKFA.com</h1>
                                                 @if(count($errors) > 0)
                                                 <div class="alert alert-danger">
                                                     @foreach($errors->all() as $err)
@@ -67,32 +67,32 @@
                                                 <form action="dangky" method="POST">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <div class="form-group">
-                                                        <label class="text-normal text-dark">Họ Tên</label>
+                                                        <label class="text-normal text-dark">{{ Lang::get('sub.flname') }}</label>
                                                         <input type="text" name="ten" class="form-control">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="text-normal text-dark">Địa chỉ E-mail</label>
+                                                        <label class="text-normal text-dark">{{ Lang::get('sub.email') }}</label>
                                                         <input type="email" name="email" class="form-control">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="text-normal text-dark">Mật khẩu</label>
+                                                        <label class="text-normal text-dark">{{ Lang::get('sub.password') }}</label>
                                                         <input type="password" name="password" class="form-control" placeholder="Password">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="text-normal text-dark">Nhập lại mật khẩu</label>
+                                                        <label class="text-normal text-dark">{{ Lang::get('sub.confirm_password') }}</label>
                                                         <input type="password" class="form-control" name="password2" placeholder="Password">
                                                     </div>
                                                     <div class="checkbox font-size-13 mrg-btm-20">
                                                         <input id="agreement" name="agreement" type="checkbox" checked="">
-                                                        <label for="agreement">Nhớ tài khoản</label>
+                                                        <label for="agreement">{{ Lang::get('sub.remember_me') }}</label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary btn-block border-radius-6">Đăng ký</button>
+                                                        <button type="submit" class="btn btn-primary btn-block border-radius-6">{{ Lang::get('sub.register') }}</button>
                                                     </div>
                                                 </form>
-                                                <p>Bạn đã có tài khoản? <a href="dangnhap">Đăng nhập</a></p>
+                                                <p>{{ Lang::get('sub.text6') }}<a href="dangnhap">{{ Lang::get('sub.login') }}</a></p>
                                                 <hr>
-                                                <small>Bằng việc đăng ký, bạn đã đồng ý với <a href="sign-up.html">Điều khoản & Chính sách</a></small>
+                                                <small>{{ Lang::get('sub.text7') }} <a href="sign-up.html">{{ Lang::get('sub.text8') }}</a></small>
                                             </div>
                                         </div>
                                     </div>

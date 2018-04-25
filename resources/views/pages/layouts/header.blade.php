@@ -13,11 +13,13 @@
                                 <i class="fa fa-phone"></i> Hotline: (1) 0969696969
                             </li>
                             <li class="dropdown">
-                                <a id="language" class="dropdown-toggle" href="#" data-toggle="dropdown"><img src="img/vi.png" alt="Việt Nam" title="Việt Nam"> Việt Nam</a>
-                                <div class="dropdown-menu">
-                                    <a onclick="click_en()" class="dropdown-item" href="#"><img src="img/en.png" alt="" title="English" /> English</a>
-                                    <a onclick="click_vi()" class="dropdown-item" href="#"><img src="img/vi.png" alt="" title="Việt Nam" /> Việt Nam</a>
-                                </div>
+                                <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
+                                    <select name="locale2" onchange='this.form.submit();'>
+                                        <option value="en">{{ trans('sub.lang.en') }}</option>
+                                        <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                                    </select>
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
                         </ul>
                     </div>
@@ -28,10 +30,10 @@
                             <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                             @if(!Auth::user())
                             <li>
-                                <a href="dangnhap" class="log-top">Đăng nhập</a>
+                                <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>
                             </li>
                             <li>
-                                <a href="dangky" class="log-top">Đăng ký</a>
+                                <a href="dangky" class="log-top">{{ Lang::get('sub.register') }}</a>
                             </li>
                             @else
                             <li>
@@ -41,7 +43,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="dangxuat" class="log-top">Đăng xuất</a>
+                                <a href="dangxuat" class="log-top">{{ Lang::get('sub.logout') }}</a>
                             </li>
                             @endif
                         </ul>
@@ -59,9 +61,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="/">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="/">{{ Lang::get('sub.home') }}</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
+                        <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Lang::get('sub.document') }}</a>
                         <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">
                             @foreach($vien as $v)
                             <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
@@ -69,7 +71,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Công nghệ</a>
+                        <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Lang::get('sub.tech') }}</a>
                         <div class="dropdown-menu dropdown-cust mega-menu" aria-labelledby="navbarDropdownMenuLink">
                             <div class="row">
                                 <div class="col-md-6">
@@ -87,13 +89,13 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html">{{ Lang::get('sub.contact') }}</a></li>
                     <li class="nav-item">
                         <i class="search fa fa-search search-btn"></i>
                         <div class="search-open">
                             <div class="input-group animated fadeInUp">
-                                <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">Go</span>
+                                <input type="text" class="form-control" placeholder="{{ Lang::get('sub.search') }}" aria-describedby="basic-addon2">
+                                <span class="input-group-addon" id="basic-addon2">{{ Lang::get('sub.search2') }}</span>
                             </div>
                         </div>
                     </li>
@@ -111,11 +113,13 @@
                                                     <i class="fa fa-phone"></i> Hotline: (1) 0969696969
                                                 </li>
                                                 <li class="dropdown">
-                                                    <a id="language" class="dropdown-toggle" href="#" data-toggle="dropdown"><img src="img/vi.png" alt="Việt Nam" title="Việt Nam"> Việt Nam</a>
-                                                    <div class="dropdown-menu">
-                                                        <a onclick="click_en()" class="dropdown-item" href="#"><img src="img/en.png" alt="" title="English" /> English</a>
-                                                        <a onclick="click_vi()" class="dropdown-item" href="#"><img src="img/vi.png" alt="" title="Việt Nam" /> Việt Nam</a>
-                                                    </div>
+                                                    <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
+                                                        <select name="locale2" onchange='this.form.submit();'>
+                                                            <option value="en">{{ trans('sub.lang.en') }}</option>
+                                                            <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                                                        </select>
+                                                        {{ csrf_field() }}
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </div>
@@ -126,10 +130,10 @@
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                                                 @if(!Auth::user())
                                                 <li>
-                                                    <a href="dangnhap" class="log-top">Đăng nhập</a>
+                                                    <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>
                                                 </li>
                                                 <li>
-                                                    <a href="dangky" class="log-top">Đăng ký</a>
+                                                    <a href="dangky" class="log-top">{{ Lang::get('sub.register') }}</a>
                                                 </li>
                                                 @else
                                                 <li>
@@ -139,7 +143,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="dangxuat" class="log-top">Đăng xuất</a>
+                                                    <a href="dangxuat" class="log-top">{{ Lang::get('sub.logout') }}</a>
                                                 </li>
                                                 @endif
                                             </ul>

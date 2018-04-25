@@ -354,6 +354,7 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\LangController' => __DIR__ . '/../..' . '/app/Http/Controllers/LangController.php',
         'App\\Http\\Controllers\\ajaxController' => __DIR__ . '/../..' . '/app/Http/Controllers/ajaxController.php',
+        'App\\Http\\Controllers\\danhgiaController' => __DIR__ . '/../..' . '/app/Http/Controllers/danhgiaController.php',
         'App\\Http\\Controllers\\dethiController' => __DIR__ . '/../..' . '/app/Http/Controllers/dethiController.php',
         'App\\Http\\Controllers\\monController' => __DIR__ . '/../..' . '/app/Http/Controllers/monController.php',
         'App\\Http\\Controllers\\pageController' => __DIR__ . '/../..' . '/app/Http/Controllers/pageController.php',
