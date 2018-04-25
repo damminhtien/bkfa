@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/footer.css">
    <!--  css pages -->
     <link rel="stylesheet" href="css/pages/news.css">
-     <link rel="stylesheet" href="css/pages/list_news.css">
+    <link rel="stylesheet" href="css/pages/list_news.css">
     <link rel="stylesheet" href="css/pages/dstailieu.css">
     <link rel="stylesheet" href="css/pages/chitiettailieu.css">
     <link rel="stylesheet" href="css/pages/kienthuc.css">
@@ -37,7 +37,6 @@
 
 <body id="page-top">
     @include('pages.layouts.header')
-    @include('pages.layouts.login')
 
     @yield('content')
 

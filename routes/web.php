@@ -15,7 +15,6 @@ use App\vien;
 use App\mon;
 
 Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-
 	Auth::routes();
 	Route::get('/home', 'HomeController@index');
 	Route::post('/lang', [
@@ -29,8 +28,7 @@ Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')
 
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-		// Auth::routes();
-		// Route::get('/home', 'HomeController@index');
+		
 		Route::post('/lang', [
 			'as' => 'switchLang',
 			'uses' => 'LangController@postLang',
@@ -96,7 +94,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 			Route::post('sua/{iduser}','userController@postSua');
 			Route::get('them','userController@getThem');
 			Route::post('them','userController@postThem');
-			Route::get('xoa/{id}','userController@getXoa');
+			Route::get('xoa/{iduser}','userController@getXoa');
 		});
 	});
 });
@@ -109,8 +107,14 @@ Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLie
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 Route::get('tim-kiem', 'pageController@timKiem');
 
+Route::get('dangnhap','pageController@getDangNhap');
+Route::post('dangnhap','pageController@postDangNhap');
+Route::get('dangxuat','pageController@getDangXuat');
 
-Route::get('404', function(){
-	return view('layout.404');
+Route::get('nguoidung','pageController@getNguoiDung');
+Route::post('nguoidung','pagepController@postNguoiDung');
+
+Route::get('dangky','pageController@getDangKy');
+Route::post('dangky','pageController@postDangKy');
+Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 });
-

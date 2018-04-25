@@ -75,7 +75,7 @@
                             <input type="file" name="anh" style="display: none;">
                         </label>
                         <div style="width: 50vw;" id="imgupload">   
-                            <img src="upload/images/{{$dethi->urlanh}}" style="width: 200px;">
+                            <img src="upload/images/dethi/anh/{{$dethi->urlanh}}" style="width: 200px;">
                         </div>
                     </div>
                     <br>

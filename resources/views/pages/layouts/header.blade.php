@@ -26,7 +26,24 @@
                             <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
-                            <li><a href="#" class="log-top" data-toggle="modal" data-target="#login-modal">Đăng nhập</a></li>
+                            @if(!Auth::user())
+                            <li>
+                                <a href="dangnhap" class="log-top">Đăng nhập</a>
+                            </li>
+                            <li>
+                                <a href="dangky" class="log-top">Đăng ký</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="nguoidung" class="log-top">
+                                    <span class ="glyphicon glyphicon-user"></span>
+                                    {{ Auth::user()->ten }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dangxuat" class="log-top">Đăng xuất</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -107,7 +124,24 @@
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
-                                                <li><a href="#" class="log-top" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                                @if(!Auth::user())
+                                                <li>
+                                                    <a href="dangnhap" class="log-top">Đăng nhập</a>
+                                                </li>
+                                                <li>
+                                                    <a href="dangky" class="log-top">Đăng ký</a>
+                                                </li>
+                                                @else
+                                                <li>
+                                                    <a href="nguoidung" class="log-top">
+                                                        <span class ="glyphicon glyphicon-user"></span>
+                                                        {{ Auth::user()->ten }}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="dangxuat" class="log-top">Đăng xuất</a>
+                                                </li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>

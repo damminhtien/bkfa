@@ -19,7 +19,7 @@
                     <thead>
                         <tr>
                             <td>
-                                <span class="fa fa-eye" data-toggle="tooltip" title="Tác giả: TTB"> Trần Trọng Bình</span>
+                                <span class="fa fa-eye" data-toggle="tooltip" title="Tác giả: TTB"> {{$chitiet->gioithieu}}</span>
                             </td>
                             <td style="text-align: right;">
                                 <a href="#" class="btn btn-general btn-white"><i class="fa fa-download"></i> Download</a>
@@ -29,39 +29,21 @@
                     <tbody>
                         <tr>
                             <td colspan="2">
-                                <div class="row">
-                                    <!--  <embed src="pandalone-json.pdf" width="100%" height="1000px" /> -->
-                                    <!--  <iframe src="pandalone-json.pdf" style="width: 100%;height: 1000px;border: none;"></iframe> -->
-                                    <div id="Iframe-Cicis-Menu-To-Go" class="set-margin-cicis-menu-to-go set-padding-cicis-menu-to-go set-border-cicis-menu-to-go set-box-shadow-cicis-menu-to-go center-block-horiz">
-                                        <div class="responsive-wrapper responsive-wrapper-padding-bottom-90pct" style="-webkit-overflow-scrolling: touch; overflow: auto;">
-                                            <style>
-                                                iframe .drive-viewer-toolstrip{
-                                                    /*display:none;*/
-                                                    background: red;
-                                                }
-                                            </style>
-                                            <iframe src="https://drive.google.com/file/d/0BxrMaW3xINrsR3h2cWx0OUlwRms/preview">
-                                                <p style="font-size: 110%;"><em><strong>ERROR: </strong> An &#105;frame should be displayed here but your browser version does not support &#105;frames.</em> Please update your browser to its most recent version and try again, or access the file
-                                                    <a href="https://drive.google.com/file/d/0BxrMaW3xINrsR3h2cWx0OUlwRms/preview"> with this link.</a>
-                                                </p>
-                                            </iframe>
-                                        </div>
-                                    </div>
+                                @include('pages.hienthitep')
                             </td>
                         </tr>
-                        <!-- <tr>
-                                <td colspan="2">
-                                    <div class="row">
-                                        <div class="preview-pic tab-content">
-                                            <div class="tab-pane active" id="pic-1"><img src="img/shop/shop-item-1.jpg" /></div>
-                                            <div class="tab-pane" id="pic-2"><img src="img/shop/shop-item-3.jpg" /></div>
-                                            <div class="tab-pane" id="pic-3"><img src="img/shop/shop-item-4.jpg" /></div>
-                                            <div class="tab-pane" id="pic-4"><img src="img/shop/shop-item-5.jpg" /></div>
-                                            <div class="tab-pane" id="pic-5"><img src="img/shop/shop-item-2.jpg" /></div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr> -->
+                        <td colspan="2">
+                            <div class="row">
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane active" id="pic-1"><img src="img/shop/shop-item-1.jpg" /></div>
+                                    <div class="tab-pane" id="pic-2"><img src="img/shop/shop-item-3.jpg" /></div>
+                                    <div class="tab-pane" id="pic-3"><img src="img/shop/shop-item-4.jpg" /></div>
+                                    <div class="tab-pane" id="pic-4"><img src="img/shop/shop-item-5.jpg" /></div>
+                                    <div class="tab-pane" id="pic-5"><img src="img/shop/shop-item-2.jpg" /></div>
+                                </div>
+                            </div>
+                        </td>
+                        </tr> -->
                         <tr>
                             <td style="text-align: center;" colspan="2">
                                 <a href="#" class="btn btn-general btn-white" style="margin-top:10px; "><i class="fa fa-eye"></i> Xem thêm ...</a>
@@ -98,143 +80,142 @@
                         </tr>
                     </tbody>
                     <tfoot>
-                        <!-- <tr>
-                                <td colspan="2">
-                                    <div class="row">
-                                        <ul class="preview-thumbnail nav nav-tabs">
-                                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img/shop/shop-item-1.jpg" /></a></li>
-                                            <li><a data-target="#pic-2" data-toggle="tab"><img src="img/shop/shop-item-3.jpg" /></a></li>
-                                            <li><a data-target="#pic-3" data-toggle="tab"><img src="img/shop/shop-item-4.jpg" /></a></li>
-                                            <li><a data-target="#pic-4" data-toggle="tab"><img src="img/shop/shop-item-5.jpg" /></a></li>
-                                            <li><a data-target="#pic-5" data-toggle="tab"><img src="img/shop/shop-item-2.jpg" /></a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr> -->
+                        <td colspan="2">
+                            <div class="row">
+                                <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="img/shop/shop-item-1.jpg" /></a></li>
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img src="img/shop/shop-item-3.jpg" /></a></li>
+                                    <li><a data-target="#pic-3" data-toggle="tab"><img src="img/shop/shop-item-4.jpg" /></a></li>
+                                    <li><a data-target="#pic-4" data-toggle="tab"><img src="img/shop/shop-item-5.jpg" /></a></li>
+                                    <li><a data-target="#pic-5" data-toggle="tab"><img src="img/shop/shop-item-2.jpg" /></a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        </tr> -->
                         <tr>
                             <td colspan="2"></td>
                         </tr>
                     </tfoot>
                 </table>
+            </div>
+            <div class="related col-md-3">
+                <h4 class="related-document">Tài liệu liên quan</h4>
+                <div class="related-item">
+                    <ol>
+                        <li>
+                            <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
+                                <!--  <span class="number">1. </span> -->
+                                <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
+                                <div style="text-align: center; color: #AFAFAF">
+                                    <span class="fa fa-eye"> 300</span>
+                                    <span>&nbsp&nbsp&nbsp&nbsp</span>
+                                    <span class="fa fa-download"> 10000</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
+                                <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
+                                <div style="text-align: center; color: #AFAFAF">
+                                    <span class="fa fa-eye"> 300</span>
+                                    <span>&nbsp&nbsp&nbsp&nbsp</span>
+                                    <span class="fa fa-download"> 10000</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
+                                <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
+                                <div style="text-align: center; color: #AFAFAF">
+                                    <span class="fa fa-eye"> 300</span>
+                                    <span>&nbsp&nbsp&nbsp&nbsp</span>
+                                    <span class="fa fa-download"> 10000</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
-                <div class="related col-md-3">
-                    <h4 class="related-document">Tài liệu liên quan</h4>
-                    <div class="related-item">
-                        <ol>
-                            <li>
-                                <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
-                                    <!--  <span class="number">1. </span> -->
-                                    <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
-                                    <div style="text-align: center; color: #AFAFAF">
-                                        <span class="fa fa-eye"> 300</span>
-                                        <span>&nbsp&nbsp&nbsp&nbsp</span>
-                                        <span class="fa fa-download"> 10000</span>
+            </div>
+            <div class="col-md-12">
+                <div class="service-h-tab">
+                    <nav class="nav nav-tabs" id="myTab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Reviews</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Desciption</a>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="review-block">
+                                <div class="row">
+                                    <div class=" col-sm-3">
+                                        <img src="img/client/avatar-3.jpg" class="img-rounded">
+                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
-                                    <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
-                                    <div style="text-align: center; color: #AFAFAF">
-                                        <span class="fa fa-eye"> 300</span>
-                                        <span>&nbsp&nbsp&nbsp&nbsp</span>
-                                        <span class="fa fa-download"> 10000</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="review-block-title" data-toggle="tooltip" title="Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016">
-                                    <a href="#"><i class="fa fa-book"></i> Kế hoạch tổ chức chương trình thắp sáng ước mơ văn nghệ mừng xuân 2016</a>
-                                    <div style="text-align: center; color: #AFAFAF">
-                                        <span class="fa fa-eye"> 300</span>
-                                        <span>&nbsp&nbsp&nbsp&nbsp</span>
-                                        <span class="fa fa-download"> 10000</span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="service-h-tab">
-                        <nav class="nav nav-tabs" id="myTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Reviews</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Desciption</a>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="review-block">
-                                    <div class="row">
-                                        <div class=" col-sm-3">
-                                            <img src="img/client/avatar-3.jpg" class="img-rounded">
-                                            <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <div class="rating">
-                                                <div class="stars">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star"></span>
-                                                    <span class="fa fa-star"></span>
-                                                </div>
+                                    <div class="col-sm-9">
+                                        <div class="rating">
+                                            <div class="stars">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
                                             </div>
-                                            <div class="review-block-title">this was nice in buy</div>
-                                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="review-block">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <img src="img/client/avatar-1.jpg" class="img-rounded">
-                                            <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <div class="rating">
-                                                <div class="stars">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star"></span>
-                                                    <span class="fa fa-star"></span>
-                                                </div>
-                                            </div>
-                                            <div class="review-block-title">this was nice in buy</div>
-                                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-block">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <img src="img/client/avatar-2.jpg" class="img-rounded">
-                                            <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <div class="rating">
-                                                <div class="stars">
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star checked"></span>
-                                                    <span class="fa fa-star"></span>
-                                                    <span class="fa fa-star"></span>
-                                                </div>
-                                            </div>
-                                            <div class="review-block-title">this was nice in buy</div>
-                                            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                        </div>
+                                        <div class="review-block-title">this was nice in buy</div>
+                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
-                                <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
+                            <div class="review-block">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img src="img/client/avatar-1.jpg" class="img-rounded">
+                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="rating">
+                                            <div class="stars">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="review-block-title">this was nice in buy</div>
+                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="review-block">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <img src="img/client/avatar-2.jpg" class="img-rounded">
+                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="rating">
+                                            <div class="stars">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="review-block-title">this was nice in buy</div>
+                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
+                            <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 </section>
 <section id="document-1" class="document-1" style="padding-top:0px;">
     <div class="container">
