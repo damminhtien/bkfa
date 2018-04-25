@@ -4504,5 +4504,41 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "goodnesskay/laravelpdfviewer",
+        "version": "v1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/goodnesskay/LARAVEL-PDF-VIEWER.git",
+            "reference": "f0808b98aab3c3dc080847e22ee7cc614bb6ed19"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/goodnesskay/LARAVEL-PDF-VIEWER/zipball/f0808b98aab3c3dc080847e22ee7cc614bb6ed19",
+            "reference": "f0808b98aab3c3dc080847e22ee7cc614bb6ed19",
+            "shasum": ""
+        },
+        "time": "2017-05-23T07:24:26+00:00",
+        "type": "laravel-package",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Goodness Toluwanimi Kayode",
+                "email": "gtkbrain@gmail.com"
+            }
+        ],
+        "description": "A Laravel Package for viewing PDF files or documents on Web App",
+        "keywords": [
+            "ViewerJS",
+            "laravel",
+            "laravel-viewerJS",
+            "pdf-viewer"
+        ]
     }
 ]

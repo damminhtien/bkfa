@@ -14,12 +14,12 @@ class slideController extends Controller
 		foreach ($slide as $s) {
 			$s->mon = mon::where('idmon',$s->idmon)->firstOrFail()->ten;
 		}
-		return view('admin.slide.danhsach',['slide'=>$slide]);
+		return view('admin.slide.danhsach', ['slide'=>$slide]);
 	}
 
 	public function getThem(){
 		$vien = vien::all();
-		return view('admin.slide.them',['vien'=>$vien]);
+		return view('admin.slide.them', ['vien'=>$vien]);
 	}
 	public function postThem(Request $request){
 		$this->validate(
@@ -45,26 +45,32 @@ class slideController extends Controller
      		$file = $request->file('file');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng file này!');
+				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
-			$url = time() . rand() . "_" . $file->getClientOriginalName(); 
-			$file->move("upload/slide",$url);
+			$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190); 
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $url)) {
+				$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190);
+			}
+			$file->move('upload/' . getUrlFileUpload($ext, 'slide'), $url);
 			$slide->url = $url;
      	}
      	if($request->hasFile('anh')){
      		$img = $request->file('anh');
 			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
-			$urlanh =  time() . rand() . "_" . $img->getClientOriginalName(); 
-			$img->move("upload/images",$urlanh);
+			$urlanh =  substr(time() . mt_rand() . "_" . $img->getClientOriginalName(), -190);
+			while(file_exists('upload/images/slide/anh/' . $urlanh)) {
+				$urlanh = substr(time() . mt_rand() . "_" . $img->getClientOriginalName(), -190);
+			}
+			$img->move('upload/images/slide/anh/', $urlanh);
 			$slide->urlanh = $urlanh;
      	}else{
      		$slide->urlanh = 'default.jpg';
      	}
      	$slide->save();
-		return redirect('admin/slide/them')->with('thongbao','Thêm slide thành công');
+		return redirect('admin/slide/them')->with('thongbao', 'Thêm slide thành công');
 	}
 
 	public function getSua($idslide){
@@ -72,50 +78,55 @@ class slideController extends Controller
 		$slide = slide::find($idslide);
 		$slide->mon = mon::find($slide->idmon);
 		$slide->vien = vien::find($slide->mon->idvien);
-		return view('admin.slide.sua',['vien'=>$vien, 'slide'=>$slide]);
+		return view('admin.slide.sua', ['vien'=>$vien, 'slide'=>$slide]);
 	}
 	public function postSua(Request $request, $idslide){
-		$modSlide = slide::find($idslide);
-		$oldSlide = clone $modSlide;
-     	if($request->idMon != null) $modSlide->idmon = $request->idMon;
-     	else $modSlide->idmon = $oldSlide->idmon;
-     	if($request->gioithieu != null) $modSlide->gioithieu = $request->gioithieu;
-     	else $modSlide->gioithieu = $oldSlide->gioithieu;
-     	$modSlide->ghichu = $request->ghichu;
+		$slide = slide::find($idslide);
+     	if($request->idMon != null) $slide->idmon = $request->idMon;
+     	if($request->gioithieu != null) $slide->gioithieu = $request->gioithieu;
+     	$slide->ghichu = $request->ghichu;
      	if($request->hasFile('file')){
      		$file = $request->file('file');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng file này!');
+				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
-			$url = cutString(time() . rand() . "_" . $file->getClientOriginalName(),190); 
-			$file->move("upload/slide",$url);
-			$modSlide->url = $url;
-			if(file_exists('upload/slide/'.$oldSlide->url))unlink('upload/slide/'.$oldSlide->url);
-     	}else{
-     		$modSlide->url = $oldSlide->url;
+			$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190);
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $urlanh)) {
+				$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190);
+			}
+			$file->move('upload/' . getUrlFileUpload($ext, 'slide'), $url);
+			$oldExt = getExtension($slide->url);
+			if(file_exists('upload/'. getUrlFileUpload($oldExt, 'slide/') . $slide->url)) unlink('upload/'. getUrlFileUpload($oldExt, 'slide/') . $slide->url);
+			$slide->url = $url;
      	}
      	if($request->hasFile('anh')){
      		$img = $request->file('anh');
 			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
-			$urlanh =  cutString(time() . rand() . "_" . $img->getClientOriginalName(),190); 
-			$img->move("upload/images",$urlanh);
-			$modSlide->urlanh = $urlanh;
-			if($oldSlide->urlanh != 'default.jpg' && file_exists('upload/images/'.$oldSlide->urlanh)) unlink('upload/images/'.$oldSlide->urlanh);
-     	}else{
-     		$modSlide->urlanh = $oldSlide->urlanh;
+			$urlanh =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
+			while(file_exists('upload/images/slide/anh/' . $urlanh)) {
+				$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+			}
+			$img->move('upload/images/slide/anh', $urlanh);
+			if($slide->urlanh != 'default.jpg' && file_exists('upload/images/slide/anh/' . $slide->urlanh)) unlink('upload/images/slide/anh/' . $slide->urlanh);
+			$slide->urlanh = $urlanh;
      	}
-     	$modSlide->save();
-		return redirect('admin/slide/danhsach')->with('thongbao','Sửa slide thành công');
+     	$slide->save();
+		return redirect('admin/slide/danhsach')->with('thongbao', 'Sửa slide thành công');
 	}
 
 	public function getXoa($idslide){
-        $slide = slide::find($idslide);
-        $ten = cutString($slide->firstOrFail()->gioithieu, 40);
+        $slide = slide::find($idslide)->firstOrFail();
+        $url = $slide->url;
+        $urlanh = $slide->urlanh;
+        $ext = getExtension($url);
+        if(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $url)) unlink('upload/' . getUrlFileUpload($ext, 'slide/') . $url);
+        if($urlanh != 'default.jpg' && file_exists('upload/images/slide/anh/' . $urlanh)) unlink('upload/images/slide/anh/' . $urlanh);
+        $ten = cutString($slide->gioithieu, 40);
         $slide->delete();
-        return redirect('admin/slide/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten); 
+        return redirect('admin/slide/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten);
 	}
 }

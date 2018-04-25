@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "38f8dde5f44b81dfd1878d29acb10762",
+    "content-hash": "b085e55cd5224f9d8879e649c0da0dcb",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -720,6 +720,40 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "goodnesskay/laravelpdfviewer",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/goodnesskay/LARAVEL-PDF-VIEWER.git",
+                "reference": "f0808b98aab3c3dc080847e22ee7cc614bb6ed19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/goodnesskay/LARAVEL-PDF-VIEWER/zipball/f0808b98aab3c3dc080847e22ee7cc614bb6ed19",
+                "reference": "f0808b98aab3c3dc080847e22ee7cc614bb6ed19",
+                "shasum": ""
+            },
+            "type": "laravel-package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Goodness Toluwanimi Kayode",
+                    "email": "gtkbrain@gmail.com"
+                }
+            ],
+            "description": "A Laravel Package for viewing PDF files or documents on Web App",
+            "keywords": [
+                "ViewerJS",
+                "laravel",
+                "laravel-viewerJS",
+                "pdf-viewer"
+            ],
+            "time": "2017-05-23T07:24:26+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

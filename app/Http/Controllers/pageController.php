@@ -11,7 +11,6 @@ use App\User;
 
 class pageController extends Controller
 {
-    //
     function trangChu(){
     	$vien = vien::all();
     	$dethi = dethi::all();
@@ -25,14 +24,13 @@ class pageController extends Controller
 
     function dsTaiLieu($id){
     	$vien = vien::all();
-    	// $dsmon = mon::find($id);
     	$dsmon = mon::where('idvien',$id)->paginate(5);
     	return view('pages.dstailieu', ['vien'=>$vien, 'dsmon'=>$dsmon]);
     }
 
     function chiTietTaiLieu($id){
         $vien = vien::all();
-        $chitiet = dethi::where('idmon',$id);
+        $chitiet = dethi::where('idmon',$id)->firstOrFail();
         return view('pages.chitiettailieu', ['vien'=>$vien, 'chitiet'=>$chitiet]);
     }
 

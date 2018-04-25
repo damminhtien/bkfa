@@ -19,7 +19,7 @@ class dethiController extends Controller
 
     public function getThem(){
 		$vien = vien::all();
-		return view('admin.dethi.them',['vien'=>$vien]);
+		return view('admin.dethi.them', ['vien'=>$vien]);
 	}
 
 	public function postThem(Request $request){
@@ -45,16 +45,17 @@ class dethiController extends Controller
      	$dethi->nam = $request->nam;
      	$dethi->gioithieu = $request->gioithieu;
      	$dethi->ghichu = $request->ghichu;
-     	//Kiểm tra file
      	if($request->hasFile('de')){
      		$file = $request->file('de');
-     		//Lấy Đuôi File
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
-				return redirect('admin/dethi/them')->with('loi','Không hỗ trợ định dạng file này!');
+				return redirect('admin/dethi/them')->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
-			$url = time() . rand() . "_" . $file->getClientOriginalName(); 
-			$file->move("upload/dethi",$url);
+			$url = substr(time() . rand() . '_' . $file->getClientOriginalName(), -190); 
+            while(file_exists('upload/' . getUrlFileUpload($ext, 'dethi/') . $url)) {
+                $url = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+            }
+            $file->move('upload/' . getUrlFileUpload($ext, 'dethi'), $url);
 			$dethi->url = $url;
      	}
      	if($request->hasFile('loigiai')){
@@ -63,9 +64,12 @@ class dethiController extends Controller
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
 				return redirect('admin/dethi/them')->with('loi','Không hỗ trợ định dạng file này!');
 			}
-			$url = time() . rand() . "_" . $file->getClientOriginalName(); 
-			$file->move("upload/dethi",$url);
-			$dethi->urlloigiai = $url;
+			$urlloigiai = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190); 
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'loigiai/') . $urlloigiai)) {
+                $urlloigiai = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+            }
+            $file->move('upload/' . getUrlFileUpload($ext, 'loigiai'), $urlloigiai);
+			$dethi->urlloigiai = $urlloigiai;
      	}else{
      		$dethi->urlloigiai = "<script>alert('Lời giải trong phần giới thiệu')</script>";
      	}
@@ -73,16 +77,19 @@ class dethiController extends Controller
      		$img = $request->file('anh');
 			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect('admin/dethi/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
-			$urlanh =  time() . rand() . "_" . $img->getClientOriginalName(); 
-			$img->move("upload/images",$urlanh);
+			$urlanh =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+            while(file_exists('upload/images/dethi/anh/' . $urlanh)) {
+                $urlanh =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+            }
+			$img->move('upload/images/dethi/anh', $urlanh);
 			$dethi->urlanh = $urlanh;
      	}else{
      		$dethi->urlanh = 'default.jpg';
      	}
      	$dethi->save();
-		return redirect('admin/dethi/them')->with('thongbao','Thêm đề thi thành công');
+		return redirect('admin/dethi/them')->with('thongbao', 'Thêm đề thi thành công');
 	}
 
 	public function getSua($iddethi){
@@ -93,64 +100,71 @@ class dethiController extends Controller
 		return view('admin.dethi.sua',['vien'=>$vien, 'dethi'=>$dethi]);
 	}
 	public function postSua(Request $request, $iddethi){
-		$modDethi = dethi::find($iddethi);
-		$oldDethi = clone $modDethi;
-     	if($request->idMon != null) $modDethi->idmon = $request->idMon;
-     	else $modDethi->idmon = $oldDethi->idmon;
-     	if($request->nam != null) $modDethi->nam = $request->nam;
-     	else $modDethi->nam = $oldDethi->nam;
-     	if($request->gioithieu != null) $modDethi->gioithieu = $request->gioithieu;
-     	else $modDethi->gioithieu = $oldDethi->gioithieu;
-     	$modDethi->ghichu = $request->ghichu;
-
+		$dethi = dethi::find($iddethi);
+     	if($request->idMon != null) $dethi->idmon = $request->idMon;
+     	if($request->nam != null) $dethi->nam = $request->nam;
+     	if($request->gioithieu != null) $dethi->gioithieu = $request->gioithieu;
+     	$dethi->ghichu = $request->ghichu;
      	if($request->hasFile('de')){
      		$file = $request->file('de');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
-				return redirect("admin/dethi/sua/$iddethi")->with('loi','Không hỗ trợ định dạng file này!');
+				return redirect('admin/dethi/sua/' . $iddethi)->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
-			$url = cutString(time() . rand() . "_" . $file->getClientOriginalName(),190); 
-			$file->move("upload/dethi",$url);
-			$modDethi->url = $url;
-			if(file_exists('upload/dethi/'.$oldDethi->url))unlink('upload/slide/'.$oldDethi->url);
-     	}else{
-     		$modDethi->url = $oldDethi->url;
+			$url = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'dethi/') . $url)) {
+                $url = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+            }
+            $file->move('upload/' . getUrlFileUpload($ext, 'dethi'), $url);
+            $oldExt = getExtension($dethi->url);
+			if(file_exists('upload/' . getUrlFileUpload($oldExt, 'dethi/') . $dethi->url)) unlink('upload/' . getUrlFileUpload($oldExt, 'dethi/') . $dethi->url);
+            $dethi->url = $url;
      	}
      	if($request->hasFile('loigiai')){
      		$file = $request->file('loigiai');
 			$ext = $file->getClientOriginalExtension();
 			if(!checkExtensionArchive($ext) && !checkExtensionImage($ext) && !checkExtensionSupportFile($ext)) {
-				return redirect("admin/dethi/sua/$iddethi")->with('loi','Không hỗ trợ định dạng file này!');
+				return redirect('admin/dethi/sua/' . $iddethi)->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
-			$url = cutString(time() . rand() . "_" . $file->getClientOriginalName(),190); 
-			$file->move("upload/dethi",$url);
-			$modDethi->urlloigiai = $url;
-			if(file_exists('upload/dethi/'.$oldDethi->urlloigiai))unlink('upload/dethi/'.$oldDethi->urlloigiai);
-     	}else{
-     		$modDethi->urlloigiai = $oldDethi->urlloigiai;
+			$urlloigiai = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190); 
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'loigiai/') . $urlloigiai)) {
+                $urlloigiai = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+            }
+            $file->move('upload/' . getUrlFileUpload($ext, 'loigiai'), $urlloigiai);
+            $oldExt = getExtension($dethi->urlloigiai);
+			if(file_exists('upload/' . getUrlFileUpload($oldExt, 'loigiai/') . $dethi->urlloigiai)) unlink('upload/' . getUrlFileUpload($oldExt, 'loigiai/') . $dethi->urlloigiai);
+            $dethi->urlloigiai = $urlloigiai;
      	}
      	if($request->hasFile('anh')){
      		$img = $request->file('anh');
 			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect("admin/dethi/sua/$iddethi")->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect('admin/dethi/sua/$iddethi')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
-			$urlanh =  cutString(time() . rand() . "_" . $img->getClientOriginalName(),190); 
-			$img->move("upload/images",$urlanh);
-			$modDethi->urlanh = $urlanh;
-			if($oldDethi->urlanh != 'default.jpg' && file_exists('upload/images/'.$oldDethi->urlanh)) unlink('upload/images/'.$oldDethi->urlanh);
-     	}else{
-     		$modDethi->urlanh = $oldDethi->urlanh;
+			$urlanh =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
+			while(file_exists('upload/images/dethi/anh/' . $urlanh)) {
+                $urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+            }
+            $img->move('upload/images/dethi/anh', $urlanh);
+			if($dethi->urlanh != 'default.jpg' && file_exists('upload/images/dethi/anh/' . $dethi->urlanh)) unlink('upload/images/dethi/anh/' . $dethi->urlanh);
+            $dethi->urlanh = $urlanh;
      	}
-     	$modDethi->save();
+     	$dethi->save();
 		return redirect('admin/dethi/danhsach')->with('thongbao','Sửa đề thi thành công');
 	}
 
     public function getXoa($iddethi){
-        $dethi = dethi::find($iddethi);
-        $ten = cutString($dethi->firstOrFail()->gioithieu, 40);
+        $dethi = dethi::find($iddethi)->firstOrFail();
+        $url = $dethi->url;
+        $urlanh = $dethi->urlanh;
+        $urlloigiai = $dethi->urlloigiai;
+        $ext = getExtension($url);
+        if(file_exists('upload/' . getUrlFileUpload($ext, 'dethi/') . $url)) unlink('upload/' . getUrlFileUpload($ext, 'dethi/') . $url);
+        if($urlanh != 'default.jpg' && file_exists('upload/images/dethi' . $urlanh)) unlink('upload/images/dethi/anh/' . $urlanh);
+        $ext = getExtension($urlloigiai);
+        if(file_exists('upload/' . getUrlFileUpload($ext, 'loigiai') . $urlloigiai)) unlink('upload/' . getUrlFileUpload($ext, 'loigiai/') . $urlloigiai);
+        $ten = cutString($dethi->gioithieu, 40);
         $dethi->delete();
-        return redirect('admin/dethi/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten); 
+        return redirect('admin/dethi/danhsach')->with('thongbao', 'Bạn đã xóa thành công ' . $ten);
     }
-
 }
