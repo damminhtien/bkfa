@@ -290,25 +290,25 @@ p {
 }
 
 .home-p.pages-head1 {
-    background: url(../img/img/banner-1.jpg) no-repeat;
+    background: url(../img/banner/banner-1.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .home-p.pages-head2 {
-    background: url(../img/img/banner-2.jpg) no-repeat;
+    background: url(../img/banner/banner-2.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .home-p.pages-head3 {
-    background: url(../img/img/banner-3.jpg) no-repeat;
+    background: url(../img/banner/banner-3.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
 .home-p.pages-head4 {
-    background: url(../img/img/banner-4.jpg) no-repeat;
+    background: url(../img/banner/banner-4.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -361,7 +361,7 @@ p {
     }
 }
 
-*====================================================
+/*====================================================
                        THOUGHT
 ======================================================*/
 
@@ -369,7 +369,7 @@ p {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        /*background-attachment: fixed;*/
+        background-attachment: fixed;
     }
 
     .thought-bg {
@@ -399,3 +399,6 @@ p {
     #thought .title-bar {
         padding: 50px 0;
     }
+
+
+    

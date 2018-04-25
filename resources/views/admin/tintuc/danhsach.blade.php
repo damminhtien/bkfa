@@ -62,23 +62,47 @@
                                       <td>
                                           <div class="mrg-top-15">
                                               <div class="thumbnail">
-                                                <h5>{{cutString($s->gioithieu, 20)}}</h5>
-                                                <p>{{$s->gioithieu}}</p>
+                                                <h5>{{cutString($s->gioithieu, 20)}}
+                                                </h5>
+                                                <p>
+                                                    @php  
+                                                      echo $s->gioithieu
+                                                    @endphp
+                                                </p>
                                               </div>
                                           </div>
                                       </td>
                                       <td>
                                           <div class="mrg-top-15">
-                                              <div class="thumbnail">
-                                                <h5>{{ cutString($s->noidung, 20) }}</h5>
-                                                  
-                                              </div>
+                                              <a class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#myModal{{$s->idtintuc}}"> 
+                                              <h3 class="ti-eye text-info"></h3>
+                                            </a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal{{$s->idtintuc}}" tabindex="-1" role="text" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Chi tiết ghi chú</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container">
+                                                              @php  
+                                                              echo $s->noidung
+                                                              @endphp
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                           </div>
                                       </td>
                                       <td>
                                           <div>
-                                              <div class="thumbnail" href="#"><img src="upload/tintuc/{{$s->urlanh}}" width="45" height="45" >
-                                              <span><img src="upload/tintuc/{{$s->urlanh}}" with="300" height="300" title="Ảnh {{$s->urlanh}}"></span></div>
+                                              <div class="thumbnail" href="#"><img src="upload/images/tintuc/anh/{{$s->urlanh}}" width="45" height="45" >
+                                              <span><img src="upload/images/tintuc/anh/{{$s->urlanh}}" with="300" height="300" title="Ảnh {{$s->urlanh}}"></span></div>
                                           </div>
                                       </td>
                                       <td>

@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.about') }}</label>
-                        <textarea name="gioithieu" class="form-control ckeditor" rows="3">{{$tintuc->gioithieu}}</textarea>
+                        <textarea name="gioithieu" class="form-control" rows="3">{{$tintuc->gioithieu}}</textarea>
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.content') }}</label>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.image') }}</label><br>
-                        <p><img with="300" height="300" src="upload/tintuc/{{$tintuc->urlanh}}"></p>
+                        <p><img with="300" height="300" src="upload/images/tintuc/anh/{{$tintuc->urlanh}}"></p>
 						<label>
                     		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>{{ Lang::get('sub.select_image') }}</span>
                     		<p id="filename" class="d-inline"></p>

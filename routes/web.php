@@ -15,7 +15,6 @@ use App\vien;
 use App\mon;
 
 Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-
 	Auth::routes();
 	Route::get('/home', 'HomeController@index');
 	Route::post('/lang', [
@@ -29,8 +28,7 @@ Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')
 
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-		// Auth::routes();
-		// Route::get('/home', 'HomeController@index');
+		
 		Route::post('/lang', [
 			'as' => 'switchLang',
 			'uses' => 'LangController@postLang',
@@ -96,23 +94,27 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 			Route::post('sua/{iduser}','userController@postSua');
 			Route::get('them','userController@getThem');
 			Route::post('them','userController@postThem');
-			Route::get('xoa/{id}','userController@getXoa');
+			Route::get('xoa/{iduser}','userController@getXoa');
 		});
 	});
 });
 
 Route::get('/', 'pageController@trangChu');
 Route::get('ds-tintuc', 'pageController@dsTinTuc');
-Route::get('ds-tintuc2', 'pageController@dsTinTuc2');
+Route::get('list-news', 'pageController@dsTinTuc2');
 Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTaiLieu');
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
-
+Route::get('tim-kiem', 'pageController@timKiem');
 Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
 Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
 Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
-
-Route::get('404', function(){
-	return view('layout.404');
+Route::get('dangnhap','pageController@getDangNhap');
+Route::post('dangnhap','pageController@postDangNhap');
+Route::get('dangxuat','pageController@getDangXuat');
+Route::get('nguoidung','pageController@getNguoiDung');
+Route::post('nguoidung','pagepController@postNguoiDung');
+Route::get('dangky','pageController@getDangKy');
+Route::post('dangky','pageController@postDangKy');
+Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 });
-

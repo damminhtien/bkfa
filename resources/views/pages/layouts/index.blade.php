@@ -28,19 +28,21 @@
     <link rel="stylesheet" href="css/footer.css">
    <!--  css pages -->
     <link rel="stylesheet" href="css/pages/news.css">
-     <link rel="stylesheet" href="css/pages/list_news.css">
+    <link rel="stylesheet" href="css/pages/list_news.css">
     <link rel="stylesheet" href="css/pages/dstailieu.css">
     <link rel="stylesheet" href="css/pages/chitiettailieu.css">
     <link rel="stylesheet" href="css/pages/kienthuc.css">
+     <link rel="stylesheet" href="css/pages/kqsearch.css">
 </head>
 
 <body id="page-top">
     @include('pages.layouts.header')
-    @include('pages.layouts.login')
 
     @yield('content')
 
     @include('pages.layouts.footer')
+
+    @include('pages.layouts.box')
 
     <!--Global JavaScript -->
     <script src="library/js/jquery/jquery.min.js"></script>

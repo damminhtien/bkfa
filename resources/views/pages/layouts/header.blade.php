@@ -26,7 +26,24 @@
                             <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
-                            <li><a href="#" class="log-top" data-toggle="modal" data-target="#login-modal">Đăng nhập</a></li>
+                            @if(!Auth::user())
+                            <li>
+                                <a href="dangnhap" class="log-top">Đăng nhập</a>
+                            </li>
+                            <li>
+                                <a href="dangky" class="log-top">Đăng ký</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="nguoidung" class="log-top">
+                                    <span class ="glyphicon glyphicon-user"></span>
+                                    {{ Auth::user()->ten }}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="dangxuat" class="log-top">Đăng xuất</a>
+                            </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -49,11 +66,6 @@
                             @foreach($vien as $v)
                             <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
                             @endforeach
-                            <a class="dropdown-item" href="chitiet.html">Công Nghệ Thông Tin</a>
-                            <a class="dropdown-item" href="#">Điện tử viễn thông</a>
-                            <a class="dropdown-item" href="#">Cơ khí</a>
-                            <a class="dropdown-item" href="#">Công nghệ may</a>
-                            <a class="dropdown-item" href="#">Đại cương</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -61,18 +73,16 @@
                         <div class="dropdown-menu dropdown-cust mega-menu" aria-labelledby="navbarDropdownMenuLink">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a class="dropdown-item" href="#">PHP</a>
-                                    <a class="dropdown-item" href="single-product.html">Nodejs</a>
-                                    <a class="dropdown-item" href="#">Laravel</a>
-                                    <a class="dropdown-item" href="#">Git&GitHub</a>
-                                    <a class="dropdown-item" href="#">Chịch</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                                 <div class="col-md-6" style="border-left: 1px solid #dedede;">
-                                    <a class="dropdown-item" href="#">PHP</a>
-                                    <a class="dropdown-item" href="single-product.html">Nodejs</a>
-                                    <a class="dropdown-item" href="#">Laravel</a>
-                                    <a class="dropdown-item" href="#">Git&GitHub</a>
-                                    <a class="dropdown-item" href="#">Chịch</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +124,24 @@
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                                                 <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
-                                                <li><a href="#" class="log-top" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                                @if(!Auth::user())
+                                                <li>
+                                                    <a href="dangnhap" class="log-top">Đăng nhập</a>
+                                                </li>
+                                                <li>
+                                                    <a href="dangky" class="log-top">Đăng ký</a>
+                                                </li>
+                                                @else
+                                                <li>
+                                                    <a href="nguoidung" class="log-top">
+                                                        <span class ="glyphicon glyphicon-user"></span>
+                                                        {{ Auth::user()->ten }}
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="dangxuat" class="log-top">Đăng xuất</a>
+                                                </li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>

@@ -21,24 +21,7 @@
                     <tbody>
                         <tr>
                             <td colspan="2">
-                                <div class="row">
-                                    <!--  <embed src="pandalone-json.pdf" width="100%" height="1000px" /> -->
-                                    <!--  <iframe src="pandalone-json.pdf" style="width: 100%;height: 1000px;border: none;"></iframe> -->
-                                    <div id="Iframe-Cicis-Menu-To-Go" class="set-margin-cicis-menu-to-go set-padding-cicis-menu-to-go set-border-cicis-menu-to-go set-box-shadow-cicis-menu-to-go center-block-horiz">
-                                        <div class="responsive-wrapper responsive-wrapper-padding-bottom-90pct" style="-webkit-overflow-scrolling: touch; overflow: auto;">
-                                            <style>
-                                            iframe .drive-viewer-toolstrip{
-                                                /*display:none;*/
-                                                background: red;
-                                            }
-                                        </style>
-                                        <iframe src="https://drive.google.com/file/d/0BxrMaW3xINrsR3h2cWx0OUlwRms/preview">
-                                            <p style="font-size: 110%;"><em><strong>ERROR: </strong> An &#105;frame should be displayed here but your browser version does not support &#105;frames.</em> Please update your browser to its most recent version and try again, or access the file
-                                                <a href="https://drive.google.com/file/d/0BxrMaW3xINrsR3h2cWx0OUlwRms/preview"> with this link.</a>
-                                            </p>
-                                        </iframe>
-                                    </div>
-                                </div>
+                                @include('pages.hienthitep')
                             </td>
                         </tr>
                         <!-- <tr>
