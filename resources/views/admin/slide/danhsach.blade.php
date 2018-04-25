@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <strong>Slide @php echo "( " .count($slide). " bản ghi )"; @endphp</strong>
+        <h4>{{ Lang::get('sub.datasheet') }} <strong>Slide @php echo "- " .count($slide). ""; @endphp {{ Lang::get('sub.record') }}</strong>
 		    <a href="admin/slide/them" title="Thêm slide mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
 		 @if(count($errors) > 0)
 		 	<br><br>
@@ -32,13 +32,13 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Giới thiệu</th>
-                                    <th>Môn học</th>
-                                    <th>Ảnh</th>
-                                    <th>Lượt xem</th>
-                                    <th>Ghi chú</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.about') }}</th>
+                                    <th>{{ Lang::get('sub.subject') }}</th>
+                                    <th>{{ Lang::get('sub.image') }}</th>
+                                    <th>{{ Lang::get('sub.view') }}</th>
+                                    <th>{{ Lang::get('sub.note') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>

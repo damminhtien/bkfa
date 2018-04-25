@@ -1,10 +1,18 @@
-@extends('layout.index') @section('title', 'Chi tiết đề thi') @section('content')
-<section id="single-product-p1">
+@extends('pages.layouts.index') 
+@section('title', 'Chi tiết đề thi') 
+@section('content')
+
+<div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
         <div class="input-group ">
             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
         </div>
+    </div>
+    <!--/end container-->
+</div>
+<section id="single-product-p1">
+    <div class="container">
         <div class="wrapper row">
             <div class="preview col-md-9">
                 <table class="table">

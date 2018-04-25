@@ -15,6 +15,7 @@ class tintucController extends Controller
 	public function getThem(){
 		return view('admin.tintuc.them');
 	}
+
 	public function postThem(Request $request){
 		$this->validate($request,
 			[
@@ -37,26 +38,21 @@ class tintucController extends Controller
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
 
-		if($request->hasFile('anh')) {
-			$file = $request->file('anh');
-			$ext = $file->getClientOriginalExtension();
+		if($request->hasFile('anh')){
+     		$img = $request->file('anh');
+			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
 				return redirect('admin/tintuc/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
-			$name = $file->getClientOriginalName();
-			$anh = time() . rand() . "_" . $name;
-			while(file_exists("upload/tintuc/".$anh)) {
-				$anh = time() . rand() . "_" . $name;
-			}
-			$file->move("upload/tintuc",$anh);
-			$tintuc->urlanh = $anh;
-		}
-		else {
-			$tintuc->urlanh = "default.jpg";
-		}
-		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
-		$tintuc->save();
-		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công ' . $ten);
+			$urlanh =  time() . rand() . "_" . $img->getClientOriginalName(); 
+			$img->move("upload/tintuc",$urlanh);
+			$tintuc->urlanh = $urlanh;
+     	}else{
+     		$tintuc->urlanh = 'default.jpg';
+     	}
+
+     	$tintuc->save();
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm tin tức thành công.');
 	}
 
 	public function getSua($id){
@@ -76,27 +72,23 @@ class tintucController extends Controller
      	if($request->noidung != null) $modTinTuc->noidung = $request->noidung;
      	else $modTinTuc->noidung = $oldTinTuc->noidung;
 
-		if($request->hasFile('urlanh')) {
-			$file = $request->file('urlanh');
-			$ext = $file->getClientOriginalExtension();
+
+     	if($request->hasFile('anh')){
+     		$img = $request->file('anh');
+			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
-				return redirect('admin/slide/them')->with('loi','Không hỗ trợ định dạng ảnh này!');
+				return redirect("admin/tintuc/sua/$idtintuc")->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
-			$name = $file->getClientOriginalName();
-			$urlanh = time() . rand() . "_" . $name;
-			while(file_exists("upload/tintuc/".$urlanh)) {
-				$urlanh = time() . rand() . "_" . $name;
-			}
-			$file->move("upload/tintuc",$urlanh);
+			$urlanh =  cutString(time() . rand() . "_" . $img->getClientOriginalName(),190); 
+			$img->move("upload/tintuc",$urlanh);
 			$modTinTuc->urlanh = $urlanh;
 			if($oldTinTuc->urlanh != 'default.jpg' && file_exists('upload/tintuc/'.$oldTinTuc->urlanh)) unlink('upload/tintuc/'.$oldTinTuc->urlanh);
-		}
-		else {
-			$modTinTuc->urlanh = $oldTinTuc->urlanh;
-		}
-		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
+     	}else{
+     		$modTinTuc->urlanh = $oldTinTuc->urlanh;
+     	}
+
 		$modTinTuc->save();
-		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ' . $ten);
+		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ');
 	}
 
 	public function getXoa($id){

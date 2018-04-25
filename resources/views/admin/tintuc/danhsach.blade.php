@@ -5,8 +5,8 @@
 @section('content')
 <div class="container-fluid">
     <div class="page-title">
-        <h4>Bảng dữ liệu <strong>Tin tức @php echo "( " .count($tintuc). " bản ghi )"; @endphp</strong>
-        <a href="admin/tintuc/them" title="Thêm tin tức mới"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
+        <h4>{{ Lang::get('sub.datasheet') }}<strong>{{ Lang::get('sub.news') }} @php echo "- " .count($tintuc). ""; @endphp {{ Lang::get('sub.record') }}</strong>
+        <a href="admin/tintuc/them" title="{{ Lang::get('sub.add_news') }}"><button type="button" class="btn-success btn" style="float: right;" ><i class="ti-plus" ></i></button></a>
      @if(count($errors) > 0)
       <br><br>
             <div class="alert alert-danger">
@@ -32,14 +32,14 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Tiêu đề</th>
-                                    <th>Giới thiệu</th>
-                                    <th>Nội dung</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày đăng</th>
-                                    <th>Lượt xem</th>
-                                    <th>Sửa</th>
-                                    <th>Xóa</th>
+                                    <th>{{ Lang::get('sub.title') }}</th>
+                                    <th>{{ Lang::get('sub.about') }}</th>
+                                    <th>{{ Lang::get('sub.content') }}</th>
+                                    <th>{{ Lang::get('sub.image') }}</th>
+                                    <th>{{ Lang::get('sub.date') }}</th>
+                                    <th>{{ Lang::get('sub.view') }}</th>
+                                    <th>{{ Lang::get('sub.edit') }}</th>
+                                    <th>{{ Lang::get('sub.delete') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,17 +62,41 @@
                                       <td>
                                           <div class="mrg-top-15">
                                               <div class="thumbnail">
-                                                <h5>{{cutString($s->gioithieu, 20)}}</h5>
-                                                <p>{{$s->gioithieu}}</p>
+                                                <h5>{{cutString($s->gioithieu, 20)}}
+                                                </h5>
+                                                <p>
+                                                    @php  
+                                                      echo $s->gioithieu
+                                                    @endphp
+                                                </p>
                                               </div>
                                           </div>
                                       </td>
                                       <td>
                                           <div class="mrg-top-15">
-                                              <div class="thumbnail">
-                                                <h5>{{cutString($s->noidung, 20)}}</h5>
-                                                <p>{{$s->noidung}}</p>
-                                              </div>
+                                              <a class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="modal" data-target="#myModal{{$s->idtintuc}}"> 
+                                              <h3 class="ti-eye text-info"></h3>
+                                            </a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="myModal{{$s->idtintuc}}" tabindex="-1" role="text" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Chi tiết ghi chú</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container">
+                                                              @php  
+                                                              echo $s->noidung
+                                                              @endphp
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                           </div>
                                       </td>
                                       <td>

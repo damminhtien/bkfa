@@ -1,57 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
 
-        <title>@yield('title')</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>BKFA.COM | @yield('title')</title>
+    <base href="{{asset('')}}">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Global Stylesheets -->
+    <link href="library/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="library/css/font-awesome.min.css">
+    <!--  css -->
+    <link rel="stylesheet" href="css/pages/404.css">
+</head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 36px;
-                padding: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title">
-                    @yield('message')
+<body>
+<!--====================================================
+                        PAGE CONTENT
+======================================================-->
+    <section class="hero-area">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="block text-center">
+                        <h1 class="animated wow fadeInLeft" data-wow-delay="0.3s" data-wow-duration=".2s">@yield('code')</h1>
+                        <p class="animated wow fadeInRight" data-wow-delay="0.5s" data-wow-duration=".5s">@yield('message')</p>
+                        <div class="animated wow fadeInUp text-center" data-wow-delay="0.7s" data-wow-duration=".7s">
+                            <span>
+                        <a class="btn btn-general btn-blue" href="/" role="button">Quay trở về BKFA home</a>
+                      </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+    <!--Global Javascript -->
+    <script src="library/js/jquery/jquery.min.js"></script>
+    <script src="library/js/bootstrap/bootstrap.min.js"></script>
+</body>
+
 </html>

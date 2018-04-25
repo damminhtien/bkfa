@@ -1,4 +1,6 @@
-@extends('layout.index') @section('title', 'Tin tức 2') @section('content')
+@extends('pages.layouts.index') 
+@section('title', 'Tin tức 2') 
+@section('content')
 <!-- home news list -->
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
@@ -22,7 +24,7 @@
             </div>
             <div class="col-md-6">
                 <div class="story-himg">
-                    <img src="img/img/image-3.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
+                    <img src="img/news/image-3.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
                 </div>
             </div>
         </div>
@@ -31,7 +33,7 @@
         <div class="row">
             <div class="col-md-6 ">
                 <div class="story-himg story-himg-middle-u">
-                    <img src="img/img/image-2.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
+                    <img src="img/news/image-2.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
                 </div>
             </div>
             <div class="col-md-6">
@@ -55,7 +57,7 @@
             </div>
             <div class="col-md-6">
                 <div class="story-himg">
-                    <img src="img/img/image-1.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
+                    <img src="img/news/image-1.jpg" class="img-fluid wow fadeInUp" data-wow-delay="0.1s" alt="">
                 </div>
             </div>
         </div>

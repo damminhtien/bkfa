@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('auth.layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Đặt lại mật khẩu') }}</div>
+                <div class="card-header">{{ Lang::get('sub.reset_password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +18,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Đia chỉ Email') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ Lang::get('sub.email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -34,7 +34,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Gửi liên kết đặt lại mật khẩu') }}
+                                    {{ Lang::get('sub.link_reset') }}
                                 </button>
                             </div>
                         </div>
