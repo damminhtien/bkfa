@@ -15,7 +15,6 @@ use App\vien;
 use App\mon;
 
 Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-
 	Auth::routes();
 	Route::get('/home', 'HomeController@index');
 	Route::post('/lang', [
@@ -29,8 +28,7 @@ Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')
 
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 	Route::group(['middleware' => 'localization', 'prefix' => Session::get('locale')], function() {
-		// Auth::routes();
-		// Route::get('/home', 'HomeController@index');
+		
 		Route::post('/lang', [
 			'as' => 'switchLang',
 			'uses' => 'LangController@postLang',
@@ -108,6 +106,15 @@ Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTa
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 
+Route::get('dangnhap','pageController@getDangNhap');
+Route::post('dangnhap','pageController@postDangNhap');
+Route::get('dangxuat','pageController@getDangXuat');
+
+Route::get('nguoidung','pageController@getNguoiDung');
+Route::post('nguoidung','pagepController@postNguoiDung');
+
+Route::get('dangky','pageController@getDangKy');
+Route::post('dangky','pageController@postDangKy');
 
 Route::get('404', function(){
 	return view('layout.404');
