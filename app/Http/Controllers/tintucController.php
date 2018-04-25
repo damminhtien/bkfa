@@ -83,7 +83,7 @@ class tintucController extends Controller
 			$tintuc->urlanh = $urlanh;
 			if($tintuc->urlanh != 'default.jpg' && file_exists('upload/images/tintuc/anh/' . $tintuc->urlanh)) unlink('upload/images/tintuc/anh/' . $tintuc->urlanh);
 		}
-		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
+		$ten = cutString($tintuc->tieude, 40);
 		$tintuc->save();
 		return redirect('admin/tintuc/danhsach')->with('thongbao','Sửa thành công ' . $ten);
 	}
