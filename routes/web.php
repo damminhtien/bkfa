@@ -117,4 +117,3 @@ Route::post('nguoidung','pagepController@postNguoiDung');
 Route::get('dangky','pageController@getDangKy');
 Route::post('dangky','pageController@postDangKy');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
-});
