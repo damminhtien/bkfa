@@ -2,13 +2,18 @@
 @section('title', 'Danh sách tài liệu')
 
 @section('content')
-<!-- Danh sách tài liệu -->
-<section id="document-1" class="document-1">
+<div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
         <div class="input-group ">
             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
         </div>
+    </div>
+    <!--/end container-->
+</div>
+<!-- Danh sách tài liệu -->
+<section id="document-1" class="document-1">
+    <div class="container">
         <div class="row">
             @foreach($dsmon as $ds)
             <div class="col-lg-3 col-md-6 mb-4">

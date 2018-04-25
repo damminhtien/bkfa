@@ -7,161 +7,90 @@
 @section('content')
 
 @include('pages.layouts.home')
+
 <!-- latest news -->
 <section id="service-h">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-7">
-                <div class="new_most">
-                    <div class="single-news-img">
-                        <img src="img/news/news-box-1.jpg" alt="" class="img-fluid">
-                    </div>
-                    <br>
-                    <div class="">
-                        <h3>We are Providing great Services</h3>
-                        <div class="heading-border-light"></div>
-                        <p>Businessbox offer the full spectrum of services to help organizations work better. Everything from creating standards of excellence to training your people to work in more effective ways.</p>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <i class="fa fa-calendar"></i> 17/4/2018
-                            </div>
-                            <div class="col-md-3">
-                                <i class="fa fa-user"></i> Admin
-                            </div>
-                            <div class="col-md-3">
-                                <i class="fa fa-comments-o"></i> 1 comments
-                            </div>
-                            <div class="col-md-3">
-                                <a href="#" class="mb-2" style="text-decoration: none;">Read More <i class="fa fa-long-arrow-right"></i></a>
+           {{--  @foreach($tintuc as $tintuc) --}}
+           @php
+            foreach($newmost as $most){
+                @endphp
+                <div class="col-md-7">
+                    <div class="new_most">
+                        <div class="single-news-img">
+                            <img src="upload/tintuc/{{$most->urlanh}}" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                        <div class="">
+                            <h4>{{$most->tieude}}</h4>
+                            <div class="heading-border-light"></div>
+                            <p>{{$most->gioithieu}}</p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <i class="fa fa-calendar"></i> {{$most->created_at}}
+                                </div>
+                                <div class="col-md-3">
+                                    <i class="fa fa-user"></i> Admin
+                                </div>
+                                <div class="col-md-3">
+                                    <i class="fa fa-comments-o"></i> 1 comments
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="chi-tiet-tin-tuc/{{ $most->idtintuc }}/{{ $most->tenkhongdau }}.html" class="mb-2" style="text-decoration: none;">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                @php
+            }
+           @endphp
+            
             <div class="col-md-5 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-h-desc">
-                    <h3>Latest News</h3>
+                    <h3>Tin tức</h3>
                     <div class="heading-border-light"></div>
                     <div class="service-h-tab">
                         <nav class="nav nav-tabs" id="myTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">News 1</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">News 2</a>
-                            <a class="nav-item nav-link" id="my-profile-tab" data-toggle="tab" href="#my-profile" role="tab" aria-controls="my-profile">New 3</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Mới nhất</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Xem nhiều</a>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
+                                @php
+                                foreach($moinhat as $mn){
+                                    @endphp
+                                    <div class="news-item">
+                                        <a href="chi-tiet-tin-tuc/{{ $mn->idtintuc }}/{{ $mn->tenkhongdau }}.html">
+                                            <div class="right-news">
+                                                <img src="upload/tintuc/{{$mn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
+                                                <p>{{$mn->tieude}}</p>
+                                                <small><fa class="fa-watch">{{$mn->created_at}}</fa></small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @php
+                                }
+                                @endphp
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="my-profile" role="tabpanel" aria-labelledby="my-profile-tab">
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="news-item">
-                                    <a href="">
-                                        <div class="right-news">
-                                            <img src="img/news/news-6.jpg" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                            <small><fa class="fa-watch"> Jan 1, 2019</fa></small>
-                                        </div>
-                                    </a>
-                                </div>
+                                @php
+                                foreach ($xemnhieu as $xn) {
+                                    @endphp
+                                     <div class="news-item">
+                                        <a href="chi-tiet-tin-tuc/{{ $xn->idtintuc }}/{{ $xn->tenkhongdau }}.html">
+                                            <div class="right-news">
+                                                <img src="upload/tintuc/{{$xn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
+                                                <p>{{$xn->tieude}}</p>
+                                                <small><fa class="fa-watch">{{$xn->created_at}}</fa></small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @php
+                                }
+                                @endphp
                             </div>
                         </div>
                     </div>
@@ -169,7 +98,7 @@
                     <br>
                     <div class="news-all" align="center">
                         <a href="ds-tintuc" class="btn btn-general btn-green" role="button">See More 1</a>
-                        <a href="list-news.html" class="btn btn-general btn-green" role="button">See More 2</a>
+                        <a href="list-news" class="btn btn-general btn-green" role="button">See More 2</a>
                     </div>
                 </div>
             </div>
@@ -177,6 +106,7 @@
     </div>
 </section>
 <!-- end -->
+
 <!-- about -->
 <div class="overlay-thought"></div>
 <section id="thought" class="bg-parallax thought-bg">
@@ -184,13 +114,13 @@
     <div id="thought-desc" class="row title-bar title-bar-thought owl-carousel owl-theme">
       <div class="col-md-12 ">
         <div class="heading-border bg-white"></div>
-        <p class="wow fadeInUp" data-wow-delay="0.4s">Businessbox will deliver value to all the stakeholders and will attain excellence and leadership through such delivery of value. We will strive to support the stakeholders in all activities related to us. Businessbox provide great things.</p>
-        <h6>John doe</h6>
+        <p class="wow fadeInUp" data-wow-delay="0.4s">"Chỉ cần biết rằng, khi bạn thực sự muốn thành công, bạn sẽ không bao giờ từ bỏ, dù cho mọi thứ có tồi tệ đến đâu đi chăng nữa."</p>
+        <h6>BKFA.COM</h6>
       </div>
       <div class="col-md-12 thought-desc">
         <div class="heading-border bg-white"></div>
-        <p class="wow fadeInUp" data-wow-delay="0.4s">Ensuring quality in Businessbox is an obsession and the high quality standards set by us are achieved through a rigorous quality assurance process. Quality assurance is performed by an independent team of trained experts for each project. </p>
-        <h6>Tom John</h6>
+        <p class="wow fadeInUp" data-wow-delay="0.4s">"Thật khó để chờ đợi một điều gì đó bạn biết có thể chẳng bao giờ xảy ra, nhưng còn khó hơn để từ bỏ khi đó là mọi điều mà bạn muốn."</p>
+        <h6>BKFA.COM</h6>
       </div>
     </div>
   </div>         
@@ -200,227 +130,32 @@
 <section>
     <div  id="document" class="container-fluid ">
         <div class="row ">
-            @foreach($dethi as $dt)
+            @foreach($dethixn as $dtxn)
             <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" data-wow-delay="0.4s">
                 <div class="desc-document-cont">
                     <div class="thumbnail-blogs ">
-                        <img src="upload/images/{{$dt->urlanh}} " class="img-fluid " alt="{{$dt->gioithieu}} ">
+                        <img src="upload/images/{{$dtxn->urlanh}} " class="img-fluid " alt="{{$dtxn->gioithieu}} ">
                     </div>
                     {{-- <div class="thumbnail-blogs">
                         <img src="upload/images/{{$dt->urlanh}}" class="img-fluid" alt="{{$dt->gioithieu}}">
                     </div> --}}
                     <div>
-                        <h3>{{cutString($dt->gioithieu, 33)." ..."}}</h3>
-                        <p class="desc">{{$dt->nam}}</p>
+                        <h3>{{cutString($dtxn->gioithieu, 33)." ..."}}</h3>
+                        <p class="desc">{{$dtxn->nam}}</p>
                     </div>
                     <div>
                         <a href="#"><i class="fa fa-heart-o"> 1</i></a>
-                        <a href="#"><i class="fa fa-eye"></i> 2</a>
+                        <a href="#"><i class="fa fa-eye"></i> {{$dtxn->luotxem}}</a>
                         <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
                     </div>
                 </div>
             </div>
             @endforeach
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 desc-document wow fadeInUp " data-wow-delay="0.4s ">
-                <div class="desc-document-cont ">
-                    <div class="thumbnail-blogs ">
-                        <img src="img/document.png " class="img-fluid " alt="... ">
-                    </div>
-                    <div>
-                        <h3>Công thức tích phân ba cấp ...</h3>
-                        <p class="desc ">Trần Trọng Bình</p>
-                    </div>
-                    <div>
-                        <a href="# "><i class="fa fa-heart-o "> 1</i></a>
-                        <a href="# "><i class="fa fa-eye "></i> 2</a>
-                        <a href="# "><i class="fa fa-arrow-circle-o-down "></i> 3</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 <!-- end -->
+
 <!-- job -->
 <section id="course " class="course bg-gray ">
     <div class="container ">

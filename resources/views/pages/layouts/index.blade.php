@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/pages/dstailieu.css">
     <link rel="stylesheet" href="css/pages/chitiettailieu.css">
     <link rel="stylesheet" href="css/pages/kienthuc.css">
+     <link rel="stylesheet" href="css/pages/kqsearch.css">
 </head>
 
 <body id="page-top">
@@ -40,6 +41,8 @@
     @yield('content')
 
     @include('pages.layouts.footer')
+
+    @include('pages.layouts.box')
 
     <!--Global JavaScript -->
     <script src="library/js/jquery/jquery.min.js"></script>

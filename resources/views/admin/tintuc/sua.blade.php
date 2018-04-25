@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.about') }}</label>
-                        <textarea name="gioithieu" class="form-control ckeditor" rows="3">{{$tintuc->gioithieu}}</textarea>
+                        <textarea name="gioithieu" class="form-control" rows="3">{{$tintuc->gioithieu}}</textarea>
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.content') }}</label>

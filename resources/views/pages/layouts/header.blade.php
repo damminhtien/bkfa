@@ -66,11 +66,6 @@
                             @foreach($vien as $v)
                             <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
                             @endforeach
-                            <a class="dropdown-item" href="chitiet.html">Công Nghệ Thông Tin</a>
-                            <a class="dropdown-item" href="#">Điện tử viễn thông</a>
-                            <a class="dropdown-item" href="#">Cơ khí</a>
-                            <a class="dropdown-item" href="#">Công nghệ may</a>
-                            <a class="dropdown-item" href="#">Đại cương</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -78,18 +73,16 @@
                         <div class="dropdown-menu dropdown-cust mega-menu" aria-labelledby="navbarDropdownMenuLink">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <a class="dropdown-item" href="#">PHP</a>
-                                    <a class="dropdown-item" href="single-product.html">Nodejs</a>
-                                    <a class="dropdown-item" href="#">Laravel</a>
-                                    <a class="dropdown-item" href="#">Git&GitHub</a>
-                                    <a class="dropdown-item" href="#">Chịch</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                                 <div class="col-md-6" style="border-left: 1px solid #dedede;">
-                                    <a class="dropdown-item" href="#">PHP</a>
-                                    <a class="dropdown-item" href="single-product.html">Nodejs</a>
-                                    <a class="dropdown-item" href="#">Laravel</a>
-                                    <a class="dropdown-item" href="#">Git&GitHub</a>
-                                    <a class="dropdown-item" href="#">Chịch</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                             </div>
                         </div>

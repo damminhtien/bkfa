@@ -1,4 +1,4 @@
-@extends('layout.index') 
+@extends('pages.layouts.index') 
 
 @section('title', 'Kiến thức lập trình') 
 
@@ -28,9 +28,9 @@
                                 <div class="toggle">
                                     <div class="toggle-title ">
                                         <h3>
-                        <i></i>
-                        <span class="title-name">How does syncing work?</span>
-                        </h3>
+                                            <span class="pull-right"><i class="fa fa-plus"></i></span>
+                                            <span class="title-name">How does syncing work?</span>
+                                        </h3>
                                     </div>
                                     <div class="toggle-inner">
                                         <p>Four billion years ago, something started stirring in the primordial soup. A few simple chemicals got together and made biology – the first molecules capable of replicating themselves appeared. We humans are linked by evolution to those early biological molecules. But how did the basic chemicals present on early Earth spontaneously arrange themselves into something resembling life? How did we get DNA? What did the first cells look like? More than half a century after the chemist Stanley Miller proposed his "primordial soup" theory, we still can't agree about what happened. Some say life began in hot pools near volcanoes, others that it was kick-started by meteorites hitting the sea.</p>

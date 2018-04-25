@@ -36,9 +36,9 @@ class tintucController extends Controller
 		$tintuc->tenkhongdau = changeTitle($request->tieude);
 		$tintuc->gioithieu = $request->gioithieu;
 		$tintuc->noidung = $request->noidung;
-		if($request->hasFile('anh')) {
-			$file = $request->file('anh');
-			$ext = $file->getClientOriginalExtension();
+		if($request->hasFile('anh')){
+     		$img = $request->file('anh');
+			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
 				return redirect('admin/tintuc/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
