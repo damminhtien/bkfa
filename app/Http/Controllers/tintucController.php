@@ -54,7 +54,7 @@ class tintucController extends Controller
 		else {
 			$tintuc->urlanh = "default.jpg";
 		}
-		$ten = cutString($tintuc->firstOrFail()->tieude, 40);
+		$ten = cutString($tintuc->tieude, 40);
 		$tintuc->save();
 		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công ' . $ten);
 	}

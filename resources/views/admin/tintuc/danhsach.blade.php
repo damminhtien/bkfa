@@ -70,8 +70,8 @@
                                       <td>
                                           <div class="mrg-top-15">
                                               <div class="thumbnail">
-                                                <h5>{{cutString($s->noidung, 20)}}</h5>
-                                                <p>{{$s->noidung}}</p>
+                                                <h5>{{ cutString($s->noidung, 20) }}</h5>
+                                                  
                                               </div>
                                           </div>
                                       </td>

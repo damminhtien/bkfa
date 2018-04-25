@@ -48,9 +48,12 @@
     <script src="library/js/bootstrap/bootstrap.min.js"></script>
     <script src="library/bower_components/wow/wow.min.js"></script>
     <script src="library/bower_components/owl-carousel/owl.carousel.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    
     <!-- Plugin JavaScript -->
     <script src="library/bower_components/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/ajaxDanhGia.js"></script>
     <script>
     function click_vi() {
         document.getElementById("language").innerHTML = "<img src='img/vi.png' alt='Việt Nam' title='Việt Nam'> Việt Nam";

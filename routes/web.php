@@ -108,6 +108,9 @@ Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTa
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 
+Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
+Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
+Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
 
 Route::get('404', function(){
 	return view('layout.404');
