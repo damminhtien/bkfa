@@ -106,14 +106,14 @@ Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTa
 Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 Route::get('tim-kiem', 'pageController@timKiem');
-
+Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
+Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
+Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
 Route::get('dangnhap','pageController@getDangNhap');
 Route::post('dangnhap','pageController@postDangNhap');
 Route::get('dangxuat','pageController@getDangXuat');
-
 Route::get('nguoidung','pageController@getNguoiDung');
 Route::post('nguoidung','pagepController@postNguoiDung');
-
 Route::get('dangky','pageController@getDangKy');
 Route::post('dangky','pageController@postDangKy');
 Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
