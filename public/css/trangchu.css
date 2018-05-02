@@ -5,44 +5,23 @@ body {
     height: 100%;
 }
 
-body {
-    font-family: 'Hind', sans-serif;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
-    font-family: 'Roboto', sans-serif;
     color: #41464b;
     text-transform: uppercase;
 }
 
 a {
-    font-family: 'Hind', sans-serif;
     color: #2196f3;
     text-decoration: none;
 }
 
 p {
-    font-family: 'Hind', sans-serif;
     color: #64707b;
-    font-size: 15px;
-    font-weight: 300;
 }
-
-@media (min-width: 1600px) {
-    p {
-        font-family: 'Hind', sans-serif;
-        color: #64707b;
-        font-size: 16px;
-        font-weight: 300;
-    }
-}
-
-
-
 
 /*====================================================
                   BUTTON

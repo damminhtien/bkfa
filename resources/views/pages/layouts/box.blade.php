@@ -35,8 +35,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa" data-numposts="5"></div>
-
 <script src="library/js/jquery/jquery.min.js"></script>
 <script src="js/box.js"></script>
 
