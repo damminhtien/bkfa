@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use DB;
 use App\Http\Controllers\Controller;
-
+use Laravel\Scout\Searchable;
 use App\vien;
 use App\mon;
 use App\dethi;
@@ -16,7 +16,7 @@ use App\User;
 
 class pageController extends Controller
 {
-
+    use Searchable;
     function __construct() {
         $vien = vien::all();
         view() -> share('vien',$vien);
@@ -27,7 +27,7 @@ class pageController extends Controller
         $xemnhieu = DB::select('SELECT * FROM tintucs WHERE luotxem > 0 ORDER BY luotxem DESC LIMIT 0,4');
         $moinhat = DB::select('SELECT * FROM tintucs WHERE created_at ORDER BY created_at DESC LIMIT 1,4');
         $newmost = DB::select('SELECT * FROM tintucs WHERE created_at = (SELECT Max(created_at) FROM tintucs)');
-    	return view('pages.trangchu', ['dethixn'=>$dethixn, 'newmost'=>$newmost, 'xemnhieu'=>$xemnhieu, 'moinhat'=>$moinhat]);
+        return view('pages.trangchu', ['dethixn'=>$dethixn, 'newmost'=>$newmost, 'xemnhieu'=>$xemnhieu, 'moinhat'=>$moinhat]);
     }
 
     function tinTuc(){
@@ -70,47 +70,85 @@ class pageController extends Controller
         return view('pages.about');
     }
 
-    function timKiem(){
-        $dethi = array();
-        return view('pages.kqsearch', ['dethi'=>$dethi]);
+    function getTimKiem(){
+        $vien = vien::all();
+        $dethi = dethi::all();
+        $slide = slide::all();
+        $tintuc = tintuc::all();
+        $sokq = 0;
+        $req = "";
+       return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'req'=>$req]);
     }
 
-    function getDangNhap() {
-        return view('pages.dangnhap');
+    function postTimKiem(Request $request){
+        $vien = vien::all();
+        $dethi = dethi::search($request->search)->get();
+        $slide = slide::search($request->search)->get();
+        $tintuc = tintuc::search($request->search)->get();
+        $sokq = count($dethi) + count($slide)+count($tintuc);
+        $req = $request->search;
+        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'req'=>$req]);
+
     }
 
-    function postDangNhap(Request $request) {
-        $this->validate($request,
-            [
-                'email'=>'required',
-                'password'=>'required|min:3|max:32'
-            ],
-            [
-                'email.required' => 'Bạn chưa nhập email',
-                'password.required' => 'Bạn chưa nhập mật khẩu',
-                'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
-                'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự'  
-            ]
-        );
+    function search_like($query)
+    {  
+        $sokq=0;
+        if($query==''){
+         $vien = vien::all();
+         $dethi = dethi::all();
+         $slide = slide::all();
+         $tintuc = tintuc::all();
+     }
+     else{
+        $vien = vien::all();
+        $dethi = dethi::where('gioithieu','LIKE', '%' .$query. '%')->get();
+        $slide = slide::where('gioithieu','LIKE', '%' .$query. '%')->get();
+        $tintuc = tintuc::where('gioithieu','LIKE', '%' .$query. '%')->orWhere('noidung','LIKE', '%' .$query. '%')->get();
+        $sokq = count($dethi) + count($slide)+count($tintuc);
 
-
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
-            return redirect('/');
-        }
-        else {
-            return redirect('/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
-        }
     }
+    $req = $query;
+        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'req'=>$req]);
+}
 
-    function getDangXuat() {
-        Auth::logout();
+
+function getDangNhap() {
+    return view('pages.dangnhap');
+}
+
+function postDangNhap(Request $request) {
+    $this->validate($request,
+        [
+            'email'=>'required',
+            'password'=>'required|min:3|max:32'
+        ],
+        [
+            'email.required' => 'Bạn chưa nhập email',
+            'password.required' => 'Bạn chưa nhập mật khẩu',
+            'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+            'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự'  
+        ]
+    );
+
+
+    if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
         return redirect('/');
     }
+    else {
+        return redirect('/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
+    }
+}
 
-    function getNguoiDung() {
-        $user = Auth::user();
-        if(Auth::check())
-            return view('pages.nguoidung',['nguoidung'=>$user]);
+function getDangXuat() {
+    Auth::logout();
+    return redirect('/');
+}
+
+function getNguoiDung() {
+    $user = Auth::user();
+    if(Auth::check())
+        return view('pages.nguoidung',['nguoidung'=>$user]);
         else
             return redirect('dangnhap')->with('thongbao','Bạn chưa Đăng Nhập!');
     }
@@ -132,17 +170,17 @@ class pageController extends Controller
         
         if($request->changePassword == "on") {
             $this->validate($request,
-            [
-                'password' => 'required|min:3|max:32',
-                'passwordAgain' => 'required|same:password'
-            ],
-            [
-                'password.required' => 'Bạn chưa nhập mật khẩu', 
-                'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
-                'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
-                'passwordAgain.required' => 'Bạn chưa nhập lại mật khẩu',
-                'passwordAgain.same' => 'Mật khẩu nhập lại chưa đúng'
-            ]
+                [
+                    'password' => 'required|min:3|max:32',
+                    'passwordAgain' => 'required|same:password'
+                ],
+                [
+                    'password.required' => 'Bạn chưa nhập mật khẩu', 
+                    'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+                    'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự',
+                    'passwordAgain.required' => 'Bạn chưa nhập lại mật khẩu',
+                    'passwordAgain.same' => 'Mật khẩu nhập lại chưa đúng'
+                ]
             );
             $user->password = bcrypt($request->password);
 
