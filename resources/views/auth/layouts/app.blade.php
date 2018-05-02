@@ -100,7 +100,7 @@
                 </style>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    {{-- <ul class="navbar-nav mr-auto">
                         <form action="{{ route('switchLang') }}" class="form-lang" method="post">
                             <div class="select">
                                 <select name="locale" onchange='this.form.submit();'>
@@ -110,7 +110,7 @@
                             </div>
                             {{ csrf_field() }}
                         </form>
-                    </ul>
+                    </ul> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
