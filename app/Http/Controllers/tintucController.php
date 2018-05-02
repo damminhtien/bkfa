@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\tintuc;
+use GuzzleHttp\Client;
 
 class tintucController extends Controller
 {
@@ -54,6 +55,9 @@ class tintucController extends Controller
 		}
 		$ten = cutString($tintuc->tieude, 40);
 		$tintuc->save();
+		$client = new Client();
+		$res = $client->request('POST', 'https://graph.facebook.com/308000529728334/feed?message=' . urlencode($tintuc->tieude) . '%0D%0A ------------------------------------------------- %0D%0A' . urlencode($tintuc->gioithieu) . '&link=www.bkfa.net&access_token=EAACZASrRvvGEBANFTO8FRJp3xReq0hPtcZAhRwyZAZAs2OBQ66Yior6BowUqHJYmPQd9sPYUVWrw9nNudo09DiNzmXZB4hkWIzduYOSY5EfhixRPXP0auEMYIXc6FoQQxZB4uYPCxHpEB5CoAbxNau54sUIrN77raZBVlykF5JiZCo8JmleKE7s5'
+		);
 		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công ' . $ten);
 	}
 

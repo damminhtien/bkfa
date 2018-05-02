@@ -1,7 +1,7 @@
 @extends('pages.layouts.index')
 
 @section('title')
-    Trang chủ
+    {{ Lang::get('sub.home') }}
 @endsection
 
 @section('content')
@@ -50,12 +50,12 @@
             
             <div class="col-md-5 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="service-h-desc">
-                    <h3>Tin tức</h3>
+                    <h3>{{ Lang::get('sub.news') }}</h3>
                     <div class="heading-border-light"></div>
                     <div class="service-h-tab">
                         <nav class="nav nav-tabs" id="myTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Mới nhất</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Xem nhiều</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">{{ Lang::get('sub.latest') }}</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">{{ Lang::get('sub.mostview') }}</a>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -97,7 +97,7 @@
                     <br>
                     <br>
                     <div class="news-all" align="left" style="margin-top: -40px; margin-left: 10px;">
-                        <a href="danh-sach-tin-tuc" class="btn btn-general btn-green" role="button">See More</a>
+                        <a href="danh-sach-tin-tuc" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
                     </div>
                 </div>
             </div>
@@ -159,9 +159,9 @@
     <div class="container ">
         <div class="row title-bar ">
             <div class="col-md-12 ">
-                <h1 class="wow fadeInUp ">We committed to Website</h1>
+                <h1 class="wow fadeInUp ">{{ Lang::get('sub.text1') }}</h1>
                 <div class="heading-border "></div>
-                <p class="wow fadeInUp " data-wow-delay="0.4s ">Chúng tôi rất mong muốn nhận được sự đóng góp và phản hồi của bạn.</p>
+                <p class="wow fadeInUp " data-wow-delay="0.4s ">{{ Lang::get('sub.text2') }}</p>
             </div>
         </div>
         <div class="row wow animated fadeInUp " data-wow-duration="1s " data-wow-delay="0.5s ">

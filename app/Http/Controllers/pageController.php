@@ -42,7 +42,7 @@ class pageController extends Controller
     }
 
     function dsMon($id){
-        $dsmon = mon::where('idvien',$id)->paginate(2);
+        $dsmon = mon::where('idvien',$id)->paginate(1);
         return view('pages.dsmon', ['dsmon'=>$dsmon]);
     }
 

@@ -56,15 +56,6 @@
     <script src="library/bower_components/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/ajaxDanhGia.js"></script>
-    <script>
-    function click_vi() {
-        document.getElementById("language").innerHTML = "<img src='img/vi.png' alt='Việt Nam' title='Việt Nam'> Việt Nam";
-    }
-
-    function click_en() {
-        document.getElementById("language").innerHTML = "<img src='img/en.png' alt='English' title='English'> English";
-    }
-    </script>
     @yield('script')
 </body>
 

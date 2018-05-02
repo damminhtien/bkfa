@@ -61,5 +61,6 @@ class Kernel extends HttpKernel
         'adminLogin' => \App\Http\Middleware\AdminLoginMiddleware::class,
         'localization' => \App\Http\Middleware\Locale::class,
         'download' => \App\Http\Middleware\download::class,
+        'localization2' => \App\Http\Middleware\Locale2::class,
     ];
 }
