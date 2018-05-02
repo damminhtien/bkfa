@@ -8,7 +8,9 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	config.uiColor = '#FFF';
 	
-	config.height = '350px';
+	config.height = 700;
+	
+	config.toolbarCanCollapse = true;
 	
 	config.filebrowserBrowseUrl = 'http://localhost:8000/ckfinder/ckfinder.html';
  

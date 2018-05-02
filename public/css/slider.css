@@ -1,6 +1,7 @@
 /*====================================================
                        HOME
 ======================================================*/
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
 .carousel-fade {
     height: 90vh;
@@ -103,7 +104,17 @@
     height: 100vh;
 }
 
+@media (max-width: 850px){
+    .hero{
+        top: 50%;
+        padding: 15px;
+    }
+}
+
 @media (max-width: 767px) {
+    .hero{
+        top: 55%;
+    }
     .hero h1 {
         font-size: 2.5em;
         color: #fff;
@@ -127,7 +138,7 @@
 @media (max-width: 575px) {
     .hero {
         position: absolute;
-        top: 45%;
+        top: 50%;
         padding: 20px 0px;
     }
     .hero h1 {

@@ -12,7 +12,6 @@
 }
 
 .desc-document-cont {
-
     max-width: 270px;
     margin: 20px auto;
     /*    margin-bottom: 10px;*/
@@ -22,9 +21,9 @@
 }
 
 .desc-document-cont:hover {
-    margin-bottom: 10px;
-    border-bottom: 5px solid #C90202;
-    margin-top: -5px;
+  /*  margin-bottom: 2px;*/
+    border-bottom: 5px solid #268ff9;
+   /* margin-top: -1px;*/
     cursor: pointer;
 }
 
@@ -48,7 +47,12 @@
     font-size: 14px;
 }
 
-.desc-document-cont a {
+.document-footer{
+    text-align: center;
+}
+
+.document-footer i {
+    margin: 0 auto;
     padding: 0px 10px;
 }
 
@@ -129,4 +133,26 @@
         font-size: 16px;
     }
 }
+
+.card{
+    background: #eee;
+    background: -moz-linear-gradient(top, #fff 0%, #ddd 84%, #aaa 100%);
+    background: linear-gradient(top, #fff 0%, #ddd 84%, #aaa 100%);
+    -pie-background: linear-gradient(top, #fff 0%, #ddd 84%, #aaa 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(84%,#ddd), color-stop(100%,#aaa));
+    -moz-box-shadow: 0 0 12px 1px #999 inset;
+    -webkit-box-shadow: 0 0 12px 1px #999 inset;
+    box-shadow: 0 0 12px 1px #999 inset;
+  /*  outline: 1px dashed #777;*/
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    margin: 0 auto; 
+}
+.cart-icon{
+    position:absolute; 
+    bottom:20px; 
+    margin-left: 22px;
+}
+
 

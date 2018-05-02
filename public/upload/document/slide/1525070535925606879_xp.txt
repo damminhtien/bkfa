@@ -1,0 +1,61 @@
+﻿+ cấu hình và cài đặt laravel khi tạo 1 project laravel:
+	Rename .env.example file to .env
+	Run "composer install" or "php composer.phar install"
+	Run "php artisan key:generate"
+	Run "php artisan migrate"
+	Run "php artisan db:seed to run seeders, if any."
+	Run php artisan serve
+	Nạp file cho laravel định nghĩa: composer dumpautoload
+
++ tạo project laraavel:
+	composer create-project --prefer-dist laravel/laravel  TÊN_PROJECT
+
+-----------------------------------------------------------------------------
++ tạo đồng bộ giữa repo fork về và repo chính:
+	kiểm tra: git remote -v
+	cài đặt: git remote add [upstream - tên (tùy biến)] [link git fork ve]
+------------------------------------------------------------------------------
++ update code:
+	git pull [forked] [buildAdmin]
+	forked là remote của chủ sở hữu - là origin
+	buildAdmin là name của nhánh-branch
+------------------------------------------------------------------------------
++ upload code lên nhánh con: 
+	tạo nhánh con với tên giống nhánh con của repo: checkout -b [buildAdmin]
+	sau đó push code sẽ push nên nhánh con đó.
+------------------------------------------------------------------------------
++ upload code lên nhánh mới trong tổ chức (có quyền admin):
+	git checkout -b [ten nhanh moi]
+	git pull [origin] [ten nhanh moi tren] // origin nêu đc admin thêm quyền admin, ko thi phai tạo một add remote mới từ link fork về (làm như dưới)
+	git add .
+	git commit -m "[]"
+	git push [origin] [ten nhanh moi]
+	xong lên github tạo 1 pull request đến nhánh moi đó
+
+--------------------------------------------------------------------------------
++ up code len repo cua mh rồi tạo request sang repo của tổ chức (ko có quyền admin):
+	git remote add main [link repo cua mh da fork ve]
+	git checkout -b [nhánh của nhóm]
+	git pull origin [nhánh của nhóm]
+	git status //thấy sự thay đổi
+	git push main [nhánh của nhóm]
+sau đó nhấn new pull request rồi next
+
+--------------------------------------------------------------------------------
++ kiểm tra các lần commit
+	git log --oneline
+	// kết quả vd:	ac79570 third commit
+			b6eb67c second commit
++ quay lai commit truoc
+	git reset --hard [index của commit - vd: b6eb67c (second commit trên, nếu ko có thì se rết về commit ngay trước)]
+---------------------------------------------------------------------------------------
++ khôi phục lại dữ liệu lỡ tay reset như trên đối với các thay đổi có commit:
+	git reflog (để liệt kê history của con trỏ HEAD - để lấy index thứ tự)
+	git branch recover-branch [ff31686 - index thứ tự] (Tạo một nhánh để recovery dữ liệu)
+---------------------------------------------------------------------------------------------
++ đẩy code từ một repo clone của người khác lên repo của mình:
+	git remote set-url origin <link repository của mình>
+	
+---------------------------------------------------------------------------------------------------
++ pull nhánh con bị lỗi ko pull được:
+	git pull origin [branchname] --allow-unrelated-histories

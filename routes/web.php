@@ -106,12 +106,22 @@ Route::group(['middleware' => 'localization2', 'prefix' => Session::get('locale2
 	]);
 	
 	Route::get('/', 'pageController@trangChu');
-	Route::get('ds-tintuc', 'pageController@dsTinTuc');
-	Route::get('list-news', 'pageController@dsTinTuc2');
-	Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTaiLieu');
-	Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
+	Route::get('danh-sach-tin-tuc', 'pageController@tinTuc');
+	Route::get('chi-tiet-tin-tuc/{id}/{TenKhongDau}.html', 'pageController@chiTietTinTuc');
+	Route::get('danh-sach-mon/{id}/{TenKhongDau}.html','pageController@dsMon');
+	Route::get('chi-tiet-de-thi/{idmon}/de{id}.html','pageController@chiTietDeThi');
+	Route::get('danh-sach-de-thi/{id}/{TenKhongDau}.html','pageController@dsDeThi');
+	Route::get('danh-sach-slide/{id}/{TenKhongDau}.html','pageController@dsSlide');
 	Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
+	Route::get('about', 'pageController@about');
+
+	Route::group(['middleware'=>'download'],function(){
+		Route::get('/download-Slide/{file}', 'downloadsController@downloadSlide');
+		Route::get('/download-de-thi/{file}', 'downloadsController@downloadDeThi');
+	});
+
 	Route::get('tim-kiem', 'pageController@timKiem');
+
 	Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
 	Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
 	Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
@@ -119,27 +129,8 @@ Route::group(['middleware' => 'localization2', 'prefix' => Session::get('locale2
 	Route::post('dangnhap','pageController@postDangNhap');
 	Route::get('dangxuat','pageController@getDangXuat');
 	Route::get('nguoidung','pageController@getNguoiDung');
-	Route::post('nguoidung','pagepController@postNguoiDung');
+	Route::post('nguoidung','pageController@postNguoiDung');
 	Route::get('dangky','pageController@getDangKy');
 	Route::post('dangky','pageController@postDangKy');
 	Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
 });
-
-// Route::get('/', 'pageController@trangChu');
-// Route::get('ds-tintuc', 'pageController@dsTinTuc');
-// Route::get('list-news', 'pageController@dsTinTuc2');
-// Route::get('chi-tiet-tai-lieu/{id}/{TenKhongDau}.html','pageController@chiTietTaiLieu');
-// Route::get('danh-sach-tai-lieu/{id}/{TenKhongDau}.html','pageController@dsTaiLieu');
-// Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');
-// Route::get('tim-kiem', 'pageController@timKiem');
-// Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
-// Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
-// Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
-// Route::get('dangnhap','pageController@getDangNhap');
-// Route::post('dangnhap','pageController@postDangNhap');
-// Route::get('dangxuat','pageController@getDangXuat');
-// Route::get('nguoidung','pageController@getNguoiDung');
-// Route::post('nguoidung','pagepController@postNguoiDung');
-// Route::get('dangky','pageController@getDangKy');
-// Route::post('dangky','pageController@postDangKy');
-// Route::get('kien-thuc-lap-trinh', 'pageController@kienThucLT');

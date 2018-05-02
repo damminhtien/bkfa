@@ -8,53 +8,71 @@ use DB;
 use App\Http\Controllers\Controller;
 
 use App\vien;
-use App\dethi;
 use App\mon;
+use App\dethi;
+use App\slide;
 use App\tintuc;
 use App\User;
 
 class pageController extends Controller
 {
+
+    function __construct() {
+        $vien = vien::all();
+        view() -> share('vien',$vien);
+    }
+
     function trangChu(){
-    	$vien = vien::all();
     	$dethixn = DB::select('SELECT * FROM dethis WHERE luotxem > 0 ORDER BY luotxem DESC LIMIT 0,12');
         $xemnhieu = DB::select('SELECT * FROM tintucs WHERE luotxem > 0 ORDER BY luotxem DESC LIMIT 0,4');
         $moinhat = DB::select('SELECT * FROM tintucs WHERE created_at ORDER BY created_at DESC LIMIT 1,4');
         $newmost = DB::select('SELECT * FROM tintucs WHERE created_at = (SELECT Max(created_at) FROM tintucs)');
-    	return view('pages.trangchu', ['vien'=>$vien, 'dethixn'=>$dethixn, 'newmost'=>$newmost, 'xemnhieu'=>$xemnhieu, 'moinhat'=>$moinhat]);
+    	return view('pages.trangchu', ['dethixn'=>$dethixn, 'newmost'=>$newmost, 'xemnhieu'=>$xemnhieu, 'moinhat'=>$moinhat]);
     }
 
-    function dsTinTuc(){
-    	$vien = vien::all();
-    	return view('pages.dstintuc', ['vien'=>$vien]);
+    function tinTuc(){
+        $tintuc =  DB::table('tintucs')->paginate(2);
+        return view('pages.tintuc', ['tintuc'=>$tintuc]);
     }
 
-    function dsTinTuc2(){
-       $vien = vien::all();
-        return view('pages.listnews', ['vien'=>$vien]);
+
+    function chiTietTinTuc($id){
+        $chitiet = DB::select('SELECT * FROM tintucs WHERE idtintuc = '.$id);
+        return view('pages.chitiettintuc', ['chitiet'=>$chitiet[0]]);
     }
 
-    function timKiem(){
-       $vien = vien::all();
-        $dethi = dethi::all();
-        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi]);
+    function dsMon($id){
+        $dsmon = mon::where('idvien',$id)->paginate(1);
+        return view('pages.dsmon', ['dsmon'=>$dsmon]);
     }
 
-    function dsTaiLieu($id){
-    	$vien = vien::all();
-    	$dsmon = mon::where('idvien',$id)->paginate(5);
-    	return view('pages.dstailieu', ['vien'=>$vien, 'dsmon'=>$dsmon]);
+    function dsDeThi($id){
+        $dethi = dethi::where('idmon',$id)->orderBy('nam', 'desc')->paginate(2);
+        return view('pages.dsdethi', ['dethi'=>$dethi]);
     }
 
-    function chiTietTaiLieu($id){
-        $vien = vien::all();
-        $chitiet = dethi::where('idmon',$id)->firstOrFail();
-        return view('pages.chitiettailieu', ['vien'=>$vien, 'chitiet'=>$chitiet]);
+    function dsSlide($id){
+        $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id);
+        return view('pages.dsslide', ['slide'=>$slide]);
+    }
+
+    function chiTietDeThi($idmon, $id){
+        $chitiet = DB::select('SELECT * FROM dethis WHERE iddethi = '.$id);
+        $lienquan = DB::select('SELECT * FROM dethis WHERE idmon = '.$idmon.' AND iddethi != '.$id);
+        return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan]);
     }
 
     function kienThucLT(){
-        $vien = vien::all();
-        return view('pages.kienthuc', ['vien'=>$vien]);
+        return view('pages.kienthuc');
+    }
+
+    function about(){
+        return view('pages.about');
+    }
+
+    function timKiem(){
+        $dethi = array();
+        return view('pages.kqsearch', ['dethi'=>$dethi]);
     }
 
     function getDangNhap() {
@@ -90,10 +108,9 @@ class pageController extends Controller
     }
 
     function getNguoiDung() {
-        $vien = vien::all();
         $user = Auth::user();
         if(Auth::check())
-            return view('pages.nguoidung',['vien'=>$vien, 'nguoidung'=>$user]);
+            return view('pages.nguoidung',['nguoidung'=>$user]);
         else
             return redirect('dangnhap')->with('thongbao','Bạn chưa Đăng Nhập!');
     }

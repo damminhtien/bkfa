@@ -19,7 +19,7 @@
                 <div class="col-md-7">
                     <div class="new_most">
                         <div class="single-news-img">
-                            <img src="upload/tintuc/{{$most->urlanh}}" alt="" class="img-fluid">
+                            <a href="chi-tiet-tin-tuc/{{ $most->idtintuc }}/{{ $most->tenkhongdau }}.html"><img src="upload/images/tintuc/{{$most->urlanh}}" alt="" class="img-fluid"></a>
                         </div>
                         <br>
                         <div class="">
@@ -65,7 +65,7 @@
                                     <div class="news-item">
                                         <a href="chi-tiet-tin-tuc/{{ $mn->idtintuc }}/{{ $mn->tenkhongdau }}.html">
                                             <div class="right-news">
-                                                <img src="upload/tintuc/{{$mn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
+                                                <img src="upload/images/tintuc/{{$mn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
                                                 <p>{{$mn->tieude}}</p>
                                                 <small><fa class="fa-watch">{{$mn->created_at}}</fa></small>
                                             </div>
@@ -82,7 +82,7 @@
                                      <div class="news-item">
                                         <a href="chi-tiet-tin-tuc/{{ $xn->idtintuc }}/{{ $xn->tenkhongdau }}.html">
                                             <div class="right-news">
-                                                <img src="upload/tintuc/{{$xn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
+                                                <img src="upload/images/tintuc/{{$xn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
                                                 <p>{{$xn->tieude}}</p>
                                                 <small><fa class="fa-watch">{{$xn->created_at}}</fa></small>
                                             </div>
@@ -96,9 +96,8 @@
                     </div>
                     <br>
                     <br>
-                    <div class="news-all" align="center">
-                        <a href="ds-tintuc" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
-                        <a href="list-news" class="btn btn-general btn-green" role="button">See More 2</a>
+                    <div class="news-all" align="left" style="margin-top: -40px; margin-left: 10px;">
+                        <a href="danh-sach-tin-tuc" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
                     </div>
                 </div>
             </div>
@@ -132,23 +131,22 @@
         <div class="row ">
             @foreach($dethixn as $dtxn)
             <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" data-wow-delay="0.4s">
-                <div class="desc-document-cont">
-                    <div class="thumbnail-blogs ">
-                        <img src="upload/images/{{$dtxn->urlanh}} " class="img-fluid " alt="{{$dtxn->gioithieu}} ">
+                <a href="chi-tiet-de-thi/{{ $dtxn->idmon}}/de{{ $dtxn->iddethi }}.html" style="text-decoration: none;">
+                    <div class="desc-document-cont">
+                        <div class="thumbnail-blogs ">
+                            <img src="upload/images/dethi/anh/{{$dtxn->urlanh}} " class="img-fluid " alt="{{$dtxn->gioithieu}} ">
+                        </div>
+                        <div>
+                            <h3>{{cutString($dtxn->gioithieu, 33)." ..."}}</h3>
+                            <p class="desc">{{$dtxn->nam}}</p>
+                        </div>
+                        <div class="document-footer">
+                            <i class="fa fa-heart-o"> 1</i>
+                            <i class="fa fa-eye"> {{$dtxn->luotxem}}</i>
+                            <i class="fa fa-arrow-circle-o-down"> 3</i>
+                        </div>
                     </div>
-                    {{-- <div class="thumbnail-blogs">
-                        <img src="upload/images/{{$dt->urlanh}}" class="img-fluid" alt="{{$dt->gioithieu}}">
-                    </div> --}}
-                    <div>
-                        <h3>{{cutString($dtxn->gioithieu, 33)." ..."}}</h3>
-                        <p class="desc">{{$dtxn->nam}}</p>
-                    </div>
-                    <div>
-                        <a href="#"><i class="fa fa-heart-o"> 1</i></a>
-                        <a href="#"><i class="fa fa-eye"></i> {{$dtxn->luotxem}}</a>
-                        <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
-                    </div>
-                </div>
+                </a>
             </div>
             @endforeach
         </div>
