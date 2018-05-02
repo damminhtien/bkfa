@@ -1,8 +1,8 @@
 @extends('pages.layouts.index') @section('title', 'Chi tiết tin tức') @section('content')
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
-        <h1 class="wow fadeInUp" data-wow-delay="0.1s">News</h1>
-        <p>Discover more</p>
+        <h1 class="wow fadeInUp" data-wow-delay="0.1s">&nbsp</h1>
+        <p>&nbsp</p>
     </div>
     <!--/end container-->
 </div>

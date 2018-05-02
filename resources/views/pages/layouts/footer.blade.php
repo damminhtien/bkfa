@@ -6,16 +6,15 @@
                     <!-- About Us -->
                     <div class="col-md-4 col-sm-6 ">
                         <div class="heading-footer">
-                            <h2>Get In Touch</h2></div>
+                            <h2>Liên lạc</h2></div>
                         <address class="address-details-f">
-                            25, Trần Duy Hưng, Hà Nội
-                            <br> BKFA
-                            <br> Phone: 0969696969
-                            <br> Fax: 69696969
+                            Số 1, Đại Cồ Việt, Đại học Bách Khoa Hà Nội
+                            <br> BKFA.NET
+                            <br> Phone: (+84) 96 105 6808
                             <br> Email: <a href="mailto:bkfa.com@gmail.com" class="">bkfa.com@gmail.com</a>
                         </address>
                         <ul class="list-inline social-icon-f top-data">
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                         </ul>
@@ -40,21 +39,20 @@
                     <!-- Recent News -->
                     <div class="col-md-4 col-sm-6 ">
                         <div class="heading-footer">
-                            <h2>Useful Links</h2></div>
+                            <h2>Liên kết</h2></div>
                         <ul class="list-unstyled link-list">
-                            <li><a href="about.html">About us</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="project.html">Project</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="careers.html">Career</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="faq.html">FAQ</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="contact.html">Contact us</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="contact.html">Learning</a><i class="fa fa-angle-right"></i></li>
-                            <li><a href="contact.html">Support</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="about">{{ Lang::get('sub.about') }}</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://github.com/orgs/BKFA/">GitHub</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://damminhtien.github.io/bkfa/">Project</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://www.facebook.com/bkfateam/">FanPages</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://www.facebook.com/groups/2129976707231316/?source_id=308000529728334">Group</a><i class="fa fa-angle-right"></i></li>
+                            <li><a href="https://www.messenger.com/t/bkfateam">FAQ</a><i class="fa fa-angle-right"></i></li>
                         </ul>
                     </div>
                     <!-- End Recent list -->
                     <!-- Latest Tweets -->
                     <div class="col-md-4 col-sm-6">
-                        <div><img src="img/logo-s1.png" alt="" class="img-fluid"></div>
+                        <div style="margin-top: -20px;"><img src="img/logo.png" alt="" class="img-fluid"></div>
                         <ul class="list-unstyled comp-desc-f">
                             <li>
                                 <p>Follow <b><span style="color: blue;">BKFA</span></b> để cập nhật thông tin mới nhất.</p>
@@ -89,7 +87,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div id="footer-copyrights">
-                        <p>Copyrights &copy; 2018 All Rights Reserved by BKFA Team. <a href="#">Privacy Policy</a> <a href="#">Terms of Services</a></p>
+                        <p>Copyrights &copy; 2018 All Rights Reserved by BKFA Team. </p>
                     </div>
                 </div>
             </div>

@@ -14,6 +14,39 @@
                             </li>
                             <li class="dropdown">
                                 <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
+                                    <style>
+                                        select {
+                                          border-bottom: 1px solid #c9c9c9;
+                                          border-top: 0;
+                                          border-left: 0;
+                                          border-right: 0;
+                                          color: #444444;
+                                          -webkit-appearance: button;
+                                          -webkit-border-radius: 2px;
+                                          -webkit-padding-end: 20px;
+                                          -webkit-padding-start: 2px;
+                                          -webkit-user-select: none;
+                                          background-color: white;
+                                          background-image: url('/img/down.png');
+                                          background-position: 97% center;
+                                          background-repeat: no-repeat;
+                                          background-size: contain;
+                                          overflow: hidden;
+                                          padding: 1px 2px;
+                                          text-overflow: ellipsis;
+                                          white-space: nowrap;
+                                          min-width: 100px;
+
+                                          option {
+                                            position: relative;
+                                          }
+                                        }
+                                        option:visited
+                                        {
+                                        background:red;
+                                        text-decoration:none;
+                                        }
+                                    </style>
                                     <select name="locale2" onchange='this.form.submit();'>
                                         <option value="en">{{ trans('sub.lang.en') }}</option>
                                         <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
@@ -25,7 +58,7 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="list-inline top-data">
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
                             <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                             @if(!Auth::user())

@@ -1,5 +1,5 @@
 @extends('pages.layouts.index') @section('title', 'Chi tiết đề thi') @section('content')
-<div id="home-p" class="home-p pages-head1 text-center">
+<div id="home-p" class="home-p pages-head5 text-center">
     <div class="container">
         <div class="input-group ">
             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
