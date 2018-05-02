@@ -229,12 +229,15 @@
                 </a>
             </li>
             <li>
+                <br>
                 <form action="{{ route('switchLang') }}" class="form-lang" method="post">
-                    <select name="locale" onchange='this.form.submit();'>
-                        <option value="en">{{ trans('sub.lang.en') }}</option>
-                        <option value="vi" {{ Lang::locale()==='vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
-                    </select>
-                    {{ csrf_field() }}
+                    <div style="font-family: serif; font-size: 120%; ">
+                        <select class="" name="locale" onchange='this.form.submit();'>
+                            <option value="en">{{ trans('sub.lang.en') }}</option>
+                            <option value="vi" {{ Lang::locale()==='vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                        </select>
+                        {{ csrf_field() }}
+                    </div>
                 </form>
             </li>
         </ul>

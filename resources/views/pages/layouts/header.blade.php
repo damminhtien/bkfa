@@ -10,24 +10,26 @@
                                 <i class="fa fa-envelope"></i> Email: <a href="mailto:info@themeborn.com">bkfa.com@gmail.com</a>
                             </li>
                             <li>
-                                <i class="fa fa-phone"></i> Hotline: (1) 0969696969
+                                <i class="fa fa-phone"></i> Hotline: (+84) 96 105 6808
                             </li>
                             <li class="dropdown">
                                 <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
-                                    <select name="locale2" onchange='this.form.submit();'>
-                                        <option value="en">{{ trans('sub.lang.en') }}</option>
-                                        <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
-                                    </select>
-                                    {{ csrf_field() }}
+                                    <div style="font-family: serif; font-size: 110%;">
+                                        <select name="locale2" onchange='this.form.submit();'>
+                                            <option value="en">{{ trans('sub.lang.en') }}</option>
+                                            <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                                        </select>
+                                        {{ csrf_field() }}
+                                    </div>
                                 </form>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-5">
                         <ul class="list-inline top-data">
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                            <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/BKFA_Team" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/105336153943636624010?hl=vi" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                             @if(!Auth::user())
                             <li>
                                 <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>
@@ -110,24 +112,26 @@
                                                     <i class="fa fa-envelope"></i> Email: <a href="mailto:info@htmlstream.com">bkfa@gmail.com</a>
                                                 </li>
                                                 <li>
-                                                    <i class="fa fa-phone"></i> Hotline: (1) 0969696969
+                                                    <i class="fa fa-phone"></i> Hotline: (+84) 96 105 6808
                                                 </li>
                                                 <li class="dropdown">
                                                     <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
-                                                        <select name="locale2" onchange='this.form.submit();'>
-                                                            <option value="en">{{ trans('sub.lang.en') }}</option>
-                                                            <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
-                                                        </select>
-                                                        {{ csrf_field() }}
+                                                        <div style="font-family: serif; font-size: 120%; background-color: #3366ff">
+                                                            <select name="locale2" onchange='this.form.submit();'>
+                                                                <option value="en">{{ trans('sub.lang.en') }}</option>
+                                                                <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                                                            </select>
+                                                            {{ csrf_field() }}
+                                                        </div>
                                                     </form>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-inline top-data">
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                                                <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com/BKFA_Team" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                                                <li><a href="https://plus.google.com/105336153943636624010?hl=vi" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                                                 @if(!Auth::user())
                                                 <li>
                                                     <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>
