@@ -61,10 +61,10 @@ class slideController extends Controller
 				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
 			$urlanh =  substr(time() . mt_rand() . "_" . $img->getClientOriginalName(), -190);
-			while(file_exists('upload/images/slide/anh/' . $urlanh)) {
+			while(file_exists('upload/images/slide/' . $urlanh)) {
 				$urlanh = substr(time() . mt_rand() . "_" . $img->getClientOriginalName(), -190);
 			}
-			$img->move('upload/images/slide/anh/', $urlanh);
+			$img->move('upload/images/slide/', $urlanh);
 			$slide->urlanh = $urlanh;
      	}else{
      		$slide->urlanh = 'default.jpg';
@@ -92,7 +92,7 @@ class slideController extends Controller
 				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng file này!');
 			}
 			$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190);
-			while(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $urlanh)) {
+			while(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $url)) {
 				$url = substr(time() . mt_rand() . "_" . $file->getClientOriginalName(), -190);
 			}
 			$file->move('upload/' . getUrlFileUpload($ext, 'slide'), $url);
@@ -107,11 +107,11 @@ class slideController extends Controller
 				return redirect('admin/slide/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
 			$urlanh =  substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190); 
-			while(file_exists('upload/images/slide/anh/' . $urlanh)) {
+			while(file_exists('upload/images/slide/' . $urlanh)) {
 				$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
 			}
-			$img->move('upload/images/slide/anh', $urlanh);
-			if($slide->urlanh != 'default.jpg' && file_exists('upload/images/slide/anh/' . $slide->urlanh)) unlink('upload/images/slide/anh/' . $slide->urlanh);
+			$img->move('upload/images/slide', $urlanh);
+			if($slide->urlanh != 'default.jpg' && file_exists('upload/images/slide/' . $slide->urlanh)) unlink('upload/images/slide/' . $slide->urlanh);
 			$slide->urlanh = $urlanh;
      	}
      	$slide->save();
@@ -124,7 +124,7 @@ class slideController extends Controller
         $urlanh = $slide->urlanh;
         $ext = getExtension($url);
         if(file_exists('upload/' . getUrlFileUpload($ext, 'slide/') . $url)) unlink('upload/' . getUrlFileUpload($ext, 'slide/') . $url);
-        if($urlanh != 'default.jpg' && file_exists('upload/images/slide/anh/' . $urlanh)) unlink('upload/images/slide/anh/' . $urlanh);
+        if($urlanh != 'default.jpg' && file_exists('upload/images/slide/' . $urlanh)) unlink('upload/images/slide/' . $urlanh);
         $ten = cutString($slide->gioithieu, 40);
         $slide->delete();
         return redirect('admin/slide/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten);

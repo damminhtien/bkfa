@@ -78,60 +78,61 @@ $(function() {
 // ====================================================
 // LOGIN FORM
 // ====================================================
-(function($) {
-    var $formLogin = $('#login-form');
-    var $formRegister = $('#register-form');
-    var $divForms = $('#div-forms');
-    var $modalAnimateTime = 300;
-    var $msgAnimateTime = 150;
-    var $msgShowTime = 2000;
-    $("form").submit(function() {
-        switch (this.id) {
-            case "login-form":
-                var $lg_username = $('#login_username').val();
-                var $lg_password = $('#login_password').val();
-                if ($lg_username == "ERROR") {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
-                } else {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
-                }
-                return false;
-                break;
-            case "register-form":
-                var $rg_username = $('#register_username').val();
-                var $rg_email = $('#register_email').val();
-                var $rg_password = $('#register_password').val();
-                if ($rg_username == "ERROR") {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
-                } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
-                }
-                return false;
-                break;
-            default:
-                return false;
-        }
-        return false;
-    });
-    $('#login_register_btn').click(function() { modalAnimate($formLogin, $formRegister) });
-    $('#register_login_btn').click(function() { modalAnimate($formRegister, $formLogin); });
+// (function($) {
+//     var $formLogin = $('#login-form');
+//     var $formRegister = $('#register-form');
+//     var $divForms = $('#div-forms');
+//     var $modalAnimateTime = 300;
+//     var $msgAnimateTime = 150;
+//     var $msgShowTime = 2000;
+//     $("form").submit(function() {
+//         switch (this.id) {
+//             case "login-form":
+//                 var $lg_username = $('#login_username').val();
+//                 var $lg_password = $('#login_password').val();
+//                 if ($lg_username == "ERROR") {
+//                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
+//                 } else {
+//                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
+//                 }
+//                 return false;
+//                 break;
+//             case "register-form":
+//                 var $rg_username = $('#register_username').val();
+//                 var $rg_email = $('#register_email').val();
+//                 var $rg_password = $('#register_password').val();
+//                 if ($rg_username == "ERROR") {
+//                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
+//                 } else {
+//                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+//                 }
+//                 return false;
+//                 break;
+//             default:
+//                 return false;
+//         }
+//         return false;
+//     });
+//     $('#login_register_btn').click(function() { modalAnimate($formLogin, $formRegister) });
+//     $('#register_login_btn').click(function() { modalAnimate($formRegister, $formLogin); });
 
-    function modalAnimate($oldForm, $newForm) {
-        var $oldH = $oldForm.height();
-        var $newH = $newForm.height();
-        $divForms.css("height", $oldH);
-        $oldForm.fadeToggle($modalAnimateTime, function() {
-            $divForms.animate({ height: $newH }, $modalAnimateTime, function() {
-                $newForm.fadeToggle($modalAnimateTime);
-            });
-        });
-    }
-    function msgFade($msgId, $msgText) {
-        $msgId.fadeOut($msgAnimateTime, function() {
-            $(this).text($msgText).fadeIn($msgAnimateTime);
-        });
-    }
-})(jQuery); // End of use strict
+//     function modalAnimate($oldForm, $newForm) {
+//         var $oldH = $oldForm.height();
+//         var $newH = $newForm.height();
+//         $divForms.css("height", $oldH);
+//         $oldForm.fadeToggle($modalAnimateTime, function() {
+//             $divForms.animate({ height: $newH }, $modalAnimateTime, function() {
+//                 $newForm.fadeToggle($modalAnimateTime);
+//             });
+//         });
+//     }
+//     function msgFade($msgId, $msgText) {
+//         $msgId.fadeOut($msgAnimateTime, function() {
+//             $(this).text($msgText).fadeIn($msgAnimateTime);
+//         });
+//     }
+// })(jQuery); 
+// End of use strict
 
 // ====================================================
 // AUTO WRITER
@@ -182,7 +183,7 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff; font-family: 'Cabin', sans-serif;}";
     document.body.appendChild(css);
 };
 

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta property="fb:app_id" content="204934146962428" />
     <title>BKFA.COM | @yield('title')</title>
     <base href="{{asset('')}}">
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -32,7 +31,8 @@
     <link rel="stylesheet" href="css/pages/dstailieu.css">
     <link rel="stylesheet" href="css/pages/chitiettailieu.css">
     <link rel="stylesheet" href="css/pages/kienthuc.css">
-     <link rel="stylesheet" href="css/pages/kqsearch.css">
+    <link rel="stylesheet" href="css/pages/kqsearch.css">
+    <link rel="stylesheet" href="css/pages/team.css">
 </head>
 
 <body id="page-top">

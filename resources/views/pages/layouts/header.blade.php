@@ -53,7 +53,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav" data-toggle="affix" style="z-index: 10">
         <div class="container">
-            <a class="navbar-brand smooth-scroll" href="/"><img src="img/logo-s.png" alt="logo"></a>
+            <a class="navbar-brand smooth-scroll" href="/"><img src="img/logo.png" alt="logo"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,7 +64,7 @@
                         <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tài liệu</a>
                         <div class="dropdown-menu dropdown-cust" aria-labelledby="navbarDropdownMenuLink">
                             @foreach($vien as $v)
-                            <a class="dropdown-item" href="danh-sach-tai-lieu/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
+                            <a class="dropdown-item" href="danh-sach-mon/{{ $v->idvien }}/{{ $v->tenkhongdau }}.html">{{$v->ten}}</a>
                             @endforeach
                         </div>
                     </li>
@@ -74,20 +74,20 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
-                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
-                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
-                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Java</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">C#</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">NodeJs</a>
                                 </div>
                                 <div class="col-md-6" style="border-left: 1px solid #dedede;">
-                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
-                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">Nodejs</a>
                                     <a class="dropdown-item" href="kien-thuc-lap-trinh">Laravel</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">React Native</a>
+                                    <a class="dropdown-item" href="kien-thuc-lap-trinh">AngularJs</a>
                                     <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="about">About</a></li>
                     <li class="nav-item">
                         <i class="search fa fa-search search-btn"></i>
                         <div class="search-open">

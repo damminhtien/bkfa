@@ -64,21 +64,21 @@
                     </div>
                     <div class="form-group">
                 		<label>
-                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> &nbsp&nbspFile {{ Lang::get('sub.exam') }} * &nbsp&nbsp&nbsp</span>
+                    		<span class="text-danger btn btn-lg btn-outline-danger"><i class="fa fa-folder-open"></i> File {{ Lang::get('sub.exam') }} * &nbsp</span>
                     		<p id="filename1" class="d-inline"></p>
                     		<input type="file" name="de" style="display: none;">
                     	</label>
                     </div>
                     <div class="form-group">
                         <label>
-                            <span class="text-warning btn btn-lg btn-outline-warning"><i class="fa fa-folder-open"></i> File {{ Lang::get('sub.answer') }}*</span>
+                            <span class="text-warning btn btn-lg btn-outline-warning"><i class="fa fa-folder-open"></i> File {{ Lang::get('sub.answer') }} *</span>
                             <p id="filename2" class="d-inline"></p>
                             <input type="file" name="loigiai" style="display: none;">
                         </label>
                     </div>
                     <div class="form-group">
 						<label>
-                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>&nbsp&nbsp&nbsp {{ Lang::get('sub.image') }}&nbsp</span>
+                    		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i> {{ Lang::get('sub.image') }} * &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
                     		<p id="fileanh" class="d-inline"></p>
                     		<input type="file" name="anh" style="display: none;">
                     	</label>

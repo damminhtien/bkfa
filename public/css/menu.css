@@ -132,7 +132,7 @@
     }
 
     .dropdown-cust.mega-menu {
-        margin-top: 0px;
+        margin-top: 3px;
         min-width: 450px;
         padding: 0;
         /*border-top: 2px solid #2196f3;*/
@@ -151,7 +151,7 @@
 }
 
 .dropdown-cust {
-    margin-top: 0px;
+    margin-top: 2px;
     min-width: 220px;
     padding: 0;
    /* border-top: 2px solid #2196f3;*/
@@ -296,6 +296,7 @@
     }
     .navbar-nav>li.dropdown .dropdown-menu {
         margin-bottom: 15px;
+        background: red;
     }
 
     .top-menubar-nav {

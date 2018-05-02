@@ -87,14 +87,21 @@ label.star:before {
 
 .related-document {
     border-bottom: 1px solid #dedede;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-.related-item ol {
-    list-style-type: square;
+.related-item li {
+    list-style-type: none;
 }
 
-.related-item ol a {
+.related-item li a {
     color: #2FADFD;
+    text-decoration: none;
+}
+
+.related-item li a:hover{
+    color: #900;
     text-decoration: none;
 }
 
