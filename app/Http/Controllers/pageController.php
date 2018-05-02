@@ -31,14 +31,15 @@ class pageController extends Controller
     }
 
     function tinTuc(){
-        $tintuc =  DB::table('tintucs')->paginate(2);
+        $tintuc =  DB::table('tintucs')->orderBy('created_at', 'desc')->paginate(5);
         return view('pages.tintuc', ['tintuc'=>$tintuc]);
     }
 
-
     function chiTietTinTuc($id){
         $chitiet = DB::select('SELECT * FROM tintucs WHERE idtintuc = '.$id);
-        return view('pages.chitiettintuc', ['chitiet'=>$chitiet[0]]);
+        DB::table('tintucs')->where('idtintuc', $id)->update(['luotxem' => ($chitiet[0]->luotxem + 1)]);
+        $tingannhat = DB::select("SELECT * FROM tintucs WHERE created_at < '{$chitiet[0]->created_at}' ORDER BY created_at DESC LIMIT 5");
+        return view('pages.chitiettintuc', ['chitiet'=>$chitiet[0], 'tingannhat'=>$tingannhat]);
     }
 
     function dsMon($id){

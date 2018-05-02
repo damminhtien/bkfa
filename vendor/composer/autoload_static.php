@@ -85,6 +85,10 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
+        'J' => 
+        array (
+            'Jorenvh\\Share\\' => 14,
+        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -252,6 +256,10 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Jorenvh\\Share\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -382,6 +390,7 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         'App\\Http\\Controllers\\ajaxController' => __DIR__ . '/../..' . '/app/Http/Controllers/ajaxController.php',
         'App\\Http\\Controllers\\danhgiaController' => __DIR__ . '/../..' . '/app/Http/Controllers/danhgiaController.php',
         'App\\Http\\Controllers\\dethiController' => __DIR__ . '/../..' . '/app/Http/Controllers/dethiController.php',
+        'App\\Http\\Controllers\\downloadsController' => __DIR__ . '/../..' . '/app/Http/Controllers/downloadsController.php',
         'App\\Http\\Controllers\\monController' => __DIR__ . '/../..' . '/app/Http/Controllers/monController.php',
         'App\\Http\\Controllers\\pageController' => __DIR__ . '/../..' . '/app/Http/Controllers/pageController.php',
         'App\\Http\\Controllers\\slideController' => __DIR__ . '/../..' . '/app/Http/Controllers/slideController.php',
@@ -397,6 +406,7 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\download' => __DIR__ . '/../..' . '/app/Http/Middleware/download.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -2254,6 +2264,9 @@ class ComposerStaticInit9f4084c1f25e5370b94af0edc7571dc3
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jorenvh\\Share\\Providers\\ShareServiceProvider' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Providers/ShareServiceProvider.php',
+        'Jorenvh\\Share\\Share' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Share.php',
+        'Jorenvh\\Share\\ShareFacade' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/ShareFacade.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

@@ -147,7 +147,7 @@ class dethiController extends Controller
         return redirect('admin/dethi/danhsach')->with('thongbao','Sửa đề thi thành công');
     }
     public function getXoa($iddethi){
-        $dethi = dethi::find($iddethi)->firstOrFail();
+        $dethi = dethi::find($iddethi);
         $url = $dethi->url;
         $urlanh = $dethi->urlanh;
         $urlloigiai = $dethi->urlloigiai;

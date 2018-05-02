@@ -91,7 +91,7 @@ class tintucController extends Controller
 	}
 
 	public function getXoa($idtintuc){
-        $tintuc = tintuc::find($idtintuc)->firstOrFail();
+        $tintuc = tintuc::find($idtintuc);
         $ten = cutString($tintuc->tieude, 40);
         $urlanh = $tintuc->urlanh;
         if($urlanh != 'default.jpg' && file_exists('upload/images/tintuc/' . $urlanh)) unlink('upload/images/tintuc/' . $urlanh);
