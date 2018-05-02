@@ -26,8 +26,6 @@
     </p>
 </div>
 
-<<<<<<< HEAD
-=======
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,7 +35,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
->>>>>>> 529848b8b6450ec2d53ad1e64886003ad0979fd0
 <script src="library/js/jquery/jquery.min.js"></script>
 <script src="js/box.js"></script>
 

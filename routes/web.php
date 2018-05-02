@@ -118,6 +118,7 @@ Route::group(['middleware' => 'localization2', 'prefix' => Session::get('locale2
 	Route::group(['middleware'=>'download'],function(){
 		Route::get('/download-Slide/{id}/{file}', 'downloadsController@downloadSlide');
 		Route::get('/download-de-thi/{file}', 'downloadsController@downloadDeThi');
+		Route::get('/download-loi-giai/{file}', 'downloadsController@downloadLoiGiai');
 	});
 
 	Route::get('tim-kiem', 'pageController@timKiem');

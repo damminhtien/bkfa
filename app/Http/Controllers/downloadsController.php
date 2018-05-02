@@ -21,4 +21,10 @@ class downloadsController extends Controller
 	    $file_path = public_path('upload/'.getUrlFileUpload($ext[0], 'dethi/').$file);
 	    return response()->download($file_path);
 	}
+
+	public function downloadLoiGiai($file) {
+    	$ext = array_reverse(explode('.',$file));
+	    $file_path = public_path('upload/'.getUrlFileUpload($ext[0], 'loigiai/').$file);
+	    return response()->download($file_path);
+	}
 }

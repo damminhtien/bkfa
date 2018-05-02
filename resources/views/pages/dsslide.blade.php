@@ -49,6 +49,29 @@
                         </div>
                     </div>
                 </div>
+                <style>
+                    .comment-box-sn ul li{
+                        display: inline-block;
+                        padding-right: 50px;
+                        font-size: 30px;
+                        margin-left: -30px; 
+                    }
+                </style>
+                <div class="comment-box-sn" style="width: 1070px; margin: 50px auto; padding-left: 30px;">
+                    {!!Share::page('http://jorenvanhocht.be', 'Share title')
+                        ->facebook()
+                        ->twitter()
+                        ->googlePlus()
+                        ->linkedin('Extra linkedin summary can be passed here')!!}
+                    <!-- <h5>Leave a Reply</h5>
+                    <textarea name="" id="" placeholder="Comment"></textarea>
+                    <input type="text" name="email" placeholder="Email Id" class="form-control">
+                    <br>
+                    <input type="text" name="text" placeholder="Name" class="form-control">
+                    <br>
+                    <button class="btn btn-general btn-green" style="width: 100%;" role="button">Send</button> -->
+                    <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#dsSlide{{$slide[0]->idmon}}" data-numposts="5" data-width="750"></div>
+                </div>
             </div>
         </div>
     </div>

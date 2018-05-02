@@ -106,6 +106,14 @@
                                 </li>
                             </ul>
                         </div> -->
+                        <style>
+                            .comment-box-sn ul li{
+                                display: inline-block;
+                                padding-right: 50px;
+                                font-size: 20px;
+                                margin-left: -30px; 
+                            }
+                        </style>
                         <div class="comment-box-sn">
                             {!!Share::page('http://jorenvanhocht.be', 'Share title')
                                 ->facebook()
@@ -119,7 +127,7 @@
                             <input type="text" name="text" placeholder="Name" class="form-control">
                             <br>
                             <button class="btn btn-general btn-green" style="width: 100%;" role="button">Send</button> -->
-                            <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#chitiettintuc{$chitiet->idtintuc}" data-numposts="5"></div>
+                            <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#chitiettintuc{{$chitiet->idtintuc}}" data-numposts="5"></div>
                         </div>
                     </div>
                 </div>
@@ -129,13 +137,14 @@
             <div class="col-md-3">
                 <div class="small-news-box">
                     @php foreach ($tingannhat as $tgn) { @endphp
-                    <a href="chi-tiet-tin-tuc/{{ $tgn->idtintuc }}/{{ $tgn->tenkhongdau }}.html">
-                        <div class="right-side-sn-cont">
+                    <div class="right-side-sn-cont">
+                        <a href="chi-tiet-tin-tuc/{{ $tgn->idtintuc }}/{{ $tgn->tenkhongdau }}.html">
                             <img src="upload/images/tintuc/{{$tgn->urlanh}}" alt="" class="img-fluid">
                             <p>{{$tgn->tieude}}</p>
-                            <small><fa class="fa-watch"> {{$tgn->created_at}}</fa></small>
-                        </div>
-                    </a>
+                        </a>
+                        <small><fa class="fa-watch"> {{$tgn->created_at}}</fa></small>
+                        <p>{{$tgn->gioithieu}}</p>
+                    </div>
                     @php } @endphp
                 </div>
             </div>
