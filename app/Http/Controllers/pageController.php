@@ -89,70 +89,68 @@ class pageController extends Controller
         $dethi = dethi::search($request->search)->get();
         $slide = slide::search($request->search)->get();
         $tintuc = tintuc::search($request->search)->get();
-        $sokq = count($dethi) + count($slide)+count($tintuc);
+        $sokq = count($dethi) + count($slide)+count($tintuc)+count($mon);
         $req = $request->search;
-        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'dsmon'=>$mon, 'req'=>$req]);
+        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'mon'=>$mon, 'req'=>$req]);
 
     }
 
-    function search_like($query)
-    {  
+    function search_like($query){  
         $sokq=0;
         if($query==''){
-         $vien = vien::all();
-         $dethi = dethi::all();
-         $slide = slide::all();
-         $tintuc = tintuc::all();
-     }
-     else{
-        $vien = vien::all();
-        $dethi = dethi::where('gioithieu','LIKE', '%' .$query. '%')->get();
-        $slide = slide::where('gioithieu','LIKE', '%' .$query. '%')->get();
-        $tintuc = tintuc::where('gioithieu','LIKE', '%' .$query. '%')->orWhere('noidung','LIKE', '%' .$query. '%')->get();
-        $sokq = count($dethi) + count($slide)+count($tintuc);
-
+            $vien = vien::all();
+            $dethi = dethi::all();
+            $slide = slide::all();
+            $tintuc = tintuc::all();
+            $mon = mon::all();
+        }else{
+            $vien = vien::all();
+            $dethi = dethi::where('gioithieu','LIKE', '%' .$query. '%')->get();
+            $slide = slide::where('gioithieu','LIKE', '%' .$query. '%')->get();
+            $tintuc = tintuc::where('gioithieu','LIKE', '%' .$query. '%')->orWhere('noidung','LIKE', '%' .$query. '%')->get();
+            $mon = mon::where('ten','LIKE', '%' .$query. '%')->get();
+            $sokq = count($dethi) + count($slide)+count($tintuc)+count($mon);
+        }
+        $req = $query;
+        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'mon'=>$mon, 'sokq'=>$sokq, 'req'=>$req]);
     }
-    $req = $query;
-        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'req'=>$req]);
-}
+
+    function getDangNhap() {
+        return view('pages.dangnhap');
+    }
+
+    function postDangNhap(Request $request) {
+        $this->validate($request,
+            [
+                'email'=>'required',
+                'password'=>'required|min:3|max:32'
+            ],
+            [
+                'email.required' => 'Bạn chưa nhập email',
+                'password.required' => 'Bạn chưa nhập mật khẩu',
+                'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
+                'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự'  
+            ]
+        );
 
 
-function getDangNhap() {
-    return view('pages.dangnhap');
-}
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
+            return redirect('/');
+        }
+        else {
+            return redirect('/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
+        }
+    }
 
-function postDangNhap(Request $request) {
-    $this->validate($request,
-        [
-            'email'=>'required',
-            'password'=>'required|min:3|max:32'
-        ],
-        [
-            'email.required' => 'Bạn chưa nhập email',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'Mật khẩu có ít nhất 3 ký tự',
-            'password.max' => 'Mật khẩu có nhiều nhất nhất 32 ký tự'  
-        ]
-    );
-
-
-    if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
+    function getDangXuat() {
+        Auth::logout();
         return redirect('/');
     }
-    else {
-        return redirect('/dangnhap')->with('thongbao','Tài khoản hoặc mật khẩu không đúng');
-    }
-}
 
-function getDangXuat() {
-    Auth::logout();
-    return redirect('/');
-}
-
-function getNguoiDung() {
-    $user = Auth::user();
-    if(Auth::check())
-        return view('pages.nguoidung',['nguoidung'=>$user]);
+    function getNguoiDung() {
+        $user = Auth::user();
+        if(Auth::check())
+            return view('pages.nguoidung',['nguoidung'=>$user]);
         else
             return redirect('dangnhap')->with('thongbao','Bạn chưa Đăng Nhập!');
     }
