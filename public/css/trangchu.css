@@ -293,6 +293,18 @@ p {
     background-position: center center;
 }
 
+.home-p.pages-head5 {
+    background: url(../img/banner/banner-5.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head6 {
+    background: url(../img/banner/banner-6.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .home-p:after {
     top: 0;
     left: 0;

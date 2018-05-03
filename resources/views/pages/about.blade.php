@@ -6,7 +6,7 @@
 <!--====================================================
                        HOME-P
 ======================================================-->
-<div id="home-p" class="home-p pages-head1 text-center">
+<div id="home-p" class="home-p pages-head6 text-center">
     <div class="container">
         <h1 class="wow fadeInUp" data-wow-delay="0.1s">We offer a huge opportunity for growth</h1>
         <p>Discover more about Team</p>
@@ -27,18 +27,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 ">
                 <div class="team-p2-cont wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="img/team/t-1.jpg" class="img-fluid" alt="...">
-                    <h5>Trần Trọng Bình</h5>
-                    <h6>Quản trị viên</h6>
-                    <ul class="list-inline social-icon-f top-data">
-                        <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
-                        <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 ">
-                <div class="team-p2-cont wow fadeInUp" data-wow-delay="0.4s">
-                    <img src="img/team/t-3.jpg" class="img-fluid" alt="...">
+                    <img src="img/team/tien.gif" class="img-fluid" alt="damminhtien" style="width: 261px; height: 307px;">
                     <h5>Đàm Minh Tiến</h5>
                     <h6>Quản trị viên</h6>
                     <ul class="list-inline social-icon-f top-data">
@@ -48,8 +37,19 @@
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 ">
+                <div class="team-p2-cont wow fadeInUp" data-wow-delay="0.4s">
+                    <img src="img/team/binh.gif" class="img-fluid" alt="trantrongbinh" style="width: 261px; height: 307px;">
+                    <h5>Trần Trọng Bình</h5>
+                    <h6>Quản trị viên</h6>
+                    <ul class="list-inline social-icon-f top-data">
+                        <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                        <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 ">
                 <div class="team-p2-cont wow fadeInUp" data-wow-delay="0.6s">
-                    <img src="img/team/t-4.jpg" class="img-fluid" alt="...">
+                    <img src="img/team/toan.gif" class="img-fluid" alt="maivantoan" style="width: 261px; height: 307px;">
                     <h5>Mai Văn Toàn</h5>
                     <h6>Quản trị viên</h6>
                     <ul class="list-inline social-icon-f top-data">
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-3 col-sm-6 ">
                 <div class="team-p2-cont wow fadeInUp" data-wow-delay="0.2s">
-                    <img src="img/team/t-1.jpg" class="img-fluid" alt="...">
+                    <img src="img/team/thai.gif" class="img-fluid" alt="nguyenvanthai" style="width: 261px; height: 307px;">
                     <h5>Nguyễn Văn Thái</h5>
                     <h6>Quản trị viên</h6>
                     <ul class="list-inline social-icon-f top-data">

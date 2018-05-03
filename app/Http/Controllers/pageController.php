@@ -53,14 +53,16 @@ class pageController extends Controller
     }
 
     function dsSlide($id){
+        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
         $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id);
-        return view('pages.dsslide', ['slide'=>$slide]);
+        return view('pages.dsslide', ['slide'=>$slide, 'mon'=>$mon]);
     }
 
     function chiTietDeThi($idmon, $id){
+        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
         $chitiet = DB::select('SELECT * FROM dethis WHERE iddethi = '.$id);
         $lienquan = DB::select('SELECT * FROM dethis WHERE idmon = '.$idmon.' AND iddethi != '.$id);
-        return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan]);
+        return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan, 'mon'=>$mon]);
     }
 
     function kienThucLT(){

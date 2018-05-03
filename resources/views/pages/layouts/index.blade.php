@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="fb:app_id" content="204934146962428" />
-    <title>BKFA.COM | @yield('title')</title>
+    <title>BKFA.NET | @yield('title')</title>
     <base href="{{asset('')}}">
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Global Stylesheets -->

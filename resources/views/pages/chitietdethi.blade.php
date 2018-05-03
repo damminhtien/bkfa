@@ -1,5 +1,5 @@
 @extends('pages.layouts.index') @section('title', 'Chi tiết đề thi') @section('content')
-<div id="home-p" class="home-p pages-head1 text-center">
+<div id="home-p" class="home-p pages-head5 text-center">
     <div class="container">
         <div class="input-group ">
             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
@@ -23,6 +23,18 @@
                                 <a href="/download-de-thi/{{$chitiet->url}}" class="btn btn-general btn-white" style="margin-right: 15px;"><i class="fa fa-download"></i> Download</a>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="fa fa-paperclip" style="margin-left: 20px; font-size: 20px;"> <b>{{$chitiet->gioithieu}}</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div style="margin-left: 20px;">
+                                @php echo($chitiet->ghichu);@endphp
+                                </div>
+                            </td>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -36,9 +48,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="text-align: center;" colspan="2">
-                                <a href="#" class="btn btn-general btn-white" style="margin-top:10px; "><i class="fa fa-eye"></i> Xem thêm ...</a>
-                                <a href="#" class="btn btn-general btn-white" style="margin-top:10px; "><i class="fa fa-download"></i> Tải xuống &nbsp</a>
+                            <td colspan="2">
+                                <br>
                             </td>
                         </tr>
                         <tr>
@@ -62,7 +73,7 @@
                                             <label class="star star-1" for="star-1">
                                             </label>               
                                         </form>
-                                        <div id="data"></div>
+                                       {{--  <div id="data"></div> --}}
                                     </div>
                                 </div>
                             </td>
@@ -104,11 +115,6 @@
                                         <div class="col-xs-4"><span class="fa fa-eye"> {{$lq->luotxem}}</span></div>
                                         <div class="col-xs-4"><span class="fa fa-download"> 10000</span></div>
                                     </div>
-                                   {{--  <span class="fa fa-calendar"> {{$lq->nam}}</span>
-                                    <span>&nbsp&nbsp&nbsp&nbsp</span>
-                                    <span class="fa fa-eye"> {{$lq->luotxem}}</span>
-                                    <span>&nbsp&nbsp&nbsp&nbsp</span>
-                                    <span class="fa fa-download"> 10000</span> --}}
                                 </div>
                             </div>
                         </li>
@@ -120,78 +126,38 @@
             <div class="col-md-12">
                 <div class="service-h-tab">
                     <nav class="nav nav-tabs" id="myTab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Reviews</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Desciption</a>
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">Comments</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile"><i class="fa fa-file-pdf-o"></i> Lời giải</a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="review-block">
                                 <div class="row">
-                                    <div class=" col-sm-3">
-                                        <img src="img/client/avatar-3.jpg" class="img-rounded">
-                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="rating">
-                                            <div class="stars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
+                                    <div class="col-sm-12">
+                                        <style>
+                                            .comment-box-sn ul li{
+                                                display: inline-block;
+                                                padding-right: 50px;
+                                                font-size: 20px;
+                                                margin-left: -30px; 
+                                            }
+                                        </style>
+                                        <div class="comment-box-sn">
+                                            {!!Share::page('http://jorenvanhocht.be', 'Share title')
+                                                ->facebook()
+                                                ->twitter()
+                                                ->googlePlus()
+                                                ->linkedin('Extra linkedin summary can be passed here')!!}
+                                            <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#chitietdethi{{$chitiet->iddethi}}" data-numposts="5" data-width="750"></div>
                                         </div>
-                                        <div class="review-block-title">this was nice in buy</div>
-                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-block">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <img src="img/client/avatar-1.jpg" class="img-rounded">
-                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="rating">
-                                            <div class="stars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                        </div>
-                                        <div class="review-block-title">this was nice in buy</div>
-                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-block">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <img src="img/client/avatar-2.jpg" class="img-rounded">
-                                        <div class="review-block-name"><a href="#">Nktailor</a></div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="rating">
-                                            <div class="stars">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                            </div>
-                                        </div>
-                                        <div class="review-block-title">this was nice in buy</div>
-                                        <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
-                            <p>Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute</p>
+                            <a href="/download-loi-giai/{{$chitiet->urlloigiai}}" class="btn btn-general btn-white" style="margin-top:10px;"><i class="fa fa-download"></i> Download</a>
+                            <br><br>
+                            @include('pages.hienthiloigiai')
                         </div>
                     </div>
                 </div>
@@ -209,67 +175,28 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="row" style="padding: 0px;">
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card ">
-                            <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a>
-                            <div class="card-body text-center">
-                                <div class="card-title">
-                                    <a href="#">cấu trúc dữ liệu và giải thuật</a>
-                                </div>
-                                <strong>Một trong những môn quan trong, đòi hỏi ...</strong>
-                                <div class="cart-icon text-center">
-                                    <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                                    <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card ">
-                            <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a>
-                            <div class="card-body text-center">
-                                <div class="card-title">
-                                    <a href="#">cấu trúc dữ liệu và giải thuật</a>
-                                </div>
-                                <strong>Một trong những môn quan trong, đòi hỏi ...</strong>
-                                <div class="cart-icon text-center">
-                                    <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                                    <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
+                <div class="row" style="padding: 0px">
+                    @php
+                    foreach ($mon as $m) {
+                        @endphp
+                         <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card ">
+                               {{--  <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a> --}}
+                                <div class="card-body text-center">
+                                    <div class="card-title">
+                                        <a href="#"><strong style="color: #000">{{$m->ten}}</strong></a>
+                                    </div>
+                                    <p style="color: #0C48BA">{{$m->gioithieu}}</p>
+                                    <div class="cart-icon text-center" style="position:absolute; bottom:20px; margin-left: 22px;">
+                                        <a href="danh-sach-slide/{{ $m->idmon }}/{{ $m->tenkhongdau }}.html"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
+                                        <a href="danh-sach-de-thi/{{ $m->idmon }}/{{ $m->tenkhongdau }}.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card ">
-                            <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a>
-                            <div class="card-body text-center">
-                                <div class="card-title">
-                                    <a href="#">cấu trúc dữ liệu và giải thuật</a>
-                                </div>
-                                <strong>Một trong những môn quan trong, đòi hỏi ...</strong>
-                                <div class="cart-icon text-center">
-                                    <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                                    <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card ">
-                            <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a>
-                            <div class="card-body text-center">
-                                <div class="card-title">
-                                    <a href="#">cấu trúc dữ liệu và giải thuật</a>
-                                </div>
-                                <strong>Một trong những môn quan trong, đòi hỏi ...</strong>
-                                <div class="cart-icon text-center">
-                                    <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
-                                    <a href="#"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @php
+                    }
+                    @endphp
                 </div>
             </div>
         </div>
