@@ -37,7 +37,7 @@
                     <thead>
                         <tr>
                             <td>
-                                <span class="fa fa-user" data-toggle="tooltip" title="Tác giả: BKFA.COM" style="margin-left: 20px;"> BKFA.COM</span>
+                                <span class="fa fa-user" data-toggle="tooltip" title="Tác giả: BKFA.COM" style="margin-left: 20px; color: #0308D4"><span style="color: #8F0707;"> BKFA.COM</span></span>
                             </td>
                             <td style="text-align: right;">
                                 <a href="/download-de-thi/{{$chitiet->url}}" class="btn btn-general btn-white" style="margin-right: 15px;"><i class="fa fa-download"></i> Download</a>

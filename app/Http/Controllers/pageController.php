@@ -53,13 +53,15 @@ class pageController extends Controller
     }
 
     function dsSlide($id){
-        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
-        $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id. ' ORDER BY created_at DESC');
-        return view('pages.dsslide', ['slide'=>$slide, 'mon'=>$mon]);
+        $mon = DB::select('SELECT * FROM mons WHERE idmon != '.$id.' ORDER BY idmon DESC LIMIT 0,4');
+        $slide = DB::table('slides')->where('idmon', $id)->orderBy('created_at', 'desc')->paginate(5);
+        $mostdownload = DB::table('slides')->where('idmon', $id)->orderBy('luotxem', 'desc')->paginate(5);
+        return view('pages.dsslide', ['slide'=>$slide, 'mon'=>$mon, 'mostdownload'=>$mostdownload]);
     }
 
     function chiTietDeThi($idmon, $id){
-        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
+        $number = DB::update('UPDATE dethis SET luotxem = luotxem + 1 WHERE iddethi = '.$id);
+        $mon = DB::select('SELECT * FROM mons WHERE idmon != '.$idmon.' ORDER BY idmon DESC LIMIT 0,4');
         $chitiet = DB::select('SELECT * FROM dethis WHERE iddethi = '.$id);
         $lienquan = DB::select('SELECT * FROM dethis WHERE idmon = '.$idmon.' AND iddethi != '.$id);
         return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan, 'mon'=>$mon]);

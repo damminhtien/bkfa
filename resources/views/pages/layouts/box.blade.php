@@ -19,7 +19,15 @@
     }(document, 'script', 'facebook-jssdk'));
     </script>
 </div>
-<div id="video_box" class="vb-left sort-order-2">
+
+<div id="twitter_footer" class="twit-left sort-order-2">
+    <div class="twitter_icon"><i class="fa fa-twitter"></i></div>
+    <a class="twitter-timeline" href="https://twitter.com/BKFA_Team?ref_src=twsrc%5Etfw">Tweets by BKFA_Team</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/BKFA_Team?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @BKFA_Team</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <a href="https://twitter.com/intent/tweet?screen_name=BKFA_Team&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @BKFA_Team</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<div id="video_box" class="vb-left sort-order-3">
     <div id="video_box_icon"><i class="fa fa-play"></i></div>
     <p>
         <iframe id="youtube" width="560" height="315" src="https://www.youtube.com/embed/etq4Iqx3hnk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

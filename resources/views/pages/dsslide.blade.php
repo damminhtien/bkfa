@@ -46,9 +46,45 @@
                                 @php
                             }
                             @endphp
+
+                            <nav aria-label="Page navigation" style="margin-top: 50px;">
+                                <ul class="pagination justify-content-center">
+                                    {{ $slide->links() }}
+                                </ul>
+                            </nav>
+
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <strong>Slide đã được hệ thống sắp xếp theo thứ tự lượt tải giảm dần, các bạn hãy lựa chọn cho mình một combo thích hợp nha. Bản thân ad thì sẽ sắm combo đầu tiên vì khá đc nhiều bạn download. Như các bạ biết thì cái gì dùng nhiều tất sẽ tốt. </strong>
+                            <em>Slide đã được hệ thống sắp xếp theo thứ tự lượt tải giảm dần, các bạn hãy lựa chọn cho mình một slide thích hợp nha. Good luck!!!</em>
+                            <br><br>
+                            @php
+                            foreach ($mostdownload as $most) {
+                                @endphp
+                                <div class="review-block">
+                                    <div class="row">
+                                        <div class=" col-sm-3">
+                                            <img src="upload/images/slide/{{$most->urlanh}} " class="img-rounded">
+                                            {{-- <div class="review-block-name" style="margin-left: 10px;"><a href="#"> Phạm Đăng Hải</a></div> --}}
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="review-block-title">{{$most->gioithieu}}</div>
+                                            <p><i class="fa fa-calendar"></i> {{$most->updated_at}}</p>
+                                            <div class="review-block-description">@php echo $most->ghichu; @endphp</div>
+                                            <br>
+                                            <a onclick="myFunction({{$most->idslide}})" href="/download-Slide/{{$most->idslide}}/{{$most->url}}" class="btn btn-general btn-white" style="padding: 5px;"><i class="fa fa-download"></i> Download</a>
+                                            <span style="margin-left: 20px;"><i class="fa fa-download number{{$most->idslide}}" style="color: #900;"> {{$most->luotxem}}</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                @php
+                            }
+                            @endphp
+
+                            <nav aria-label="Page navigation" style="margin-top: 50px;">
+                                <ul class="pagination justify-content-center">
+                                    {{ $mostdownload->links() }}
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -73,7 +109,7 @@
                     <input type="text" name="text" placeholder="Name" class="form-control">
                     <br>
                     <button class="btn btn-general btn-green" style="width: 100%;" role="button">Send</button> -->
-                    <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#dsSlide{{$slide[0]->idmon}}" data-numposts="5" data-width="750"></div>
+                    <div class= "fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#bkfa#{{$slide[0]->idmon}}" data-numposts="5" data-width="750"></div>
                 </div>
             </div>
         </div>
