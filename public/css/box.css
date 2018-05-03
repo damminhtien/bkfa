@@ -159,12 +159,12 @@
     }
 
     .sort-order-1 {
-        top: 145px;
-        z-index: 10000;
+        top: 190px;
+        z-index: 10001;
     }
 
-    .sort-order-3 {
-        top: 200px;
+    .sort-order-2 {
+        top: 245px;
         z-index: 10000;   
     }
 }
