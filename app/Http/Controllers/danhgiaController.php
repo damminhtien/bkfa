@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\danhGiaSlide;
+use App\danhgiadethi;
 
 class danhgiaController extends Controller
 {
-	public function danhGiaSlide($iduser,$idslide,$star){
+	public function danhGiaDeThi($iduser,$iddethi,$star){
 		$kq2=0;
-		$danhgia = danhGiaSlide::where('idslide',$idslide)->get();
+		$danhgia = danhgiadethi::where('iddethi',$iddethi)->get();
 		foreach ($danhgia as $dg) {
-			if($dg->iduser == $iduser){
+			if($dg->id == $iduser){
 				$dg->star =  $star;
 				$dg->save();
 				$kq2 += 1;
@@ -19,24 +19,24 @@ class danhgiaController extends Controller
 		}
 		if($kq2 == 0){
 
-			$danhgia1 = new danhGiaSlide;
-			$danhgia1->iduser = $iduser;
-			$danhgia1->idslide = $idslide;
+			$danhgia1 = new danhgiadethi;
+			$danhgia1->id = $iduser;
+			$danhgia1->iddethi = $iddethi;
 			$danhgia1->star = $star;
 			$danhgia1->save();
 		}
 		$saoTB=0;
-		$sao = danhGiaSlide::where('idslide',$idslide)->get();
+		$sao = danhgiadethi::where('iddethi',$iddethi)->get();
 		foreach($sao as $s){
 			$saoTB += $s->star;
 		}
 		echo $saoTB/count($sao);
 	}
 
-	public function danhGiaTB($idslide){
+	public function danhGiaTB($iddethi){
 		$saoTB=0;
-		$sao = danhGiaSlide::where('idslide',$idslide)->get();
-		$saocuatoi = danhGiaSlide::where('idslide',$idslide)->get();
+		$sao = danhgiadethi::where('iddethi',$iddethi)->get();
+		$saocuatoi = danhgiadethi::where('iddethi',$iddethi)->get();
 		foreach($sao as $s){
 			$saoTB += $s->star;
 		}
@@ -49,11 +49,11 @@ class danhgiaController extends Controller
 	}
 
 
-	public function saocuatoi($idslide,$iduser){
+	public function saocuatoi($iddethi,$iduser){
 		$kq = 0;
-		$saocuatoi = danhGiaSlide::where('idslide',$idslide)->get();
+		$saocuatoi = danhgiadethi::where('iddethi',$iddethi)->get();
 		foreach ($saocuatoi as $s) {
-			if($s->iduser == $iduser){
+			if($s->id == $iduser){
 				$kq = $s->star;
 			}
 		}

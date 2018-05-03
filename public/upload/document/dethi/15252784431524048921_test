@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sentence Reverser! Nhom 2</title>
+    <link rel="stylesheet" href="">
+    <style type="text/css" media="screen">
+    	body{
+    		background: #FFA17F;  /* fallback for old browsers */
+	    	background: -webkit-linear-gradient(left, #00223E, #FFA17F);
+	    	background: -o-linear-gradient(left, #00223E, #FFA17F);
+	    	background: linear-gradient(to right, #00223E, #FFA17F);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    	}
+    	table{
+    		padding: 10px;
+    		font-size: 20px;
+    		margin: 0 auto;
+    		color: white;
+    		border: 3px dashed white;
+    	}
+    	p{
+    		font-size: 15px;
+			float: left;
+			margin: 2px;
+    		padding: 5px;
+    		border: 1px solid white;
+    	}
+    	span{
+    		font-size: 15px;
+			float: right;
+    	}
+		button{
+			float:  right;
+			padding: 8px;
+			cursor: pointer;
+			width: 50px;
+			background: transparent;
+			color: white;
+			font-size: 20px;
+		}
+    </style>
+</head>
+
+<body>
+	<table>
+		<tbody>
+			<tr>
+				<td colspan="2">
+					<h1>Sentence Reverser!</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>Phrase:</td>
+				<td><input id="phrase" type="text" size="40" /></td>
+			</tr>
+			<tr>
+				<td>Filter:</td>
+				<td><input id="filter" type="text" size="10" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button id="go">Go!</button></td>
+			</tr>
+			<td colspan="2">
+				<br>
+				<div id="words"></div>
+			</td>
+			<tr>
+				<td colspan="2">
+				<br>
+				<div id="count"></div>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+    <script type="text/javascript" charset="utf-8" async defer>
+    	// first we define some global variables
+    	let words = []
+    	let numWord = 0
+    	let numFilOut = 0
+    	let rootStr, filterStr
+
+    	// then, we define somethings that we think special
+    	// hash to fast 
+    	const specialUnit = {
+    		'~': true,
+    		'`': true,
+    		'!': true,
+    		'@': true,
+    		'#': true,
+    		'$': true,
+    		'%': true,
+    		'^': true,
+    		'&': true,
+    		'*': true,
+    		'(': true,
+    		')': true,
+    		'-': true,
+    		'_': true,
+    		'+': true,
+    		'=': true,
+    		'{': true,
+    		'}': true,
+    		'[': true,
+    		']': true,
+    		':': true,
+    		';': true,
+    		'\"': true,
+    		'\'': true,
+    		'\\': true,
+    		'\/': true,
+    		'|': true,
+    		',': true,
+    		'.': true,
+    		'<': true,
+    		'>': true,
+    		'?': true
+    	}
+
+    	// and, we define boring aphabel :(
+    	const aphabel = {
+    		'Q': 'q',
+    		'q': 'q',
+    		'W': 'w',
+    		'w': 'w',
+    		'E': 'e',
+    		'e': 'e',
+    		'R': 'r',
+    		'r': 'r',
+    		'T': 't',
+    		't': 't',
+    		'Y': 'y',
+    		'y': 'y',
+    		'U': 'u',
+    		'u': 'u',
+    		'I': 'i',
+    		'i': 'i',
+    		'P': 'p',
+    		'p': 'p',
+    		'O': 'o',
+    		'o': 'o',
+    		'A': 'a',
+    		'a': 'a',
+    		'S': 's',
+    		's': 's',
+    		'D': 'd',
+    		'd': 'd',
+    		'F': 'f',
+    		'f': 'f',
+    		'G': 'g',
+    		'g': 'g',
+    		'H': 'h',
+    		'h': 'h',
+    		'J': 'j',
+    		'j': 'j',
+    		'K': 'k',
+    		'k': 'k',
+    		'L': 'l',
+    		'l': 'l',
+    		'Z': 'z',
+    		'z': 'z',
+    		'X': 'x',
+    		'x': 'x',
+    		'C': 'c',
+    		'c': 'c',
+    		'V': 'v',
+    		'v': 'v',
+    		'B': 'b',
+    		'b': 'b',
+    		'N': 'n',
+    		'n': 'n',
+    		'M': 'm',
+    		'm': 'm'
+    	}
+    	
+    	// set event when click button
+    	document.getElementById("go").addEventListener("click", ()=>
+    	{
+    		words = []
+    		numWord = 0
+    		numFilOut = 0
+    		rootStr = document.getElementById('phrase').value
+    		if(rootStr == '') alert("Nothing to phrase!")
+    		else phraseStr(rootStr)
+    	})
+    	
+    	// phrase string to words divide by space
+    	function phraseStr(str)
+    	{
+    		let len = str.length
+    		let currentWord = ""
+    		// add word to words array
+    		for (let i = 0; i < len; i++) 
+    		{
+    			if(specialUnit[str[i]] == true) continue
+    			if(str[i] === ' ')
+    			{
+    				if(currentWord !== "" && filter(currentWord))
+    				{
+    					words[numWord] = currentWord
+    					numWord++
+    				}
+    				currentWord = ""
+    				continue
+    			}
+    			currentWord += str[i]
+    		}
+    		// add the last word to words array
+    		if(currentWord !== "" && filter(currentWord))
+			{
+				words[numWord] = currentWord
+				numWord++
+			}
+    		showIt()
+    	}
+
+    	// filter word!!!
+    	function filter(currentWord)
+    	{
+    		let filterStr = document.getElementById('filter').value
+    		if(filterStr === "") return true
+    		let lenF = filterStr.length
+    		let lenC = currentWord.length
+    		// two loop to find the same
+    		for (let i = 0; i < lenC; i++)
+    		{
+    			let countCharSame = 0 
+    			for(let j = 0; j < lenF; j++){
+    				if(toLowerChar(filterStr[j]) != toLowerChar(currentWord[i+j])){
+    					break;
+    				}
+    				countCharSame++	
+    			}
+    			// if the currentWord has filterStr, return it false
+    			if(countCharSame == lenF)
+    			{
+    				numFilOut++
+    				return false
+    			}
+    		}
+    		return true
+    	}
+
+    	// show words in the div
+    	function showIt()
+    	{
+    		// refresh the div
+    		console.log(words)
+    		console.log(numWord)
+			document.getElementById('words').innerHTML = ""
+			document.getElementById('count').innerHTML = ""
+    		// append them!!!
+    		for (let i = numWord-1; i >= 0; i--)
+    		{
+    			let paraWord = document.createElement("p")
+				let nodeWord = document.createTextNode(words[i])
+				paraWord.appendChild(nodeWord)
+    			document.getElementById('words').appendChild(paraWord)
+    		}
+    		let spanNum = document.createElement("span")
+			let nodeNum = document.createTextNode("=> " + numFilOut + " word(s) filter out!")
+			spanNum.appendChild(nodeNum)
+			document.getElementById('count').appendChild(spanNum)
+    	}
+
+    	function toLowerChar(a){
+    		return aphabel[a];
+    	}
+    </script>
+</body>
+
+</html>

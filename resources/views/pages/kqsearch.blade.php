@@ -4,10 +4,13 @@
 <!-- home -->
 <div id="home-p" class="home-p pages-head1 text-center">
     <div class="container">
-        <div class="input-group ">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ Lang::get('sub.search') }}">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        </div>
+        <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <div class="input-group ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm" name="search">
+                <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
     </div>
     <!--/end container-->
 </div>
@@ -19,7 +22,7 @@
                 <h3>{{ Lang::get('sub.resultsearch') }}</h3>
                 <div class="heading-border-light"></div>
                 <hgroup>
-                    <h2 class="lead"><strong class="cl-blue">3</strong> {{ Lang::get('sub.resultsearch') }} <strong class="cl-blue">vlxxx.com</strong></h2>
+                    <h2 class="lead"><strong class="cl-blue">{{$sokq}}</strong> {{ Lang::get('sub.resultsearch') }}: {{$req}} <strong class="cl-blue"></strong></h2>
                 </hgroup>
                 <div class="service-h-tab">
                     <nav class="nav nav-tabs" id="myTab" role="tablist">
@@ -38,96 +41,88 @@
                                                 <img src="upload/images/{{$dt->urlanh}} " class="img-fluid " alt="{{$dt->gioithieu}} ">
                                             </div>
                                             {{--
-                                            <div class="thumbnail-blogs">
-                                                <img src="upload/images/{{$dt->urlanh}}" class="img-fluid" alt="{{$dt->gioithieu}}">
-                                            </div> --}}
-                                            <div>
-                                                <h3>{{cutString($dt->gioithieu, 33)." ..."}}</h3>
-                                                <p class="desc">{{$dt->nam}}</p>
-                                            </div>
-                                            <div>
-                                                <a href="#"><i class="fa fa-heart-o"> 1</i></a>
-                                                <a href="#"><i class="fa fa-eye"></i> 2</a>
-                                                <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
+                                                <div class="thumbnail-blogs">
+                                                    <img src="upload/images/{{$dt->urlanh}}" class="img-fluid" alt="{{$dt->gioithieu}}">
+                                                </div> --}}
+                                                <div>
+                                                    <h3>{{cutString($dt->gioithieu, 33)." ..."}}</h3>
+                                                    <p class="desc">{{$dt->nam}}</p>
+                                                </div>
+                                                <div>
+                                                    <a href="#"><i class="fa fa-heart-o"> 1</i></a>
+                                                    <a href="#"><i class="fa fa-eye"></i> 2</a>
+                                                    <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endforeach
+                                        @endforeach
 
+                                    </div>
+                                </div>
+                                <div class="result-view" align="left">
+                                    <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
                                 </div>
                             </div>
-                            <div class="result-view" align="left">
-                                <a href="#" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                               @foreach($slide as $sl)
+                               <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="desc-document-cont">
+                                    <div class="thumbnail-blogs ">
+
+                                    </div>
+                                    {{--
+                                        <div class="thumbnail-blogs">
+
+                                        </div> --}}
+                                        <div>
+                                            <h3>{{cutString($sl->gioithieu, 33)." ..."}}</h3>
+                                            <p class="desc">{{$sl->nam}}</p>
+                                        </div>
+                                        <div>
+                                            <a href="#"><i class="fa fa-heart-o"> 1</i></a>
+                                            <a href="#"><i class="fa fa-eye"></i> 2</a>
+                                            <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                                <br>
+                                <br>
+                                <div class="result-view" align="left">
+                                    <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <div>abcdxyz</div>
-                            <br>
-                            <br>
-                            <div class="result-view" align="left">
-                                <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="my-profile" role="tabpanel" aria-labelledby="my-profile-tab">
-                            <div class="row">  
-                                <section class="col-xs-12 col-sm-6 col-md-12">
-                                    <article class="search-result row">
-                                        <div class="col-xs-12 col-sm-12 col-md-3">
-                                            <a href="#" title="Lorem ipsum" class="thumbnail"><img src="img/search/s-1.jpg" class="img-fluid" alt="Lorem ipsum" /></a>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-2">
-                                            <ul class="meta-search">
-                                                <li><i class="fa fa-calendar"></i> <span>02/15/2014</span></li>
-                                                <li><i class="fa fa-clock-o"></i> <span>4:28 pm</span></li>
-                                                <li><i class="fa fa-tags"></i> <span>People</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                                            <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                                        </div>
-                                        <span class="clearfix borda"></span>
-                                    </article>
-                                    <article class="search-result row">
-                                        <div class="col-xs-12 col-sm-12 col-md-3">
-                                            <a href="#" title="Lorem ipsum" class="thumbnail"><img src="img/search/s-2.jpg" class="img-fluid" alt="Lorem ipsum" /></a>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-2">
-                                            <ul class="meta-search">
-                                                <li><i class="fa fa-calendar"></i> <span>02/13/2014</span></li>
-                                                <li><i class="fa fa-clock-o"></i> <span>8:32 pm</span></li>
-                                                <li><i class="fa fa-tags"></i> <span>Food</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-7">
-                                            <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                                        </div>
-                                        <span class="clearfix borda"></span>
-                                    </article>
-                                    <article class="search-result row">
-                                        <div class="col-xs-12 col-sm-12 col-md-3">
-                                            <a href="#" title="Lorem ipsum" class="thumbnail"><img src="img/search/s-3.jpg" class="img-fluid" alt="Lorem ipsum" /></a>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-2">
-                                            <ul class="meta-search">
-                                                <li><i class="fa fa-calendar"></i> <span>01/11/2014</span></li>
-                                                <li><i class="fa fa-clock-o"></i> <span>10:13 am</span></li>
-                                                <li><i class="fa fa-tags"></i> <span>Sport</span></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-7">
-                                            <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                                        </div>
-                                        <!-- <span class="clearfix border"></span> -->
-                                    </article>
-                                </section>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="result-view" align="left">
-                                <a href="#" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
+                            <div class="tab-pane fade" id="my-profile" role="tabpanel" aria-labelledby="my-profile-tab">
+                                <div class="row">  
+                                    <section class="col-xs-12 col-sm-6 col-md-12">
+                                        @foreach($tintuc as $tt)
+                                        <article class="search-result row">
+                                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                                <a href="#" title="{{$tt->tieude}}" class="thumbnail"><img src="upload/tintuc/{{$tt->tieudeurlanh}}" class="img-fluid" alt="{{$tt->tieude}}" /></a>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-2">
+                                                <ul class="meta-search">
+                                                    <li><i class="fa fa-calendar"></i> <span>
+                                                        {{$tt->updated_at->format('m/d/Y')}}
+                                                    </span></li>
+                                                    <li><i class="fa fa-clock-o"></i> <span>{{$tt->updated_at->format('H:i:s')}}</span></li>
+                                                    <li><i class="fa fa-tags"></i> <span>People</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                                                <h3><a href="#" title="">{{cutString($tt->gioithieu, 10)." ..."}}</a></h3>
+                                                <p>{!!cutString($tt->noidung, 50) ."..."!!}</p>
+                                            </div>
+                                            <span class="clearfix borda"></span>
+                                        </article>
+                                        @endforeach
+                                    </section>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="result-view" align="left">
+                                    <a href="#" class="btn btn-general btn-green" role="button">Xem thêm</a>
+                                </div>
                             </div>
                         </div>
                     </div>

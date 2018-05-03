@@ -126,10 +126,17 @@
                     <li class="nav-item">
                         <i class="search fa fa-search search-btn"></i>
                         <div class="search-open">
-                            <div class="input-group animated fadeInUp">
-                                <input type="text" class="form-control" placeholder="{{ Lang::get('sub.search') }}" aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2">{{ Lang::get('sub.search2') }}</span>
-                            </div>
+                            <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <div class="input-group animated fadeInUp">
+                                    <input type="text" class="form-control" placeholder="{{ Lang::get('sub.search') }}" aria-describedby="basic-addon2" name="search">
+                                     <span class="input-group-addon" id="basic-addon2">{{ Lang::get('sub.search2') }}</span>
+                                </div>
+
+
+                            </form>
+
+
                         </div>
                     </li>
                     <li>
