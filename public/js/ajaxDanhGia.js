@@ -1,4 +1,3 @@
-
 var star1 = $( "input[type=radio][name=star]" ).val();
 var iddethi1 = $("input[type=hidden][name=iddethi]").val();
 var iduser1 = $("input[type=hidden][name=iduser]").val();
