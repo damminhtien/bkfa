@@ -26,10 +26,10 @@
                             </div>
                             <div>
                                 <h3>{{cutString($ds->gioithieu, 33)." ..."}}</h3>
-                                <p class="desc">{{$ds->nam}}</p>
+                                <p class="desc"><span class="fa fa-user" style="color: #1520F5"></span><b style="color: #731717"> BKFA</b></p>
                             </div>
                             <div class="document-footer">
-                                <i class="fa fa-heart-o"> 1</i>
+                                <i class="fa fa-calendar"> {{$ds->nam}}</i>
                                 <i class="fa fa-eye"> {{$ds->luotxem}}</i>
                                 <i class="fa fa-arrow-circle-o-down"> 3</i>
                             </div>

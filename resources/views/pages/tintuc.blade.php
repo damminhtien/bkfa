@@ -8,14 +8,17 @@
     <!--/end container-->
 </div>
 <!-- end -->
-<!-- news list -->
-<section id="story" class="about-p3">
-    <style>
+<style>
+    #story{
+        margin-top: 50px;
+    }
     .news {
         border: 1px solid #dedede;
         padding: 50px;
     }
-    </style>
+</style>
+<!-- news list -->
+<section id="story" class="about-p3">
     @php foreach ($tintuc as $tt) { if($tt->idtintuc % 2 != 0){ @endphp
     <div class="container news animated fadeInLeft">
         <div class="row">

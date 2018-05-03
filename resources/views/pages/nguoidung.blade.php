@@ -102,7 +102,7 @@ input.form-control {
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="username" class="cols-sm-2 control-label">Password</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
@@ -110,7 +110,7 @@ input.form-control {
                                 <input type="text" class="form-control" name="date" id="username" placeholder="Enter your old Password" value="{{ $nguoidung->password }}"/>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                     	<input type="checkbox" id="changePassword" class="" name="changePassword">
                         <label for="password" class="cols-sm-2 control-label">{{ Lang::get('sub.chanpw') }}</label>
