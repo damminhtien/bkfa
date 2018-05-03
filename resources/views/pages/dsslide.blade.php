@@ -114,11 +114,21 @@
     </div>
 </section>
 @endsection
-@section('script')
-    <script>
-        function myFunction(id){
-            var $tmp = Number($('.number'+ id).text()) + 1;
-            $('.number' + id + ':first').html(" " + $tmp);
-          }
-    </script>
-@endsection
+@if(!Auth::user())
+    @section('script')
+        <script>
+            function myFunction(id){
+                alert('Bạn cần phải đăng nhập để có thể Download tài liệu');
+            }
+        </script>
+    @endsection
+    @else
+    @section('script')
+        <script>
+            function myFunction(id){
+                var $tmp = Number($('.number'+ id).text()) + 1;
+                $('.number' + id + ':first').html(" " + $tmp);
+              }
+        </script>
+    @endsection
+@endif

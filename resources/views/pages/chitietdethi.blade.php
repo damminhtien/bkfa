@@ -8,9 +8,26 @@
     </div>
     <!--/end container-->
 </div>
-
 <section id="single-product-p1">
     <div class="container">
+        <div>
+            @if(count($errors) > 0)
+                <br><br>
+                <div class="alert alert-danger">
+                @foreach($errors->all() as $err)
+                    {{$err}}<br>
+                @endforeach()
+                </div>
+            @endif
+
+            @if(session('thongbao'))
+                <br><br>
+                <div class="alert alert-success"> 
+                    {{session('thongbao')}}
+                </div>
+            @endif
+        </div>
+        <br><br>
         <div class="wrapper row">
             <div class="preview col-md-9">
                 <table>

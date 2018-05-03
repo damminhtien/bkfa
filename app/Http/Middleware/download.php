@@ -23,6 +23,6 @@ class download
             else return redirect('/');
         }
         else
-            return redirect('/')->with('thongbao','Phải đăng nhập mới có thể download');
+            return redirect()->back()->with('thongbao','Phải đăng nhập mới có thể download');
     }
 }
