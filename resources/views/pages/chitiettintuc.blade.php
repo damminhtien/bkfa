@@ -109,9 +109,9 @@
                         <style>
                             .comment-box-sn ul li{
                                 display: inline-block;
-                                padding-right: 50px;
+                                padding-right: 20%;
                                 font-size: 20px;
-                                margin-left: -30px; 
+                                margin-left: -30px;
                             }
                         </style>
                         <div class="comment-box-sn">
@@ -143,7 +143,11 @@
                             <p>{{$tgn->tieude}}</p>
                         </a>
                         <small><fa class="fa-watch"> {{$tgn->created_at}}</fa></small>
+<<<<<<< HEAD
+                        <p class=" text-justify">{{$tgn->gioithieu}}</p>
+=======
                         <p class="text-justify">{{$tgn->gioithieu}}</p>
+>>>>>>> 80adbfe17f6bac6b9bccaefebe8a47d4b18dcdd1
                     </div>
                     @php } @endphp
                 </div>

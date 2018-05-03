@@ -5,10 +5,13 @@
 
 <div id="home-p" class="home-p pages-head2 text-center">
     <div class="container">
-        <div class="input-group ">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        </div>
+        <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <div class="input-group ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm" name="search">
+                <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
     </div>
     <!--/end container-->
 </div>
@@ -19,7 +22,7 @@
             @foreach($dsmon as $ds)
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card ">
-                   {{--  <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a> --}}
+                 {{--  <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a> --}}
                     <div class="card-body text-center">
                         <div class="card-title">
                             <a href="#"><strong style="color: #000">{{$ds->ten}}</strong></a>

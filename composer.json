@@ -6,12 +6,14 @@
     "type": "project",
     "require": {
         "php": ">=7.1.3",
+        "algolia/algoliasearch-client-php": "^1.25",
         "doctrine/dbal": "~2.6",
         "fideloper/proxy": "~4.0",
         "goodnesskay/laravelpdfviewer": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "jorenvanhocht/laravel-share": "^2.0",
         "laravel/framework": "5.6.*",
+        "laravel/scout": "^4.0",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
