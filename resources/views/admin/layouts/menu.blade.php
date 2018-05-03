@@ -1,9 +1,9 @@
 <div class="side-nav">
     <div class="side-nav-inner">
         <div class="side-nav-logo">
-            <a href="index.html">
-                <div class="logo logo-dark" style="background-image: url('library/images/logo/logo.png')"></div>
-                <div class="logo logo-white" style="background-image: url('library/images/logo/logo-white.png')"></div>
+            <a href="/home">
+                <div class="logo logo-dark" style="background-image: url('img/logo.png')"></div>
+                <div class="logo logo-white" style="background-image: url('img/logo.png')"></div>
             </a>
             <div class="mobile-toggle side-nav-toggle">
                 <a href="/">
@@ -63,13 +63,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="email.html">Email</a>
+                        <a href="#">Email</a>
                     </li>
                     <li>
-                        <a href="calendar.html">Calendar</a>
+                        <a href="#">Calendar</a>
                     </li>
                     <li>
-                        <a href="social.html">Social</a>
+                        <a href="#">Social</a>
                     </li>
                 </ul>
             </li>
@@ -85,10 +85,10 @@
                             </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="google-map.html">Google Map</a>
+                        <a href="#">Google Map</a>
                     </li>
                     <li>
-                        <a href="vector-map.html">Vector Map</a>
+                        <a href="#">Vector Map</a>
                     </li>
                 </ul>
             </li>
@@ -104,31 +104,19 @@
                             </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="invoice.html">Invoice</a>
+                        <a href="#">Invoice</a>
                     </li>
                     <li>
-                        <a href="account.html">Account Settings</a>
+                        <a href="#">Account Settings</a>
                     </li>
                     <li>
-                        <a href="faq.html">FAQ</a>
+                        <a href="#">FAQ</a>
                     </li>
                     <li>
-                        <a href="gallery.html">Gallery</a>
+                        <a href="#">Gallery</a>
                     </li>
                     <li>
-                        <a href="sign-in.html">Sign In</a>
-                    </li>
-                    <li>
-                        <a href="sign-in2.html">Sign In 2</a>
-                    </li>
-                    <li>
-                        <a href="sign-up.html">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="404.html">404</a>
-                    </li>
-                    <li>
-                        <a href="500.html">500</a>
+                        <a href="#">Sign In</a>
                     </li>
                 </ul>
             </li>

@@ -1112,9 +1112,13 @@ class Client
                    redirect_now('search-like/' . $query);
                 }     
             } catch (AlgoliaException $e) {
-                redirect_now('search-like/' . $query);                
+                if($query != null){
+                    redirect_now('search-like/' . $query);
+                }
             } catch (\Exception $e) {
-                redirect_now('search-like/' . $query);
+                if($query != null){
+                    redirect_now('search-like/' . $query);
+                }
                 $exceptions[$host] = $e->getMessage();
                 if ($context instanceof ClientContext) {
                     $context->addFailingHost($host); // Needs to be before the rotation otherwise it will not be rotated
