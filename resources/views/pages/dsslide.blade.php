@@ -2,10 +2,13 @@
 
 <div id="home-p" class="home-p pages-head3 text-center">
     <div class="container">
-        <div class="input-group ">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        </div>
+        <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <div class="input-group ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm" name="search">
+                <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
     </div>
     <!--/end container-->
 </div>
@@ -114,11 +117,21 @@
     </div>
 </section>
 @endsection
-@section('script')
-    <script>
-        function myFunction(id){
-            var $tmp = Number($('.number'+ id).text()) + 1;
-            $('.number' + id + ':first').html(" " + $tmp);
-          }
-    </script>
-@endsection
+@if(!Auth::user())
+    @section('script')
+        <script>
+            function myFunction(id){
+                alert('Bạn cần phải đăng nhập để có thể Download tài liệu');
+            }
+        </script>
+    @endsection
+    @else
+    @section('script')
+        <script>
+            function myFunction(id){
+                var $tmp = Number($('.number'+ id).text()) + 1;
+                $('.number' + id + ':first').html(" " + $tmp);
+              }
+        </script>
+    @endsection
+@endif

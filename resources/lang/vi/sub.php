@@ -71,7 +71,7 @@
   'library' => 'Một kho tài liệu khổng lồ dành cho sinh viên',
   'docweb' => 'Website Tài Liệu',
   'latest' => 'Mới nhất',
-  'mostview' => 'Xem nhiều nhất',
+  'mostview' => 'Xem nhiều',
   'seemore' => 'Xem thêm',
   'text1' => 'Chúng tôi liên kết với Website',
   'text2' => 'Chúng tôi rất mong nhận được sự đóng góp và phản hồi của bạn.',

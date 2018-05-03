@@ -121,11 +121,13 @@ Route::group(['middleware' => 'localization2', 'prefix' => Session::get('locale2
 		Route::get('/download-loi-giai/{file}', 'downloadsController@downloadLoiGiai');
 	});
 
-	Route::get('tim-kiem', 'pageController@timKiem');
+	Route::post("tim-kiem",'pageController@postTimKiem');
+	Route::get('tim-kiem', 'pageController@getTimKiem');
+	Route::get('search-like/{query}','pageController@search_like');
 
-	Route::get('danhgia/{iduser}/{idslide}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaSlide']);
-	Route::get('TB/{idslide}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
-	Route::get('saocuatoi/{idslide}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
+	Route::get('danhgia/{iduser}/{iddethi}/{star}',['as'=>'danhgia','uses'=>'danhgiaController@danhGiaDeThi']);
+	Route::get('TB/{iddethi}',['as'=>'TB','uses'=>'danhgiaController@danhGiaTB']);
+	Route::get('saocuatoi/{iddethi}/{iduser}',['as'=>'saocuatoi','uses'=>'danhgiaController@saocuatoi']);
 	Route::get('dangnhap','pageController@getDangNhap');
 	Route::post('dangnhap','pageController@postDangNhap');
 	Route::get('dangxuat','pageController@getDangXuat');

@@ -2,10 +2,13 @@
 
 <div id="home-p" class="home-p pages-head4 text-center">
     <div class="container">
-        <div class="input-group ">
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-        </div>
+        <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="{{csrf_token()}}">
+            <div class="input-group ">
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Tìm kiếm" name="search">
+                <button type="submit" class="input-group-addon"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
     </div>
     <!--/end container-->
 </div>
