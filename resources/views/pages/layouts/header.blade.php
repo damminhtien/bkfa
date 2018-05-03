@@ -28,7 +28,7 @@
                                           -webkit-user-select: none;
                                           background-color: white;
                                           background-image: url('/img/down.png');
-                                          background-position: 97% auto;
+                                          background-position: 97%;
                                           background-repeat: no-repeat;
                                           background-size: contain;
                                           overflow: hidden;

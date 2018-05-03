@@ -26,6 +26,7 @@
                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-expanded="true">{{ Lang::get('sub.exam') }}</a>
                         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile">Slide</a>
                         <a class="nav-item nav-link" id="my-profile-tab" data-toggle="tab" href="#my-profile" role="tab" aria-controls="my-profile">{{ Lang::get('sub.news') }}</a>
+                        <a class="nav-item nav-link" id="my-profile-tab2" data-toggle="tab" href="#my-profile2" role="tab" aria-controls="my-profile2">{{ Lang::get('sub.news') }}</a>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
@@ -123,6 +124,32 @@
                                         <!-- <span class="clearfix border"></span> -->
                                     </article>
                                 </section>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="result-view" align="left">
+                                <a href="#" class="btn btn-general btn-green" role="button">{{ Lang::get('sub.seemore') }}</a>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="my-profile2" role="tabpanel" aria-labelledby="my-profile-tab2">
+                            <div id="document-1" class="row">
+                                
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="card ">
+                                       {{--  <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a> --}}
+                                        <div class="card-body text-center">
+                                            <div class="card-title">
+                                                <a href="#"><strong style="color: #000">abc</strong></a>
+                                            </div>
+                                            <p style="color: #0C48BA">dm dm dmd dm dm dmd m</p>
+                                            <div class="cart-icon text-center" style="position:absolute; bottom:20px; margin-left: 22px;">
+                                                <a href="danh-sach-slide.html"><i class="fa fa-book" aria-hidden="true"></i> Slide</a>
+                                                <a href="danh-sach-de-thi.html"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Đề thi</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
                             <br>
                             <br>
