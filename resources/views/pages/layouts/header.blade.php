@@ -1,4 +1,4 @@
-<header>
+<header id="header">
     <!-- Top Navbar  -->
     <div class="top-menubar">
         <div class="topmenu">
@@ -10,10 +10,43 @@
                                 <i class="fa fa-envelope"></i> Email: <a href="mailto:info@themeborn.com">bkfa.com@gmail.com</a>
                             </li>
                             <li>
-                                <i class="fa fa-phone"></i> Hotline: (1) 0969696969
+                                <i class="fa fa-phone"></i> Hotline: (+84) 96 105 6808
                             </li>
                             <li class="dropdown">
                                 <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
+                                    <style>
+                                        select {
+                                          border-bottom: 1px solid #c9c9c9;
+                                          border-top: 0;
+                                          border-left: 0;
+                                          border-right: 0;
+                                          color: #444444;
+                                          -webkit-appearance: button;
+                                          -webkit-border-radius: 2px;
+                                          -webkit-padding-end: 20px;
+                                          -webkit-padding-start: 2px;
+                                          -webkit-user-select: none;
+                                          background-color: white;
+                                          background-image: url('/img/down.png');
+                                          background-position: 97% auto;
+                                          background-repeat: no-repeat;
+                                          background-size: contain;
+                                          overflow: hidden;
+                                          padding: 1px 2px;
+                                          text-overflow: ellipsis;
+                                          white-space: nowrap;
+                                          min-width: 100px;
+
+                                          option {
+                                            position: relative;
+                                          }
+                                        }
+                                        option:visited
+                                        {
+                                        background:red;
+                                        text-decoration:none;
+                                        }
+                                    </style>
                                     <select name="locale2" onchange='this.form.submit();'>
                                         <option value="en">{{ trans('sub.lang.en') }}</option>
                                         <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
@@ -25,9 +58,9 @@
                     </div>
                     <div class="col-md-5">
                         <ul class="list-inline top-data">
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
-                            <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                            <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/BKFA_Team" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/105336153943636624010?hl=vi" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                             @if(!Auth::user())
                             <li>
                                 <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>
@@ -117,24 +150,26 @@
                                                     <i class="fa fa-envelope"></i> Email: <a href="mailto:info@htmlstream.com">bkfa@gmail.com</a>
                                                 </li>
                                                 <li>
-                                                    <i class="fa fa-phone"></i> Hotline: (1) 0969696969
+                                                    <i class="fa fa-phone"></i> Hotline: (+84) 96 105 6808
                                                 </li>
                                                 <li class="dropdown">
                                                     <form action="{{ route('switchLang2') }}" class="form-lang" method="post">
-                                                        <select name="locale2" onchange='this.form.submit();'>
-                                                            <option value="en">{{ trans('sub.lang.en') }}</option>
-                                                            <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
-                                                        </select>
-                                                        {{ csrf_field() }}
+                                                        <div style="font-family: serif; font-size: 120%; background-color: #3366ff">
+                                                            <select name="locale2" onchange='this.form.submit();'>
+                                                                <option value="en">{{ trans('sub.lang.en') }}</option>
+                                                                <option value="vi"{{ Lang::locale() === 'vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                                                            </select>
+                                                            {{ csrf_field() }}
+                                                        </div>
                                                     </form>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
                                             <ul class="list-inline top-data">
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
-                                                <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
+                                                <li><a href="https://www.facebook.com/bkfateam/" target="_empty"><i class="fa top-social fa-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com/BKFA_Team" target="_empty"><i class="fa top-social fa-twitter"></i></a></li>
+                                                <li><a href="https://plus.google.com/105336153943636624010?hl=vi" target="_empty"><i class="fa top-social fa-google-plus"></i></a></li>
                                                 @if(!Auth::user())
                                                 <li>
                                                     <a href="dangnhap" class="log-top">{{ Lang::get('sub.login') }}</a>

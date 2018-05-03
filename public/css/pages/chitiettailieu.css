@@ -51,8 +51,8 @@ input.star:checked~label.star:before {
 }
 
 input.star-5:checked~label.star:before {
-    color: #FE7;
-    text-shadow: 0 0 20px #952;
+    color: #FBDC04;
+    text-shadow: 0 0 20px #FF0000;
 }
 
 input.star-1:checked~label.star:before {
@@ -110,7 +110,7 @@ label.star:before {
 }
 
 #single-product-p1 {
-    padding: 100px 0 0 0;
+    padding: 70px 0 0 0;
 }
 
 .preview {
@@ -330,8 +330,8 @@ h5.colors {
 }
 
 .review-block .col-sm-3 img {
-    width: 100px;
-    height: 100px;
+    width: 145px;
+    height: 180px;
 }
 
 .review-block-name {

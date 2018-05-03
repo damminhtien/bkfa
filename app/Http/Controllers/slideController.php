@@ -119,7 +119,7 @@ class slideController extends Controller
 	}
 
 	public function getXoa($idslide){
-        $slide = slide::find($idslide)->firstOrFail();
+        $slide = slide::find($idslide);
         $url = $slide->url;
         $urlanh = $slide->urlanh;
         $ext = getExtension($url);

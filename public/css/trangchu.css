@@ -5,44 +5,23 @@ body {
     height: 100%;
 }
 
-body {
-    font-family: 'Hind', sans-serif;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5 {
-    font-family: 'Roboto', sans-serif;
     color: #41464b;
     text-transform: uppercase;
 }
 
 a {
-    font-family: 'Hind', sans-serif;
     color: #2196f3;
     text-decoration: none;
 }
 
 p {
-    font-family: 'Hind', sans-serif;
     color: #64707b;
-    font-size: 15px;
-    font-weight: 300;
 }
-
-@media (min-width: 1600px) {
-    p {
-        font-family: 'Hind', sans-serif;
-        color: #64707b;
-        font-size: 16px;
-        font-weight: 300;
-    }
-}
-
-
-
 
 /*====================================================
                   BUTTON
@@ -310,6 +289,24 @@ p {
 
 .home-p.pages-head4 {
     background: url(../img/banner/banner-4.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head5 {
+    background: url(../img/banner/banner-5.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head6 {
+    background: url(../img/banner/banner-6.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.home-p.pages-head7 {
+    background: url(../img/banner/banner-7.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
 }

@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="fb:app_id" content="204934146962428" />
-    <title>BKFA.COM | @yield('title')</title>
+    <title>BKFA.NET | @yield('title')</title>
     <base href="{{asset('')}}">
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- Global Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="library/bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link href="library/css/font-awesome.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/animate/animate.min.css"> -->
+    <link rel="stylesheet" href="library/css/animate.min.css">
     <link rel="stylesheet" href="library/css/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" href="library/css/owl-carousel/owl.theme.default.min.css">
     <!--  css -->
@@ -39,7 +39,6 @@
     @include('pages.layouts.header')
 
     @yield('content')
-
     @include('pages.layouts.footer')
 
     @include('pages.layouts.box')
@@ -56,6 +55,8 @@
     <script src="library/bower_components/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/ajaxDanhGia.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="{{ asset('js/share.js') }}"></script>
     @yield('script')
 </body>
 

@@ -31,14 +31,15 @@ class pageController extends Controller
     }
 
     function tinTuc(){
-        $tintuc =  DB::table('tintucs')->paginate(2);
+        $tintuc =  DB::table('tintucs')->orderBy('created_at', 'desc')->paginate(5);
         return view('pages.tintuc', ['tintuc'=>$tintuc]);
     }
 
-
     function chiTietTinTuc($id){
         $chitiet = DB::select('SELECT * FROM tintucs WHERE idtintuc = '.$id);
-        return view('pages.chitiettintuc', ['chitiet'=>$chitiet[0]]);
+        DB::table('tintucs')->where('idtintuc', $id)->update(['luotxem' => ($chitiet[0]->luotxem + 1)]);
+        $tingannhat = DB::select("SELECT * FROM tintucs WHERE created_at < '{$chitiet[0]->created_at}' ORDER BY created_at DESC LIMIT 5");
+        return view('pages.chitiettintuc', ['chitiet'=>$chitiet[0], 'tingannhat'=>$tingannhat]);
     }
 
     function dsMon($id){
@@ -52,14 +53,16 @@ class pageController extends Controller
     }
 
     function dsSlide($id){
+        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
         $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id);
-        return view('pages.dsslide', ['slide'=>$slide]);
+        return view('pages.dsslide', ['slide'=>$slide, 'mon'=>$mon]);
     }
 
     function chiTietDeThi($idmon, $id){
+        $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
         $chitiet = DB::select('SELECT * FROM dethis WHERE iddethi = '.$id);
         $lienquan = DB::select('SELECT * FROM dethis WHERE idmon = '.$idmon.' AND iddethi != '.$id);
-        return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan]);
+        return view('pages.chitietdethi', ['chitiet'=>$chitiet[0], 'lienquan'=>$lienquan, 'mon'=>$mon]);
     }
 
     function kienThucLT(){
@@ -166,7 +169,7 @@ function getNguoiDung() {
         );
 
         $user = Auth::user();
-        $user->name = $request->name;
+        $user->ten = $request->name;
         
         if($request->changePassword == "on") {
             $this->validate($request,

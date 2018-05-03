@@ -1,6 +1,6 @@
 @extends('pages.layouts.index') @section('title', 'Danh sách đề thi') @section('content')
 
-<div id="home-p" class="home-p pages-head1 text-center">
+<div id="home-p" class="home-p pages-head4 text-center">
     <div class="container">
         <form action="tim-kiem" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -13,7 +13,7 @@
     <!--/end container-->
 </div>
 
-<section id="single-product-p1">
+<section>
     <div class="container">
         <div  id="document" class="container-fluid ">
             <div class="wrapper row">
@@ -46,7 +46,7 @@
         </div>
     </div>
 </section>
-<section id="document-1" class="document-1" style="padding-top:0px;">
+{{-- <section id="document-1" class="document-1" style="padding-top:0px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -121,5 +121,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

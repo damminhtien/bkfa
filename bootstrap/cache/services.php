@@ -31,7 +31,7 @@
     27 => 'App\\Providers\\AuthServiceProvider',
     28 => 'App\\Providers\\EventServiceProvider',
     29 => 'App\\Providers\\RouteServiceProvider',
-    30 => 'Laravel\\Scout\\ScoutServiceProvider',
+    30 => 'Jorenvh\\Share\\Providers\\ShareServiceProvider',
   ),
   'eager' => 
   array (
@@ -51,7 +51,7 @@
     13 => 'App\\Providers\\AuthServiceProvider',
     14 => 'App\\Providers\\EventServiceProvider',
     15 => 'App\\Providers\\RouteServiceProvider',
-    16 => 'Laravel\\Scout\\ScoutServiceProvider',
+    16 => 'Jorenvh\\Share\\Providers\\ShareServiceProvider',
   ),
   'deferred' => 
   array (
