@@ -1,11 +1,21 @@
 .sort-order-1 {
-    top: 210px;
+    top: 170px;
     z-index: 10000;
 }
 
 .sort-order-2 {
-    top: 270px;
+    top: 230px;
     z-index: 9999;
+}
+
+.sort-order-3 {
+    top: 290px;
+    z-index: 9998;
+}
+
+.sort-order-4 {
+    top: 340px;
+    z-index: 9997;
 }
 
 
@@ -99,6 +109,50 @@
     left: -33px;
 }
 
+/**===== 17.2. Twitter =====**/
+
+#twitter_footer {
+    position: fixed;
+    width: 215px;
+    background: #fff;
+    border: 3px solid #2daae1;
+    padding: 5px 10px;
+}
+
+#twitter_footer.twit-left {
+    left: -215px;
+}
+
+#twitter_footer.twit-right {
+    right: -215px;
+}
+
+.twitter_icon {
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    line-height: 54px;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: -3px;
+    background-color: #2daae1;
+}
+
+.twitter_icon .fa-twitter,
+.facebook_icon .fa-facebook {
+    font-size: 19px;
+    color: #FFF;
+}
+
+.twit-left .twitter_icon {
+    right: -33px;
+}
+
+.twit-right .twitter_icon {
+    left: -33px;
+}
+
 @media (max-width: 480px) {
     #video_box {
         display: none;
@@ -107,5 +161,10 @@
     .sort-order-1 {
         top: 145px;
         z-index: 10000;
+    }
+
+    .sort-order-3 {
+        top: 200px;
+        z-index: 10000;   
     }
 }
