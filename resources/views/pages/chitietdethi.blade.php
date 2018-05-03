@@ -93,7 +93,7 @@
                                                 <label class="star star-1" for="star-1">
                                                 </label>               
                                             </form>
-                                        <div id="data"></div>
+                                        <div class="btn btn-outline-primary">Lượt đánh giá trung bình | <span id="data"></span> / 5</div>
                                     </div>
                                 </div>
                             </td>
