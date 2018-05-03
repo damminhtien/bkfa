@@ -143,7 +143,7 @@
                             <p>{{$tgn->tieude}}</p>
                         </a>
                         <small><fa class="fa-watch"> {{$tgn->created_at}}</fa></small>
-                        <p>{{$tgn->gioithieu}}</p>
+                        <p class="text-justify">{{$tgn->gioithieu}}</p>
                     </div>
                     @php } @endphp
                 </div>

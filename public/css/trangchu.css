@@ -305,6 +305,12 @@ p {
     background-position: center center;
 }
 
+.home-p.pages-head7 {
+    background: url(../img/banner/banner-7.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .home-p:after {
     top: 0;
     left: 0;

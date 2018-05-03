@@ -1,4 +1,4 @@
-<header>
+<header id="header">
     <!-- Top Navbar  -->
     <div class="top-menubar">
         <div class="topmenu">
@@ -28,7 +28,7 @@
                                           -webkit-user-select: none;
                                           background-color: white;
                                           background-image: url('/img/down.png');
-                                          background-position: 97% center;
+                                          background-position: 97% auto;
                                           background-repeat: no-repeat;
                                           background-size: contain;
                                           overflow: hidden;

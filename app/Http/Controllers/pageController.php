@@ -131,7 +131,7 @@ class pageController extends Controller
         );
 
         $user = Auth::user();
-        $user->name = $request->name;
+        $user->ten = $request->name;
         
         if($request->changePassword == "on") {
             $this->validate($request,
