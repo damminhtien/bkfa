@@ -61,7 +61,7 @@
                     }
                 </style>
                 <div class="comment-box-sn" style="width: 1070px; margin: 50px auto; padding-left: 30px;">
-                    {!!Share::page('http://jorenvanhocht.be', 'Share title')
+                    {!!Share::currentPage()
                         ->facebook()
                         ->twitter()
                         ->googlePlus()

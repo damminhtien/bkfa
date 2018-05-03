@@ -13,15 +13,7 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="input-group input-group-lg">
                                     <button type="submit" style="border-radius: 50px 0px 0px 50px; background-color: #268ff9; border: 2px solid #FFF; color: #FFF;" class="btn btn-default" id="search-button"><i class="fa fa-search"></i></button>
-                                    {{-- <style>
-                                        .input-search {
-                                            /*text-transform: uppercase;*/
-                                            background: rgba(83, 174, 252, 0.7);
-                                            border: 1px solid #fff;
-                                            border-left: none;
-                                        }
-                                    </style> --}}
-                                    <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="{{ Lang::get('sub.search') }} ..." id="input-search" name="search">
+                                    <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="{{ Lang::get('sub.search') }} ..." id="input-search" name="search" autocomplete="off">
                                 </div>
                             </form>
                         </div>

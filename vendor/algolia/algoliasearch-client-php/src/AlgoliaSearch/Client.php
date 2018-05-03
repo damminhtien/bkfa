@@ -1091,9 +1091,9 @@ class Client
         $connectTimeout,
         $readTimeout,
         $query1,
-        $query
+        $query = null
     ) {
-        $requestHeaders = func_num_args() === 9 && is_array(func_get_arg(8)) ? func_get_arg(8) : array();
+        $requestHeaders = func_num_args() === 10 && is_array(func_get_arg(8)) ? func_get_arg(8) : array();
 
         $exceptions = array();
         $cnt = 0;

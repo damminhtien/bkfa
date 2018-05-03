@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Traits\Macroable;
 use PHPUnit\Framework\Assert as PHPUnit;
+use Illuminate\Foundation\Testing\Constraints\SeeInOrder;
 
 /**
  * @mixin \Illuminate\Http\Response
@@ -280,7 +281,7 @@ class TestResponse
      */
     public function assertSee($value)
     {
-        PHPUnit::assertContains($value, $this->getContent());
+        PHPUnit::assertContains((string) $value, $this->getContent());
 
         return $this;
     }
@@ -293,20 +294,7 @@ class TestResponse
      */
     public function assertSeeInOrder(array $values)
     {
-        $position = 0;
-
-        foreach ($values as $value) {
-            $valuePosition = mb_strpos($this->getContent(), $value, $position);
-
-            if ($valuePosition === false || $valuePosition < $position) {
-                PHPUnit::fail(
-                    'Failed asserting that \''.$this->getContent().
-                    '\' contains "'.$value.'" in specified order.'
-                );
-            }
-
-            $position = $valuePosition + mb_strlen($value);
-        }
+        PHPUnit::assertThat($values, new SeeInOrder($this->getContent()));
 
         return $this;
     }
@@ -319,7 +307,7 @@ class TestResponse
      */
     public function assertSeeText($value)
     {
-        PHPUnit::assertContains($value, strip_tags($this->getContent()));
+        PHPUnit::assertContains((string) $value, strip_tags($this->getContent()));
 
         return $this;
     }
@@ -332,20 +320,7 @@ class TestResponse
      */
     public function assertSeeTextInOrder(array $values)
     {
-        $position = 0;
-
-        foreach ($values as $value) {
-            $valuePosition = mb_strpos(strip_tags($this->getContent()), $value, $position);
-
-            if ($valuePosition === false || $valuePosition < $position) {
-                PHPUnit::fail(
-                    'Failed asserting that \''.strip_tags($this->getContent()).
-                    '\' contains "'.$value.'" in specified order.'
-                );
-            }
-
-            $position = $valuePosition + mb_strlen($value);
-        }
+        PHPUnit::assertThat($values, new SeeInOrder(strip_tags($this->getContent())));
 
         return $this;
     }
@@ -358,7 +333,7 @@ class TestResponse
      */
     public function assertDontSee($value)
     {
-        PHPUnit::assertNotContains($value, $this->getContent());
+        PHPUnit::assertNotContains((string) $value, $this->getContent());
 
         return $this;
     }
@@ -371,7 +346,7 @@ class TestResponse
      */
     public function assertDontSeeText($value)
     {
-        PHPUnit::assertNotContains($value, strip_tags($this->getContent()));
+        PHPUnit::assertNotContains((string) $value, strip_tags($this->getContent()));
 
         return $this;
     }
@@ -736,7 +711,7 @@ class TestResponse
                 "Session is missing expected key [{$key}]."
             );
         } else {
-            PHPUnit::assertEquals($value, app('session.store')->get($key));
+            PHPUnit::assertEquals($value, $this->session()->get($key));
         }
 
         return $this;
@@ -775,7 +750,7 @@ class TestResponse
 
         $keys = (array) $keys;
 
-        $errors = app('session.store')->get('errors')->getBag($errorBag);
+        $errors = $this->session()->get('errors')->getBag($errorBag);
 
         foreach ($keys as $key => $value) {
             if (is_int($key)) {

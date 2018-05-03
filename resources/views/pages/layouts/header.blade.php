@@ -28,7 +28,7 @@
                                           -webkit-user-select: none;
                                           background-color: white;
                                           background-image: url('/img/down.png');
-                                          background-position: 97% auto;
+                                          background-position: 97%;
                                           background-repeat: no-repeat;
                                           background-size: contain;
                                           overflow: hidden;
@@ -88,7 +88,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav" data-toggle="affix" style="z-index: 10">
         <div class="container">
-            <a class="navbar-brand smooth-scroll" href="/"><img src="img/logo.png" alt="logo"></a>
+            <a class="navbar-brand smooth-scroll" href="/"><img src="img/logo.png" alt="logo" data-toggle="tooltip" data-placement="top" title="BKFA_Team"></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -103,9 +103,9 @@
                             @endforeach
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle smooth-scroll" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Lang::get('sub.tech') }}</a>
-                        <div class="dropdown-menu dropdown-cust mega-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle smooth-scroll" href="/danh-sach-tin-tuc" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Lang::get('sub.tech') }}</a>
+                         <div class="dropdown-menu dropdown-cust mega-menu" aria-labelledby="navbarDropdownMenuLink">
                             <div class="row">
                                 <div class="col-md-6">
                                     <a class="dropdown-item" href="kien-thuc-lap-trinh">PHP</a>
@@ -120,8 +120,9 @@
                                     <a class="dropdown-item" href="kien-thuc-lap-trinh">Git&GitHub</a>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </div> 
+                    </li>-->
+                    <li class="nav-item"><a class="nav-link smooth-scroll" href="danh-sach-tin-tuc">{{ Lang::get('sub.tech') }}</a></li>
                     <li class="nav-item"><a class="nav-link smooth-scroll" href="about">{{ Lang::get('sub.about') }}</a></li>
                     <li class="nav-item">
                         <i class="search fa fa-search search-btn"></i>
@@ -129,7 +130,7 @@
                             <form action="tim-kiem" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                                 <div class="input-group animated fadeInUp">
-                                    <input type="text" class="form-control" placeholder="{{ Lang::get('sub.search') }}" aria-describedby="basic-addon2" name="search">
+                                    <input type="text" class="form-control" placeholder="{{ Lang::get('sub.search') }}" aria-describedby="basic-addon2" name="search" autocomplete="off">
                                      <span class="input-group-addon" id="basic-addon2">{{ Lang::get('sub.search2') }}</span>
                                 </div>
 

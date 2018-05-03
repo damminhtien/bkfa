@@ -54,7 +54,7 @@ class pageController extends Controller
 
     function dsSlide($id){
         $mon = DB::select('SELECT * FROM mons ORDER BY idmon DESC LIMIT 0,4');
-        $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id);
+        $slide =  DB::select('SELECT * FROM slides WHERE idmon = '.$id. ' ORDER BY created_at DESC');
         return view('pages.dsslide', ['slide'=>$slide, 'mon'=>$mon]);
     }
 
@@ -85,12 +85,13 @@ class pageController extends Controller
 
     function postTimKiem(Request $request){
         $vien = vien::all();
+        $mon = mon::search($request->search)->get();
         $dethi = dethi::search($request->search)->get();
         $slide = slide::search($request->search)->get();
         $tintuc = tintuc::search($request->search)->get();
         $sokq = count($dethi) + count($slide)+count($tintuc);
         $req = $request->search;
-        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'req'=>$req]);
+        return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'sokq'=>$sokq, 'dsmon'=>$mon, 'req'=>$req]);
 
     }
 

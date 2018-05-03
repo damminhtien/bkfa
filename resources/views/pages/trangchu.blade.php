@@ -167,13 +167,13 @@
         <div class="row wow animated fadeInUp " data-wow-duration="1s " data-wow-delay="0.5s ">
             <div class="col-md-3 col-sm-6 service-padding ">
                 <div class="service-item ">
-                    <div class="service-item-icon "> <i class="fa fa-paint-brush fa-3x "></i>
+                    <div class="service-item-icon "> <i class="fa fa-user fa-3x "></i>
                     </div>
                     <div class="service-item-title ">
-                        <h3>Web Design</h3>
+                        <h3>User Experience</h3>
                     </div>
                     <div class="service-item-desc ">
-                        <p>Laborum adipisicing do amet commodo occaecat do amet commodo occaecat.</p>
+                        <p>Material Design and responsive with Bootstrap 4.0.</p>
                         <div class="content-title-underline-light "></div>
                     </div>
                 </div>
@@ -186,20 +186,20 @@
                         <h3>Web Devlopment</h3>
                     </div>
                     <div class="service-item-desc ">
-                        <p>Laborum adipisicing do amet commodo occaecat do amet commodo occaecat.</p>
+                        <p>Development with Laravel framework 5.6 - WAMP stack</p>
                         <div class="content-title-underline-light "></div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 service-padding ">
                 <div class="service-item ">
-                    <div class="service-item-icon "> <i class="fa fa-table fa-3x "></i>
+                    <div class="service-item-icon "> <i class="fa fa-facebook fa-3x "></i>
                     </div>
                     <div class="service-item-title ">
-                        <h3>Mobile Apps</h3>
+                        <h3>Social Network</h3>
                     </div>
                     <div class="service-item-desc ">
-                        <p>Laborum adipisicing do amet commodo occaecat do amet commodo occaecat.</p>
+                        <p>Connect more and synchorous with Facebook api.</p>
                         <div class="content-title-underline-light "></div>
                     </div>
                 </div>
@@ -209,10 +209,10 @@
                     <div class="service-item-icon "> <i class="fa fa-search fa-3x "></i>
                     </div>
                     <div class="service-item-title ">
-                        <h3>SEO Optimization</h3>
+                        <h3>Search engine</h3>
                     </div>
                     <div class="service-item-desc ">
-                        <p>Laborum adipisicing do amet commodo occaecat do amet commodo occaecat.</p>
+                        <p>Full text search with Algodia search engine to get best performance.</p>
                         <div class="content-title-underline-light "></div>
                     </div>
                 </div>

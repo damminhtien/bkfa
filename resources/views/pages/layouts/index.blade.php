@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="css/footer.css">
    <!--  css pages -->
     <link rel="stylesheet" href="css/pages/news.css">
-    <link rel="stylesheet" href="css/pages/list_news.css">
     <link rel="stylesheet" href="css/pages/dstailieu.css">
     <link rel="stylesheet" href="css/pages/chitiettailieu.css">
     <link rel="stylesheet" href="css/pages/kienthuc.css">
@@ -54,8 +53,6 @@
     <!-- Plugin JavaScript -->
     <script src="library/bower_components/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/ajaxDanhGia.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="{{ asset('js/share.js') }}"></script>
     @yield('script')
 </body>

@@ -223,3 +223,7 @@
     </div>
 </section>
 @endsection
+
+@section('script')
+    <script src="js/ajaxDanhGia.js"></script>
+@endsection
