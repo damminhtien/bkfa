@@ -165,7 +165,8 @@
     @section('script')
         <script>
             function myFunction(id){
-                var $tmp = Number($('.number'+ id).text()) + 1;
+                var $tmp = Number($('.number'+ id).html()) + 1;
+                console.log($('.number'+ id).html());
                 $('.number' + id + ':first').html(" " + $tmp);
               }
         </script>

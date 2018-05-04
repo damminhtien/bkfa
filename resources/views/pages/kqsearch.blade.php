@@ -55,79 +55,73 @@
                 </div>
                         <div class="tab-pane fade" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="row ">
-                                @foreach($dethi as $dt)
+                                @foreach($dethi as $ds)
                                 <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" data-wow-delay="0.4s">
-                                    <div class="desc-document-cont">
-                                        <div class="thumbnail-blogs ">
-                                            <img src="upload/images/{{$dt->urlanh}} " class="img-fluid " alt="{{$dt->gioithieu}} ">
+                                    <a href="chi-tiet-de-thi/{{ $ds->idmon}}/de{{ $ds->iddethi }}.html" style="text-decoration: none;">
+                                        <div class="desc-document-cont">
+                                            <div class="thumbnail-blogs ">
+                                                <img src="upload/images/dethi/anh/{{$ds->urlanh}} " class="img-fluid " alt="{{$ds->gioithieu}} ">
+                                            </div>
+                                            <div>
+                                                <h3>{{cutString($ds->gioithieu, 33)." ..."}}</h3>
+                                                <p class="desc"><span class="fa fa-user" style="color: #1520F5"></span><b style="color: #731717"> BKFA</b></p>
+                                            </div>
+                                            <div class="document-footer">
+                                                <i class="fa fa-calendar"> {{$ds->nam}}</i>
+                                                <i class="fa fa-eye"> {{$ds->luotxem}}</i>
+                                                <i class="fa fa-arrow-circle-o-down">3</i>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3>{{cutString($dt->gioithieu, 33)." ..."}}</h3>
-                                            <p class="desc">{{$dt->nam}}</p>
-                                        </div>
-                                        <div>
-                                            <a href="#"><i class="fa fa-heart-o"> 1</i></a>
-                                            <a href="#"><i class="fa fa-eye"></i> 2</a>
-                                            <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 @endforeach
                             </div>
-                            
                         </div>
                         
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <div class="row">
-                     @foreach($slide as $sl)
-
-                     <div class="col-md-3 col-sm-6 desc-document wow fadeInUp" >
-                        <div class="desc-document-cont">
-                            <div class="thumbnail-blogs ">
-
-                            </div>
-                            {{--
-                                <div class="thumbnail-blogs">
-
-                                </div> --}}
-                                <div>
-                                    <h3>{{cutString($sl->gioithieu, 33)." ..."}}</h3>
-                                    <p class="desc">{{$sl->nam}}</p>
+                     @php
+                            foreach ($slide as $ds) {
+                                @endphp
+                                <div class="review-block">
+                                    <div class="row">
+                                        <div class=" col-sm-3">
+                                            <img src="upload/images/slide/{{$ds->urlanh}} " class="img-rounded">
+                                        </div>
+                                        <div class="col-sm-1"></div>
+                                        <div class="col-sm-8">
+                                            <div class="review-block-title">{{$ds->gioithieu}}</div>
+                                            <p><i class="fa fa-calendar"></i> {{$ds->updated_at}}</p>
+                                            <div class="review-block-description">@php echo $ds->ghichu; @endphp</div>
+                                            <br>
+                                            <a onclick="myFunction({{$ds->idslide}})" href="/download-Slide/{{$ds->idslide}}/{{$ds->url}}" class="btn btn-general btn-white" style="padding: 5px;"><i class="fa fa-download"></i> Download</a>
+                                            <span style="margin-left: 20px;"><i class="fa fa-download number{{$ds->idslide}}" style="color: #900;"> {{$ds->luotxem}}</i></span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <a href="#"><i class="fa fa-heart-o"> 1</i></a>
-                                    <a href="#"><i class="fa fa-eye"></i> 2</a>
-                                    <a href="#"><i class="fa fa-arrow-circle-o-down"></i> 3</a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+                                @php
+                            }
+                            @endphp
                     </div>
                 </div>
                 <div class="tab-pane fade" id="my-profile" role="tabpanel" aria-labelledby="my-profile-tab">
                     <div class="row">  
                         <section class="col-xs-12 col-sm-6 col-md-12">
-                            @foreach($tintuc as $tt)
-                            <article class="search-result row">
-                                <div class="col-xs-12 col-sm-12 col-md-3">
-                                    <a href="#" title="{{$tt->tieude}}" class="thumbnail"><img src="upload/tintuc/{{$tt->tieudeurlanh}}" class="img-fluid" alt="{{$tt->tieude}}" /></a>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-2">
-                                    <ul class="meta-search">
-                                        <li><i class="fa fa-calendar"></i> <span>
-                                            {{$tt->updated_at->format('m/d/Y')}}
-                                        </span></li>
-                                        <li><i class="fa fa-clock-o"></i> <span>{{$tt->updated_at->format('H:i:s')}}</span></li>
-                                        <li><i class="fa fa-tags"></i> <span>People</span></li>
-                                    </ul>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                                    <h3><a href="#" title="">{{cutString($tt->gioithieu, 10)." ..."}}</a></h3>
-                                    <p>{!!cutString($tt->noidung, 50) ."..."!!}</p>
-                                </div>
-                                <span class="clearfix borda"></span>
-                            </article>
-                            @endforeach
+                            @php
+                                foreach($tintuc as $mn){
+                                    @endphp
+                                    <div class="news-item">
+                                        <a href="chi-tiet-tin-tuc/{{ $mn->idtintuc }}/{{ $mn->tenkhongdau }}.html">
+                                            <div class="right-news">
+                                                <img src="upload/images/tintuc/{{$mn->urlanh}}" alt="" class="img-fluid" style="width: 120px;height: 80px;float: left;margin-right: 15px;">
+                                                <p>{{$mn->tieude}}</p>
+                                                <small><fa class="fa-watch">{{$mn->created_at}}</fa></small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @php
+                                }
+                                @endphp
                         </section>
                     </div>
                 </div>
@@ -143,3 +137,22 @@
 </section>
 <!-- end -->
 @endsection
+@if(!Auth::user())
+    @section('script')
+        <script>
+            function myFunction(id){
+                alert('Bạn cần phải đăng nhập để có thể Download tài liệu');
+            }
+        </script>
+    @endsection
+    @else
+    @section('script')
+        <script>
+            function myFunction(id){
+                var $tmp = Number($('.number'+ id).html()) + 1;
+                console.log($('.number'+ id).html());
+                $('.number' + id + ':first').html(" " + $tmp);
+              }
+        </script>
+    @endsection
+@endif

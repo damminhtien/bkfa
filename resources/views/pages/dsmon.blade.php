@@ -21,11 +21,10 @@
         <div class="row">
             @foreach($dsmon as $ds)
             <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card ">
-                 {{--  <a href="#"><img class="card-img-top" src="img/item.jpg" alt=""></a> --}}
+                <div class="card">
                     <div class="card-body text-center">
                         <div class="card-title">
-                            <a href="#"><strong style="color: #000">{{$ds->ten}}</strong></a>
+                            <a href="#"><strong style="color: #000"><h3>{{$ds->ten}}</h3></strong></a>
                         </div>
                         <p style="color: #0C48BA">{{$ds->gioithieu}}</p>
                         <div class="cart-icon text-center" style="position:absolute; bottom:20px; margin-left: 22px;">
