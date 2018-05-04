@@ -40,7 +40,8 @@
                                 <span class="fa fa-user" data-toggle="tooltip" title="Tác giả: BKFA.COM" style="margin-left: 20px; color: #0308D4"><span style="color: #8F0707;"> BKFA.COM</span></span>
                             </td>
                             <td style="text-align: right;">
-                                <a href="/download-de-thi/{{$chitiet->url}}" class="btn btn-general btn-white" style="margin-right: 15px;"><i class="fa fa-download"></i> Download</a>
+                                <a onclick="myFunction({{$chitiet->iddethi}})" href="/download-de-thi/{{$chitiet->iddethi}}/{{$chitiet->url}}" class="btn btn-general btn-white" style="margin-right: 15px;"><i class="fa fa-download"></i> Download</a>
+                                <span style="color: #900"><i class="fa fa-download download{{$chitiet->iddethi}}" style="color: #900;"> {{$chitiet->download}}</i></span>
                             </td>
                         </tr>
                         <tr>
@@ -175,7 +176,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <a href="/download-loi-giai/{{$chitiet->urlloigiai}}" class="btn btn-general btn-white" style="margin-top:10px;"><i class="fa fa-download"></i> Download</a>
+                            <a onclick="myFunction({{$chitiet->iddethi}})" href="/download-loi-giai/{{$chitiet->idmon}}/{{$chitiet->urlloigiai}}" class="btn btn-general btn-white" style="margin-top:10px;"><i class="fa fa-download"></i> Download</a>
                             <br><br>
                             @include('pages.hienthiloigiai')
                         </div>
@@ -227,3 +228,21 @@
 @section('script')
     <script src="js/ajaxDanhGia.js"></script>
 @endsection
+@if(!Auth::user())
+    @section('script')
+        <script>
+            function myFunction(id){
+                alert('Bạn cần phải đăng nhập để có thể Download tài liệu');
+            }
+        </script>
+    @endsection
+    @else
+    @section('script')
+        <script>
+            function myFunction(id){
+                var $tmp = Number($('.download'+ id).text()) + 1;
+                $('.download' + id + ':first').html(" " + $tmp);
+              }
+        </script>
+    @endsection
+@endif
