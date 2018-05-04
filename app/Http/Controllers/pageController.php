@@ -116,7 +116,7 @@ class pageController extends Controller
         $req = $query;
         return view('pages.kqsearch', ['vien'=>$vien, 'dethi'=>$dethi,'slide'=>$slide,'tintuc'=>$tintuc, 'mon'=>$mon, 'sokq'=>$sokq, 'req'=>$req]);
     }
-
+  
     function getDangNhap() {
         return view('pages.dangnhap');
     }
