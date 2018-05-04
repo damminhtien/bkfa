@@ -15,14 +15,15 @@ class downloadsController extends Controller
 	    return response()->download($file_path);
 	}
 
-	public function downloadDeThi($file) {
-    	//$ext = $file->getClientOriginalExtension();
+	public function downloadDeThi($id, $file) {
+    	$number = DB::update('UPDATE dethis SET download = download + 1 WHERE iddethi = '.$id);
     	$ext = array_reverse(explode('.',$file));
 	    $file_path = public_path('upload/'.getUrlFileUpload($ext[0], 'dethi/').$file);
 	    return response()->download($file_path);
 	}
 
-	public function downloadLoiGiai($file) {
+	public function downloadLoiGiai($id, $file) {
+		$number = DB::update('UPDATE dethis SET download = download + 1 WHERE iddethi = '.$id);
     	$ext = array_reverse(explode('.',$file));
 	    $file_path = public_path('upload/'.getUrlFileUpload($ext[0], 'loigiai/').$file);
 	    return response()->download($file_path);
