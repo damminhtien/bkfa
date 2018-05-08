@@ -65,8 +65,8 @@
                                       </td>
 	                                    <td>
 	                                        <div>
-	                                            <div class="thumbnail" href="#"><img src="upload/images/dethi/anh/{{$dt->urlanh}}" width="45" height="45" >
-                                              <span><img src="upload/images/dethi/anh/{{$dt->urlanh}}" with="200" height="200" title="Ảnh {{$dt->urlanh}}"></span></div>
+	                                            <div class="thumbnail" href="#"><img src="upload/images/dethi/anh/{{$dt->urlanh}}" width="60" height="40" >
+                                              <span><img src="upload/images/dethi/anh/{{$dt->urlanh}}" with="250" height="200" title="Ảnh {{$dt->urlanh}}"></span></div>
 	                                        </div>
 	                                    </td>
                                       <td>
@@ -81,7 +81,7 @@
                                             </a>
                                             <!-- Modal -->
                                             <div class="modal fade" id="myModal{{$dt->iddethi}}" tabindex="-1" role="text" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-dialog modal-lg" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel">Chi tiết ghi chú</h5>

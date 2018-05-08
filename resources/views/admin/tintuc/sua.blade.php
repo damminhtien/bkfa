@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label>{{ Lang::get('sub.image') }}</label><br>
-                        <p><img with="300" height="300" src="upload/images/tintuc/anh/{{$tintuc->urlanh}}"></p>
+                        <p><img with="300" height="300" src="upload/images/tintuc/{{$tintuc->urlanh}}"></p>
 						<label>
                     		<span class="text-primary btn btn-lg btn-outline-primary"><i class="fa fa-camera"></i>{{ Lang::get('sub.select_image') }}</span>
                     		<p id="filename" class="d-inline"></p>
@@ -50,8 +50,8 @@
                     	<div style="width: 50vw;" id="imgupload">	
                     	</div>
                     </div>
-                    <button type="submit" class="btn btn-default">{{ Lang::get('sub.edit') }}</button>
-                    <button type="reset" class="btn btn-default">{{ Lang::get('sub.refresh') }}</button>
+                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnSubmit">{{ Lang::get('sub.edit') }}<i class="fa fa-paper-plane"></i></button>
+                    <button type="reset" class="btn btn-lg float-right btn-secondary">{{ Lang::get('sub.refresh') }}<i class="fa fa-undo"></i></button>
                 </form>
 		        </div>
     		</div>

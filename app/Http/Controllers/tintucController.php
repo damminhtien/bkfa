@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\tintuc;
+use GuzzleHttp\Client;
 
 class tintucController extends Controller
 {
@@ -42,11 +43,11 @@ class tintucController extends Controller
 			if(!checkExtensionImage($ext)) {
 				return redirect('admin/tintuc/them')->with('loi', 'Không hỗ trợ định dạng ảnh này!');
 			}
-			$urlanh = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
-			while(file_exists('upload/images/tintuc/anh/' . $urlanh)) {
-				$urlanh = substr(time() . mt_rand() . '_' . $file->getClientOriginalName(), -190);
+			$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+			while(file_exists('upload/images/tintuc/' . $urlanh)) {
+				$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
 			}
-			$file->move('upload/images/tintuc/anh', $urlanh);
+			$img->move('upload/images/tintuc/', $urlanh);
 			$tintuc->urlanh = $urlanh;
 		}
 		else {
@@ -54,6 +55,9 @@ class tintucController extends Controller
 		}
 		$ten = cutString($tintuc->tieude, 40);
 		$tintuc->save();
+		$client = new Client();
+		$res = $client->request('POST', 'https://graph.facebook.com/308000529728334/feed?message=' . urlencode($tintuc->tieude) . '%0D%0A ------------------------------------------------- %0D%0A' . urlencode($tintuc->gioithieu) . '&link=www.bkfa.net&access_token=EAACZASrRvvGEBANFTO8FRJp3xReq0hPtcZAhRwyZAZAs2OBQ66Yior6BowUqHJYmPQd9sPYUVWrw9nNudo09DiNzmXZB4hkWIzduYOSY5EfhixRPXP0auEMYIXc6FoQQxZB4uYPCxHpEB5CoAbxNau54sUIrN77raZBVlykF5JiZCo8JmleKE7s5'
+		);
 		return redirect('admin/tintuc/danhsach')->with('thongbao','Thêm thành công ' . $ten);
 	}
 
@@ -68,20 +72,18 @@ class tintucController extends Controller
      	if($request->tieude != null) $tintuc->tieude = $request->tieude;
      	if($request->gioithieu != null) $tintuc->gioithieu = $request->gioithieu;
      	if($request->noidung != null) $tintuc->noidung = $request->noidung;
-		if($request->hasFile('urlanh')) {
-			$file = $request->file('urlanh');
-			$ext = $file->getClientOriginalExtension();
+		if($request->hasFile('anh')) {
+			$img = $request->file('anh');
+			$ext = $img->getClientOriginalExtension();
 			if(!checkExtensionImage($ext)) {
 				return redirect('admin/tintuc/sua/' . $idtintuc)->with('loi','Không hỗ trợ định dạng ảnh này!');
 			}
-			$name = $file->getClientOriginalName();
-			$urlanh = time() . rand() . '_' . $name;
-			while(file_exists('upload/images/tintuc/anh/' . $urlanh)) {
-				$urlanh = time() . rand() . '_' . $name;
+			$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
+			while(file_exists('upload/images/tintuc/' . $urlanh)) {
+				$urlanh = substr(time() . mt_rand() . '_' . $img->getClientOriginalName(), -190);
 			}
-			$file->move('upload/images/tintuc/anh', $urlanh);
+			$img->move('upload/images/tintuc/', $urlanh);
 			$tintuc->urlanh = $urlanh;
-			if($tintuc->urlanh != 'default.jpg' && file_exists('upload/images/tintuc/anh/' . $tintuc->urlanh)) unlink('upload/images/tintuc/anh/' . $tintuc->urlanh);
 		}
 		$ten = cutString($tintuc->tieude, 40);
 		$tintuc->save();
@@ -89,10 +91,10 @@ class tintucController extends Controller
 	}
 
 	public function getXoa($idtintuc){
-        $tintuc = tintuc::find($idtintuc)->firstOrFail();
+        $tintuc = tintuc::find($idtintuc);
         $ten = cutString($tintuc->tieude, 40);
         $urlanh = $tintuc->urlanh;
-        if($urlanh != 'default.jpg' && file_exists('upload/images/tintuc/anh/' . $urlanh)) unlink('upload/images/tintuc/anh/' . $urlanh);
+        if($urlanh != 'default.jpg' && file_exists('upload/images/tintuc/' . $urlanh)) unlink('upload/images/tintuc/' . $urlanh);
         $tintuc->delete();
         return redirect('admin/tintuc/danhsach')->with('thongbao','Bạn đã xóa thành công ' . $ten); 
 	}

@@ -100,8 +100,8 @@
         </ul>
         <ul class="nav-right">
             <li class="user-profile dropdown">
-                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">
-                    <img class="profile-img img-fluid" src="library/images/user.jpg" alt="">
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                    <img class="profile-img img-fluid" src="img/favicon.ico" alt="logo">
                     <div class="user-info">
                         <span class="name pdd-right-5">{{ Auth::user()->ten }}</span>
                         <i class="ti-angle-down font-size-10"></i>
@@ -229,12 +229,15 @@
                 </a>
             </li>
             <li>
+                <br>
                 <form action="{{ route('switchLang') }}" class="form-lang" method="post">
-                    <select name="locale" onchange='this.form.submit();'>
-                        <option value="en">{{ trans('sub.lang.en') }}</option>
-                        <option value="vi" {{ Lang::locale()==='vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
-                    </select>
-                    {{ csrf_field() }}
+                    <div style="font-family: serif; font-size: 120%; ">
+                        <select class="" name="locale" onchange='this.form.submit();'>
+                            <option value="en">{{ trans('sub.lang.en') }}</option>
+                            <option value="vi" {{ Lang::locale()==='vi' ? 'selected' : '' }}>{{ trans('sub.lang.vi') }}</option>
+                        </select>
+                        {{ csrf_field() }}
+                    </div>
                 </form>
             </li>
         </ul>

@@ -43,7 +43,6 @@
 
 /*Left side news details
 ------------------------------*/
-
 .single-news-p1 .container .row .col-md-10{
 	margin:0 auto;
 }
@@ -56,23 +55,12 @@
 	padding: 50px;
 }
 
-.single-news-p1 .single-news-desc li{
-	display: inline-block;
-	vertical-align: top;
-	display: inline; /* Fix for IE7 */
-	margin: 0 40px 0 0;
-}
-
-.single-news-p1 .single-news-desc .bg-light-gray{
-	padding:20px 10px;
-}
-
-.single-news-p1 .single-news-desc .bg-light-gray p{
-	font-size: 14px;
-}
-
 .single-news-p1 a {
 	text-decoration: none;
+}
+
+.single-news-p1 p {
+	color: black;
 } 
 
 /*====================================================
@@ -349,13 +337,13 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
 
-    .single-news-p1 .col-md-8 {
+    .single-news-p1 .col-md-9 {
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;
     }
 
-    .single-news-p1 .col-md-4 {
+    .single-news-p1 .col-md-3{
         -ms-flex: 100%;
         flex: 100%;
         max-width: 100%;

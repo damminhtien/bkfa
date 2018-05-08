@@ -1,13 +1,14 @@
 /*====================================================
                        HOME
 ======================================================*/
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
 .carousel-fade {
     height: 90vh;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background: rgba(0, 0, 0, 0.5) url('/img/HUST.jpg');
+    background: rgba(0, 0, 0, 0.5) url('/img/hust.jpg');
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -103,7 +104,17 @@
     height: 100vh;
 }
 
+@media (max-width: 850px){
+    .hero{
+        top: 50%;
+        padding: 15px;
+    }
+}
+
 @media (max-width: 767px) {
+    .hero{
+        top: 55%;
+    }
     .hero h1 {
         font-size: 2.5em;
         color: #fff;
@@ -127,7 +138,7 @@
 @media (max-width: 575px) {
     .hero {
         position: absolute;
-        top: 45%;
+        top: 50%;
         padding: 20px 0px;
     }
     .hero h1 {

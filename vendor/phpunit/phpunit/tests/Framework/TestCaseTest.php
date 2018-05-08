@@ -15,9 +15,8 @@ use PHPUnit\Runner\BaseTestRunner;
 
 class TestCaseTest extends TestCase
 {
+    protected static $testStatic      = 0;
     protected $backupGlobalsBlacklist = ['i', 'singleton'];
-
-    protected static $testStatic = 0;
 
     public static function setUpBeforeClass(): void
     {
@@ -176,6 +175,14 @@ class TestCaseTest extends TestCase
         $this->assertTrue($test->assertPostConditions);
         $this->assertTrue($test->tearDown);
         $this->assertEquals(BaseTestRunner::STATUS_ERROR, $test->getStatus());
+    }
+
+    public function testExceptionInTestIsDetectedInTeardown(): void
+    {
+        $test   = new \ExceptionInTestDetectedInTeardown('testSomething');
+        $test->run();
+
+        $this->assertTrue($test->exceptionDetected);
     }
 
     public function testNoArgTestCasePasses(): void
@@ -720,6 +727,12 @@ class TestCaseTest extends TestCase
 
         $this->assertInternalType('array', $test->myTestData);
         $this->assertSame($data, $test->myTestData);
+    }
+
+    public function testGettingNullTestResultObject(): void
+    {
+        $test = new \Success();
+        $this->assertNull($test->getTestResultObject());
     }
 
     /**

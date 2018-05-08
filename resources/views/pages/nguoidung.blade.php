@@ -1,88 +1,145 @@
-@extends('pages.layouts.index')
+@extends('pages.layouts.index') @section('title', 'Thông tin người dùng') @section('content')
+<style>
+/*====================================================
+                       MYACCOUNT
+======================================================*/
 
-@section('title', 'Thông tin người dùng')
+#acc-form {
+    padding: 100px 0;
+}
 
-@section('content')
-<!-- Page Content -->
-<div class="container">
+.form-group {
+    margin-bottom: 15px;
+}
 
-	<!-- slider -->
-	<div class="row carousel-holder">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-8">
-			<div class="panel panel-default">
-				<div class="panel-heading"><b>Thông tin tài khoản<b></div>
-				<div class="panel-body">
-					@if(session('thongbao'))
-                    	<div class="alert alert-success"> 
-                        	{{session('thongbao')}}
-                    	</div>
-                	@endif
-					<form action="nguoidung" method="POST">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<div>
-							<label>Họ tên</label>
-							<input type="text" class="form-control" placeholder="Username" name="name" aria-describedby="basic-addon1" value="{{ $nguoidung->ten }}">
-						</div>
-						<br>
-						<div>
-							<label>Email</label>
-							<input type="email" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1"
-							readonly value="{{ $nguoidung->email }}" 
-							>
-						</div>
-						<br>	
-						<div>
-							<input type="checkbox" id="changePassword" class="" name="changePassword">
-							<label>Đổi mật khẩu</label>
-							<input type="password" class="form-control password" name="password" aria-describedby="basic-addon1" disabled>
-						</div>
-						
-						<div>
-							<label>Nhập lại mật khẩu</label>
-							<input type="password" class="form-control password" name="passwordAgain" aria-describedby="basic-addon1" disabled>
-						</div>
-						
+label {
+    margin-bottom: 15px;
+}
 
-						<div>
-							<label>Giới tính</label>
-							<select class="form-control" name="gioitinh" id="gioitinh">
-								<option value="0">--Giới tính--</option>
-                                <option value="">Nam</option>
-                                <option value="">Nữ</option>
-							</select>
-						</div>
-						<br>
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+    border-radius: 0;
+}
 
-						<div>
-							<label>Ngày sinh</label>
-							<input type="date" id="ngaysinh" class="form-control" name="ngaysinh">
-						</div>
-						<br>
+span.input-group-addon,
+input.form-control {
+    border-radius: 0;
+}
 
-						<div>
-							<label>Tỉnh-Thành phố</label>
-							<select class="form-control" name="quequan" id="quequan">
-								<option value="0">--Tỉnh/TP--</option>
-                                <option value="">Hà Nội</option>
-                                <option value="">TP.Hồ Chí Minh</option>
-							</select>
-						</div>
-						<br>
-						<button type="submit" class="btn btn-default">Cập nhật thông tin
-						</button>
+.main-login {
+    background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2">
-		</div>
-	</div>
-	<!-- end slide -->
+.main-center {
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 530px;
+    padding: 40px 40px;
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.login-register {
+    font-size: 11px;
+    text-align: center;
+}
+
+@media(max-width: 575px) {
+    #acc-form {
+        padding: 30px 20px;
+    }
+}
+</style>
+<!--====================================================
+                       HOME-P
+======================================================-->
+<div id="home-p" class="home-p pages-head7 text-center">
+    <div class="container">
+        <h1 class="wow fadeInUp" data-wow-delay="0.1s">Quản Lý Tài Khoản</h1>
+    </div>
+    <!--/end container-->
 </div>
-<!-- end Page Content -->
+<!--====================================================
+                        FORM ACC
+======================================================-->
+<section class="acc-form bg-gray" id="acc-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 main-login main-center">
+            	@if(session('thongbao'))
+	            	<div class="alert alert-success"> 
+	                	{{session('thongbao')}}
+	            	</div>
+	        	@endif
+                <form class="form-horizontal" method="POST" action="nguoidung">
+                	<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <label for="name" class="cols-sm-2 control-label">{{ Lang::get('sub.flname') }}</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" value="{{ $nguoidung->ten }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="email" id="email" aria-describedby="basic-addon1" readonly placeholder="Enter your Email" value="{{ $nguoidung->email }}"/>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="date" id="username" placeholder="Enter your old Password" value="{{ $nguoidung->password }}"/>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="form-group">
+                    	<input type="checkbox" id="changePassword" class="" name="changePassword">
+                        <label for="password" class="cols-sm-2 control-label">{{ Lang::get('sub.chanpw') }}</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control password" name="changePassword" id="password" placeholder="Enter your Password" aria-describedby="basic-addon1" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">{{ Lang::get('sub.confirm_password') }}</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" class="form-control password" name="passwordAgain" id="confirm" placeholder="Confirm your Password" aria-describedby="basic-addon1" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                    	<br>
+                    	<button type="submit" class="btn btn-general btn-white text-center">{{ Lang::get('sub.uppf') }}
+						</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @section('script')

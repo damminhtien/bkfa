@@ -9,18 +9,13 @@
                     <div class="row">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-8 botCol">
-                            <div class="input-group input-group-lg">
-                                <button style="border-radius: 50px 0px 0px 50px; background-color: #3A71FC" class="btn btn-default" type="button" id="search-button"><i class="fa fa-search"></i></button>
-                                <style>
-                                .input-search {
-                                    text-transform: uppercase;
-                                    background: rgba(83, 174, 252, 0.2);
-                                    border: 1px solid #fff;
-                                    color: white
-                                }
-                                </style>
-                                <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="Search ..." id="input-search">
-                            </div>
+                            <form action="tim-kiem" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <div class="input-group input-group-lg">
+                                    <button type="submit" style="border-radius: 50px 0px 0px 50px; background-color: #268ff9; border: 2px solid #FFF; color: #FFF;" class="btn btn-default" id="search-button"><i class="fa fa-search"></i></button>
+                                    <input style="border-radius: 0px 50px 50px 0px;" type="search" class="form-control input-search" placeholder="{{ Lang::get('sub.search') }} ..." id="input-search" name="search" autocomplete="off">
+                                </div>
+                            </form>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
@@ -28,10 +23,10 @@
                 </div>
                 <div class="hero ">
                     <hgroup class="wow fadeInUp">
-                        <h1><span ><a href="" class="typewrite" data-period="2000" data-type='[" BKFA.COM", "Website Tài liệu"]'><span class="wrap"> </span></a></span> <i class="fa fa-pencil"> </i></h1>
-                        <h3>Một kho tài liệu khủng lồ cho sinh viên</h3>
+                        <h1><span ><a href="" class="typewrite" data-period="2000" data-type='[" BKFA.COM", "{{ Lang::get('sub.docweb') }}"]'><span class="wrap"> </span></a></span> <i class="fa fa-pencil"> </i></h1>
+                        <h3>{{ Lang::get('sub.library') }}</h3>
                     </hgroup>
-                    <a href="https://www.youtube.com/watch?v=stxlq4tXTaQ" class="btn btn-general btn-green wow fadeInUp" role="button" target="_blank">Hướng dẫn sử dụng</a>
+                    <a href="https://www.youtube.com/watch?v=stxlq4tXTaQ" class="btn btn-general btn-green wow fadeInUp" role="button" target="_blank">{{ Lang::get('sub.manual') }}</a>
                 </div>
             </div>
         </div>
