@@ -1,9 +1,17 @@
-# About BKFA.com
+# About BKFA.net
 ### Purpose
 
-BKFA.com is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.
-
-<p align="center"><img src="https://raw.githubusercontent.com/damminhtien/bkfa/buildFunction/public/img/logo.png"></p>
+<p align="center"><img src="https://i.imgur.com/CwGiBFE.jpg"></p>
+<p align="justify">BKFA.net is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.</p>
+<p align="justify">Following up on the idea of a web site that can share material and experience, the group of four is currently building a website to implement the idea. However due to the limited time and this is also a community project ^^ so we are looking forward to receiving feedback from everyone. This is also a condition for people to improve their programming and team work.</p>
+<strong>Basic project:</strong>
+<p align="justify">We build on Laravel Framework 5.6. Run LampStack. Frontend responsive with Bootstrap. Details about the technology are also available on the group repo in the README.md and package.json sections
+We are currently building additional functionality for the project on the buildFunction, which runs stable. The add / edit / delete / search / login functions are fine and well optimized.</p>
+<p align="justify">Want to be and we are looking forward to receiving your contributions. You can fork our repo and create pull request, we will review code thoroughly for you! As we manage with version control, everyone can learn how to group and design patterns when designing web pages with laravel.</p>
+<p align="justify">Any questions or comments related to the comment below or contact us directly at fb.com/bkfateam!</p>
+<p align="justify">Thank you for reading this article! Dear</p>
+BKFA_TEAM 2018
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"><img src="https://raw.githubusercontent.com/damminhtien/bkfa/buildFunction/public/img/logo.png"></p>
 
 ### Technology
 
@@ -20,66 +28,4 @@ We are students of HUST
 - assassin881997
 - 0henri0
 with love <3
-
 <p>Contact us: https://www.facebook.com/bkfateam/</p>
-
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
