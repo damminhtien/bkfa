@@ -2,7 +2,7 @@
 ### Purpose
 
 <p align="center"><img src="https://i.imgur.com/CwGiBFE.jpg"></p>
-<p align="justify">BKFA.net is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.</p>
+<p align="justify">(Deprecated) BKFA.net is a project of the BKFA team from HUST for the purpose of bringing the academic materials of the subjects / institutes to a storage facility. From there, students at the school and abroad can easily search and review the subjects within the framework of Hanoi University of Technology. In addition, people can update the study news, confession, tips from us. The project has been developed since February 2018.</p>
 <p align="justify">Following up on the idea of a web site that can share material and experience, the group of four is currently building a website to implement the idea. However due to the limited time and this is also a community project ^^ so we are looking forward to receiving feedback from everyone. This is also a condition for people to improve their programming and team work.</p>
 <strong>Basic project:</strong>
 <p align="justify">We build on Laravel Framework 5.6. Run LampStack. Frontend responsive with Bootstrap. Details about the technology are also available on the group repo in the README.md and package.json sections
