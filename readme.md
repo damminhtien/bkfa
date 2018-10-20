@@ -1,4 +1,5 @@
 # About BKFA.net
+New versions of this project right here: [alpha](https://github.com/BKFA/bkfav2), [beta](https://github.com/trantrongbinh/FS-Focus)
 ### Purpose
 
 <p align="center"><img src="https://i.imgur.com/CwGiBFE.jpg"></p>
